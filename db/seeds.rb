@@ -5,3 +5,44 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+User.destroy_all
+
+test_user = User.create!(
+  email: "test@mail.de",
+  password: "123456"
+)
+
+Category.create!(name: "Nature")
+Category.create!(name: "Art")
+Category.create!(name: "Animals")
+
+
+Keyword.create!(
+  name: "Flower",
+  category: Category.find_by(name: "Nature")
+)
+
+Keyword.create!(
+  name: "Sky",
+  category: Category.find_by(name: "Nature")
+)
+
+Keyword.create!(
+  name: "Blue",
+  category: Category.find_by(name: "Art")
+)
+
+Keyword.create!(
+  name: "Paintings",
+  category: Category.find_by(name: "Art")
+)
+
+Keyword.create!(
+  name: "Dogs",
+  category: Category.find_by(name: "Animals")
+)
+
+Keyword.create!(
+  name: "Cats",
+  category: Category.find_by(name: "Animals")
+)
