@@ -1,0 +1,11 @@
+<div class="container">
+  <%= month_calendar do |date, challenges| %>
+    <%= date %>
+
+    <% challenges.each do |challenge| %>
+      <div class="challenge">  <-- We will add some style to the challenge class later so let's add it now -->
+        <p><%= challenge.name %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
