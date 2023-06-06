@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_05_155825) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_06_130652) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "challenges", force: :cascade do |t|
     t.bigint "keyword_id", null: false
     t.bigint "user_id", null: false
-    t.date "created_date"
+    t.date "start_date"
     t.bigint "post_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
