@@ -1,17 +1,29 @@
 class ChallengesController < ApplicationController
 
   def new
-    # check if user logs in for first time of today
-    # generate a new keyword
-    # if user has already logged in once, link to show
+    # check if challenge of today already created. If so, directly link to show
+    if Challenge.find_by(created_date: Date.today).where(user: current_user)
+      @challenge = Challenge.find_by(created_date: Date.today).where(user: current_user)
+      redirect_to challenge_path(@challenge)
+    # generate a new challenge if user opens app for first time today
+    else
+      @challenge = Challenge.new
+
+      @keyword = Keyword.where(category: current_user.categories).sample
+    end
   end
 
   def create
-    @challenge = Challenge.new
+    @challenge = Challenge.new(params in here)
     @challenge.save
-    redirect_to new_challenge_post_path
+    redirect_to challenge_path(@challenge)
   end
 
   def show
   end
 end
+
+in simple form
+input type="hidden" name="keyword" value="@keyword"
+
+submit button => tap
