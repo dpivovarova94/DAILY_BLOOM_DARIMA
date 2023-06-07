@@ -10,27 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_06_130652) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_07_122741) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "challenges", force: :cascade do |t|
     t.bigint "keyword_id", null: false
     t.bigint "user_id", null: false
-    t.date "start_date"
-    t.bigint "post_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "start_date"
     t.index ["keyword_id"], name: "index_challenges_on_keyword_id"
-    t.index ["post_id"], name: "index_challenges_on_post_id"
     t.index ["user_id"], name: "index_challenges_on_user_id"
   end
 
   create_table "keywords", force: :cascade do |t|
     t.string "name"
-    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_keywords_on_category_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -42,6 +47,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_130652) do
     t.string "medium"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "challenge_id"
+    t.index ["challenge_id"], name: "index_posts_on_challenge_id"
+  end
+
+  create_table "user_categories", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_user_categories_on_category_id"
+    t.index ["user_id"], name: "index_user_categories_on_user_id"
   end
  
     t.datetime "reset_password_sent_at"
@@ -53,6 +69,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_130652) do
   end
 
   add_foreign_key "challenges", "keywords"
-  add_foreign_key "challenges", "posts"
   add_foreign_key "challenges", "users"
+  add_foreign_key "keywords", "categories"
+  add_foreign_key "posts", "challenges"
+  add_foreign_key "user_categories", "categories"
+  add_foreign_key "user_categories", "users"
 end
