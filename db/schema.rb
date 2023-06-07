@@ -23,6 +23,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_095744) do
   create_table "challenges", force: :cascade do |t|
     t.bigint "keyword_id", null: false
     t.bigint "user_id", null: false
+    t.date "start_date"
+    t.bigint "post_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["keyword_id"], name: "index_challenges_on_keyword_id"
