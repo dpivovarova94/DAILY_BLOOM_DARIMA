@@ -19,12 +19,19 @@
   height: 50%;
   border-radius: 40px;
   overflow: hidden;
+  margin-bottom: 5px;
 }
 
 .standar-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.showcard {
+  width: 100%;
+  border-radius: 40px;
+  overflow: hidden;
 }
 
 // dont know yet how to apply only if the number or image is odd
