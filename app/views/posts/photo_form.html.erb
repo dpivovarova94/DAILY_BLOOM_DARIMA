@@ -1,0 +1,74 @@
+<!-- Add a container to display the captured image -->
+<div id="photo-container"></div>
+
+<!-- Add a button to open the camera roll and take a picture -->
+<button class="btn btn primary capture-btn" >Take a Picture</button>
+
+<!-- Add a button to retake the picture -->
+<button class="btn btn-primary retake-btn" style="display: none;">Retake</button>
+
+<!-- Add a button to submit the captured image -->
+<%= form.submit 'Post', class: 'btn btn-primary post-btn', style: 'display: none;' %>
+
+<!-- Include the JavaScript code -->
+<script>
+  // Get references to the DOM elements
+  const captureButton = document.getElementById('capture-btn');
+  const retakeButton = document.getElementById('retake-btn');
+  const postButton = document.getElementById('post-btn');
+  const photoContainer = document.getElementById('photo-container');
+
+  // Function to handle when the capture button is clicked
+  function handleCaptureClick() {
+    // Disable the capture button
+    captureButton.disabled = true;
+
+    // Open the camera roll to allow the user to select a picture
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+
+    // Listen for when a file is selected
+    input.addEventListener('change', function (event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      // Read the file as a data URL
+      reader.readAsDataURL(file);
+
+      // Handle when the file is loaded
+      reader.onload = function () {
+        const imageUrl = reader.result;
+
+        // Display the captured image in the photo container
+        const img = document.createElement('img');
+        img.src = imageUrl;
+        photoContainer.appendChild(img);
+
+        // Show the retake and post buttons
+        retakeButton.style.display = 'inline-block';
+        postButton.style.display = 'inline-block';
+      };
+    });
+
+    // Simulate a click on the input element to open the camera roll
+    input.click();
+  }
+
+  // Function to handle when the retake button is clicked
+  function handleRetakeClick() {
+    // Remove the captured image from the photo container
+    photoContainer.innerHTML = '';
+
+    // Hide the retake and post buttons
+    retakeButton.style.display = 'none';
+    postButton.style.display = 'none';
+
+    // Enable the capture button
+    captureButton.disabled = false;
+  }
+
+  // Attach click event listeners to the buttons
+  captureButton.addEventListener('click', handleCaptureClick);
+  retakeButton.addEventListener('click', handleRetakeClick);
+</script>
