@@ -6,14 +6,16 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
   end
-  
+
   def new
+    @challenge = Challenge.find(params[:challenge_id])
     @post = Post.new
   end
 
   def create
     @challenge = Challenge.find(params[:challenge_id])
     @post = Post.new(post_params)
+    raise
 
     if @post.save
       # case @post.medium
