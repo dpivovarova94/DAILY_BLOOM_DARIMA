@@ -1,0 +1,22 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.blob {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: wheat;
+}

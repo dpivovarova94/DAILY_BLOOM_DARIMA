@@ -4,21 +4,23 @@ class PostsController < ApplicationController
   end
 
   def create
+    @challenge = Challenge.find(params[:challenge_id])
     @post = Post.new(post_params)
+
     if @post.save
-      case @post.medium
-      when 'photo'
-        # Handle photo upload logic
-      when 'poem'
-        # Handle poem upload logic
-      when 'text'
-        # Handle text upload logic
-      when 'song'
-        # Handle song upload logic
-      end
-        # Redirect or render appropriate response
+      # case @post.medium
+      # when 'photo'
+      #   redirect_to new_challenge_post_path(@challenge)
+      # when 'poem'
+      #   #blabla
+      # when 'quote'
+      #   #blabla
+      # when 'song'
+      #   #blabla
+      # end
+      redirect_to feed_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
