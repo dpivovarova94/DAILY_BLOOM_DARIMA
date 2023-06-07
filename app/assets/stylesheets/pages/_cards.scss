@@ -11,16 +11,23 @@
 .index-card-container {
   display: flex;
   flex-wrap: wrap;
+  columns: 2;
 }
 
-.index-card-container .standar-card {
-  flex-basis: 50%;
-  width: 200px;
-  height: 200px;
-  border-radius: 50px;
+.standar-card {
+  width: 50%;
+  height: 50%;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.standar-card img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-.index-card-container > :last-child {
-  flex-basis: 100%;
-}
+// dont know yet how to apply only if the number or image is odd
+// .index-card-container > :last-child {
+//   flex-basis: 100%;
+// }

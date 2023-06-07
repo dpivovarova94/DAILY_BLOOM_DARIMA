@@ -84,3 +84,6 @@ end
 
 #svg control
 gem 'inline_svg'
+
+#faker
+gem 'faker'
