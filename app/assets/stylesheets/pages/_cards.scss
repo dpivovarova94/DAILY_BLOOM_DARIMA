@@ -1,0 +1,26 @@
+
+.content-wrap {
+  padding-top:5pt;
+  padding-left: 10pt;
+  padding-right: 10pt;
+  padding-bottom: 15pt;
+  // display: flex;
+
+}
+
+.index-card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.index-card-container .standar-card {
+  flex-basis: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+.index-card-container > :last-child {
+  flex-basis: 100%;
+}
