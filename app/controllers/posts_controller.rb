@@ -6,8 +6,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
   end
-  
+
   def new
+    @challenge = Challenge.find(params[:challenge_id])
     @post = Post.new
   end
 
@@ -35,7 +36,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:medium, :picture_url, :poem, :text, :song_url)
+    params.require(:post).permit(:medium, :picture_url, :poem, :text, :song_url, :photo)
   end
 
 end

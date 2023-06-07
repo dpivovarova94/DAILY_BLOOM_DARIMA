@@ -84,15 +84,16 @@
   </div>
 </section>
 
-this is display none also TARGET
+<%# this is display none also TARGET %>
   <div>form for option 1
-    <%= simple_form_for @post do |form| %>
+    <%= simple_form_for [@challenge, @post] do |f| %>
 
-      generate input type file
-      also input type hidden name="medium" value="photo"
+      <%# generate input type file
+      also input type hidden name="medium" value="photo" %>
 
-      <%= form.button :submit %>
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit %>
     <% end %>
   </div>
-  
+
 </div>
