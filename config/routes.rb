@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: "pages#home"
   get 'dashboard', to: 'pages#dashboard'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -8,6 +7,9 @@ Rails.application.routes.draw do
   end
 
   get 'posts', to: 'posts#index', as: :feed
-  # Defines the root path route ("/")
-  # root "articles#index"
+
+  get 'user_categories/new', to: 'user_categories#new'
+  post 'user_categories', to: 'user_categories#create'
+
+  devise_for :users, controllers: { registrations: "users/registrations" }
 end
