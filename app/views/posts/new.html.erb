@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Choose your medium</h2>
+  <%= simple_form_for @post do |form| %>
+    <%= form.input :medium, collection: ['photo', 'poem', 'text', 'song'] %>
+
+    <% # Render the appropriate form based on the chosen medium %>
+    <% if @post.medium == 'photo' %>
+      <%= render 'photo_form', form: form %>
+    <% elsif @post.medium == 'poem' %>
+      <%= render 'poem_form', form: form %>
+    <% elsif @post.medium == 'text' %>
+      <%= render 'text_form', form: form %>
+    <% elsif @post.medium == 'song' %>
+      <%= render 'song_form', form: form %>
+    <% end %>
+
+    <%= form.button :submit %>
+  <% end %>
+
+</div>
