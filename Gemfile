@@ -81,3 +81,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+#svg control
+gem 'inline_svg'
