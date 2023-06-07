@@ -1,0 +1,30 @@
+<div class="simple-calendar">
+  <div class="d-flex align-items-center justify-content-between my-2">
+    <%# <div class="calendar-heading my-2 d-flex align-items-center justify-content-between"> %>
+    <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: 'btn btn-outline-primary' %>
+    <h3 class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></h3>
+    <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view, class: 'btn btn-outline-primary' %>
+  </div>
+
+  <table class="table">
+    <thead class="weekdays">
+      <tr>
+        <% date_range.slice(0, 7).each do |day| %>
+          <th><%= t('date.day_names')[day.wday] %></th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% date_range.each_slice(7) do |dates| %>
+        <tr>
+          <% dates.each do |date| %>
+            <%= content_tag :td, class: calendar.td_classes_for(date) do %>
+              <% passed_block.call date.day, sorted_events.fetch(date, []) %>
+            <% end %>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

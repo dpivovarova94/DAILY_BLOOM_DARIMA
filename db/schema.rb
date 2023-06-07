@@ -10,9 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_05_150755) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_06_130652) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "challenges", force: :cascade do |t|
+    t.bigint "keyword_id", null: false
+    t.bigint "user_id", null: false
+    t.date "start_date"
+    t.bigint "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["keyword_id"], name: "index_challenges_on_keyword_id"
+    t.index ["post_id"], name: "index_challenges_on_post_id"
+    t.index ["user_id"], name: "index_challenges_on_user_id"
+  end
+
+  create_table "keywords", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.date "date"
+    t.string "song_url"
+    t.text "poem"
+    t.text "text"
+    t.string "picture_url"
+    t.string "medium"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_150755) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "challenges", "keywords"
+  add_foreign_key "challenges", "posts"
+  add_foreign_key "challenges", "users"
 end
