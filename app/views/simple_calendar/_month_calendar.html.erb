@@ -7,13 +7,13 @@
   </div>
 
   <table class="table">
-    <thead class="weekdays">
+    <%# <thead class="weekdays">
       <tr>
         <% date_range.slice(0, 7).each do |day| %>
-          <th><%= t('date.day_names')[day.wday] %></th>
-        <% end %>
-      </tr>
-    </thead>
+          <%# <th><%= t('date.day_names')[day.wday] %>
+        <%# <% end %>
+      <%# </tr> %>
+    <%# </thead> %>
 
     <tbody>
       <% date_range.each_slice(7) do |dates| %>
