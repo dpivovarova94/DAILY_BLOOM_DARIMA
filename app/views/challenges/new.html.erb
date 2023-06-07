@@ -1,0 +1,4 @@
+<%= simple_form_for(@challenge) do |f| %>
+  <%= f.input :keyword_id, as: :hidden, input_html: { value: @keyword.id} %>
+  <%= f.button :submit, 'Tap to see your bloom' %>
+<% end %>
