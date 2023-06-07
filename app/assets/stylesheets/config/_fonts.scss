@@ -1,9 +1,56 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+@font-face {
+  font-family: 'DailyBloom';
+  src:url('DailyBloom.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+// $body-font: "Work Sans", "Helvetica", "sans-serif";
+$character-font: "DailyBloom";
+$body-font: "Inter", "sans-serif";
+
+
+h1 {
+  font-family: $character-font;
+  font-size: 24px;
+}
+
+h2 {
+  font-family: $body-font;
+  font-size: 20px;
+}
+
+h3 {
+  font-family: $body-font;
+  font-size: 18px;
+}
+
+h4 {
+  font-family: $body-font;
+  font-size: 16px;
+}
+
+h5 {
+  font-family: $body-font;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+p {
+  font-family: $body-font;
+  font-size: 14px;
+}
+
+a {
+  font-family: $body-font;
+  font-size: 14px;
+}
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
