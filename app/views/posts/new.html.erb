@@ -91,7 +91,7 @@
       <%# generate input type file
       also input type hidden name="medium" value="photo" %>
       <%= f.input :photo, as: :file, label: "Open camera",
-      label_html: {class:"btn"},
+      label_html: {class:"btn-camera"},
       input_html: {accept: "image/*",
        capture:"environment",
         id:"cameraFileInput"}%>
