@@ -20,6 +20,7 @@ export default class extends Controller {
     });
 
     targetElement.classList.remove("d-none");
+    
     this.bubbleTargets.forEach((element) => {
       element.classList.add("d-none")
     })
