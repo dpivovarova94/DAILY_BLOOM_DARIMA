@@ -39,18 +39,21 @@
 }
 
 .card-photo {
+  position: relative;
   background-color:$main-green;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   height: 200px;
   padding: 10px;
   border-radius: 12px;
 
   .img.card-photo {
     border-radius: 20px;
-    max-width: 100%;
-    object-fit: contain;
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 }
 
