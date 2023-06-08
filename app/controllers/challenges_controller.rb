@@ -4,7 +4,7 @@ class ChallengesController < ApplicationController
     # check if challenge of today already created. If so, directly link to show
     if !Challenge.where(created_at: Time.current.all_day, user: current_user).empty?
       @challenge = Challenge.where(created_at: Time.current.all_day, user: current_user).first
-  
+
       redirect_to challenge_path(@challenge)
     # generate a new challenge if user opens app for first time today
     else
