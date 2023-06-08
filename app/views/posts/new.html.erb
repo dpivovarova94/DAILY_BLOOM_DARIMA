@@ -1,7 +1,4 @@
 <div class="container" data-controller="blob-buttons">
-  <h2>Choose your medium</h2>
-
-
 
 <%# here STARTS the BUTTON feature %>
   <div class="card">
@@ -14,7 +11,7 @@
 
       <!-- First Blob -->
       <g class="option1">
-        <%= link_to dashboard_path do %>
+        <%= link_to feed_path do %>
           <g transform="translate(150 150)">
             <path id="animated-path1" fill="#6DF0B1">
               <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
@@ -32,7 +29,7 @@
 
     <!-- Second Blob -->
       <g class="option2">
-        <%= link_to dashboard_path do %>
+        <%= link_to feed_path do %>
           <g transform="translate(300 150)">
             <path id="animated-path2" fill="#81D2FF">
               <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M62,-51C74.4,-34,74.2,-8.6,66.3,10.7C58.4,30,42.7,43.1,24.6,52.3C6.6,61.4,-14,66.5,-34.7,60.8C-55.4,55.2,-76.4,38.7,-81.2,18.3C-86.1,-2.1,-74.9,-26.4,-58.6,-44.3C-42.4,-62.1,-21.2,-73.5,1.8,-74.9C24.9,-76.4,49.7,-67.9,62,-51Z;
@@ -49,7 +46,7 @@
 
     <!-- Third Blob -->
       <g class="option3">
-        <%= link_to dashboard_path do %>
+        <%= link_to feed_path do %>
           <g transform="translate(150 300)">
             <path id="animated-path3" fill="#FFF975">
               <animate attributeName="d" dur="10s" repeatCount="indefinite" values=
@@ -67,7 +64,7 @@
 
     <!-- Fourth Blob -->
       <g class="option3">
-        <%= link_to dashboard_path do %>
+        <%= link_to feed_path do %>
           <g transform="translate(300 300)">
             <path id="animated-path4" fill="#CBACFF">
               <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
@@ -91,7 +88,7 @@
   <%# this is display none also TARGET %>
   <div class="option2">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
-      <div class="form-group">
+      <div class="form-poem">
         <%= f.input :poem, class: 'form-control', placeholder: 'Enter your Poem' %>
         <%# data-blob-buttons-target="poem" %>
       </div>
@@ -102,7 +99,7 @@
 
   <div class="option3">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
-      <div class="form-group">
+      <div class="form-quote">
         <%= f.input :text, class: 'form-control', placeholder: 'Enter your Quote'%>
         <%# data-blob-buttons-target="quote"   %>
       </div>
@@ -113,7 +110,7 @@
 
   <div class="option4">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
-      <div class="form-group">
+      <div class="form-song">
         <%= f.input :song_url, class: 'form-control', placeholder: 'Enter your Song URL'%>
         <%# data-blob-buttons-target="song" %>
       </div>
