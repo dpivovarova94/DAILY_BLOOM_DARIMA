@@ -3,7 +3,7 @@
 
 <div class="index-card-container">
   <% @posts.each do |post| %>
-    <div class="standar-card">
+    <div class="standard-card">
       <%= link_to post_path(post) do %>
           <%# <%= image_tag post.picture_url %>
           <% if ! post.photo.key.nil? %>
