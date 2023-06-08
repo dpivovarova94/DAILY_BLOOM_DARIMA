@@ -16,8 +16,8 @@ class PostsController < ApplicationController
     @challenge = Challenge.find(params[:challenge_id])
     @post = Post.new(post_params)
     @post.challenge = @challenge
-
     if @post.save
+
       redirect_to feed_path
     else
       render :new, status: :unprocessable_entity
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:medium, :picture_url, :poem, :text, :song_url)
+    params.require(:post).permit(:medium, :poem, :text, :song_url, :photo)
   end
 
 end

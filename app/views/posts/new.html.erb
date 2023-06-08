@@ -85,6 +85,21 @@
 <%# here ENDS the BUTTON feature %>
 
 <%# here STARTS the FORMS feature %>
+  <!-- Camera open form-->
+  <div class="option1 m-5">
+    <%= simple_form_for [@challenge, @post] do |f| %>
+      <%# generate input type file
+      also input type hidden name="medium" value="photo" %>
+      <%= f.input :photo, as: :file, label: "Open camera",
+      label_html: {class:"btn"},
+      input_html: {accept: "image/*",
+       capture:"environment",
+        id:"cameraFileInput"}%>
+      <%= f.button :submit, 'Submit'%>
+    <% end %>
+  </div>
+
+  <!-- Poem open form-->
   <div class="option2 m-5">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
       <div class="mb-3 text optional post_poem">
@@ -94,6 +109,7 @@
     <% end %>
   </div>
 
+  <!-- Quote open form-->
   <div class="option3 m-5">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
       <div class="mb-3 text optional post_quote">
@@ -103,6 +119,7 @@
     <% end %>
   </div>
 
+  <!-- Song open form-->
   <div class="option4 m-5">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
       <div class="mb-3 text optional post_song">
@@ -114,4 +131,8 @@
       <button type="submit" class="btn btn-primary">Submit</button>
     <% end %>
   </div>
+</section>
+
+
+
 </div>
