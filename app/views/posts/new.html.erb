@@ -63,7 +63,7 @@
       </g>
 
     <!-- Fourth Blob -->
-      <g class="option3">
+      <g class="option4">
         <%= link_to feed_path do %>
           <g transform="translate(300 300)">
             <path id="animated-path4" fill="#CBACFF">
@@ -85,39 +85,33 @@
 <%# here ENDS the BUTTON feature %>
 
 <%# here STARTS the FORMS feature %>
-  <%# this is display none also TARGET %>
-  <div class="option2">
+  <div class="option2 m-5">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
-      <div class="form-poem">
-        <%= f.input :poem, class: 'form-control', placeholder: 'Enter your Poem' %>
-        <%# data-blob-buttons-target="poem" %>
+      <div class="mb-3 text optional post_poem">
+        <%= f.input :poem, class:"form-control text optional", label: "Poem",type:"text", placeholder:"Share your Poem", name:"post[poem]", id:"post_poem" %>
       </div>
-      <%# <%=f.input :medium type="hidden" value="poem"%>
-      <%= f.button :submit, class: 'btn btn-primary' %>
+      <button type="submit" class="btn btn-primary">Submit</button>
     <% end %>
   </div>
 
-  <div class="option3">
+  <div class="option3 m-5">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
-      <div class="form-quote">
-        <%= f.input :text, class: 'form-control', placeholder: 'Enter your Quote'%>
-        <%# data-blob-buttons-target="quote"   %>
+      <div class="mb-3 text optional post_quote">
+        <%= f.input :text, class: "form-control text optional", label: "Quote",placeholder: "Share your Quote of the day", name: "post[quote]", id: "post_quote" %>
       </div>
-      <%# <%=f.input :medium type="hidden" value="poem"%>
-      <%= f.button :submit, class: 'btn btn-primary' %>
+      <button type="submit" class="btn btn-primary">Submit</button>
     <% end %>
   </div>
 
-  <div class="option4">
+  <div class="option4 m-5">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
-      <div class="form-song">
-        <%= f.input :song_url, class: 'form-control', placeholder: 'Enter your Song URL'%>
-        <%# data-blob-buttons-target="song" %>
+      <div class="mb-3 text optional post_song">
+        <%# upload your song here %>
+        <%= f.input :song_url, class: 'form-control text optional', label: "Song", placeholder: 'Upload your Song', id: 'post_song' %>
       </div>
-      <%# <%=f.input :medium type="hidden" value="poem"%>
-      <%= f.button :submit, class: 'btn btn-primary' %>
+      <%# preview of the uploaded link here %>
+      <div id="cover_preview"></div>
+      <button type="submit" class="btn btn-primary">Submit</button>
     <% end %>
   </div>
-
-
 </div>
