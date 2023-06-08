@@ -1,5 +1,11 @@
-<h1> <%= @post.date %> </h1>
 
-<div class="showcard flip">
-  <%= image_tag @post.picture_url %>
+
+
+<div class="content-wrap">
+<div class="showcard">
+  <%= image_tag @post.picture_url, style: 'width: 100%'%>
+</div>
+
+  <h2> <%= @post.date %> </h2>
+  <h2><%=  @post.medium %></h2>
 </div>
