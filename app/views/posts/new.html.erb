@@ -1,11 +1,11 @@
-<div class="container" data-controller="blob-buttons">
+<div class="content-wrap" data-controller="blob-buttons">
 
 <%# here STARTS the BUTTON feature %>
   <div class="card">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </div>
-
   <section>
+  <%# style="transform: translateX(-30px);  add to Blob class adjust postion manually%>
     <div class="blob">
     <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
 
@@ -91,7 +91,7 @@
       <%# generate input type file
       also input type hidden name="medium" value="photo" %>
       <%= f.input :photo, as: :file, label: "Open camera",
-      label_html: {class:"btn"},
+      label_html: {class:"btn-camera"},
       input_html: {accept: "image/*",
        capture:"environment",
         id:"cameraFileInput"}%>
