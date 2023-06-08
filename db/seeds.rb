@@ -8,6 +8,352 @@
 require "open-uri"
 require 'json'
 
+Post.destroy_all
+Challenge.destroy_all
+User.destroy_all
+UserCategory.destroy_all
+Keyword.destroy_all
+puts "database cleaned 🧹"
+
+# Seed Users
+user = User.create(
+  email: "lilly@bloom.com",
+  password: "123456"
+)
+
+puts "test user created"
+
+# Seed Categories
+categories = ["Nature", "Harry Potter", "Art", "Food", "Human Connection"]
+categories.each do |category_name|
+  category = Category.create!(name: category_name)
+  puts "Category created: #{category.name}"
+end
+
+# Seed Keywords: only for Demo, all Categories will have Keyword 'Lumos'
+
+keywords_nature = ["Sky", "Sun", "Moon", "Flowers", "Water", "Clouds", "Beach", "Trees"]
+keywords_nature.each do |keyword_name|
+  Keyword.create!(
+    name: keyword_name,
+    category: Category.find_by(name: "Nature")
+  )
+end
+
+keywords_harry_potter = ["Lumos", "Magic", "Muggle", "Harry"]
+keywords_harry_potter.each do |keyword_name|
+  Keyword.create!(
+    name: keyword_name,
+    category: Category.find_by(name: "Harry Potter")
+  )
+end
+
+keywords_art = ["Grafitti", "Paintings", "Blue", "Red", "Green", "Colours"]
+keywords_art.each do |keyword_name|
+  Keyword.create!(
+    name: keyword_name,
+    category: Category.find_by(name: "Art")
+  )
+end
+
+keywords_food = ["Extra Cheese", "Pizza", "Plates", "Favourite Mug", "Fruits", "Pasta"]
+keywords_food.each do |keyword_name|
+  Keyword.create!(
+    name: keyword_name,
+    category: Category.find_by(name: "Food")
+  )
+end
+
+keywords_human_connection = ["People", "Laughter", "Friendship", "Love", "Hugs"]
+keywords_human_connection.each do |keyword_name|
+  Keyword.create!(
+    name: keyword_name,
+    category: Category.find_by(name: "Human Connection")
+  )
+end
+
+puts "Keywords created"
+
+# Create Seeds with personalized Challenges for Test User Lilly
+
+# Post 1
+challenge1 = Challenge.create!(
+    keyword: Keyword.find_by(name: "Beach"),
+    user: User.find_by(email: "lilly@bloom.com"),
+    start_date: Date.today
+  )
+
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230232/Hanna_Scho%CC%88nberg_dbdyak.jpg")
+picture1 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge1
+)
+picture1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture1.save
+
+puts "post 1 created"
+
+# Post 2
+
+challenge2 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Green"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  start_date: Date.today
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230288/Green_tiles_zgejii.jpg")
+picture2 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: challenge2
+)
+picture2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture2.save
+
+# Post 3
+
+challenge3 = Challenge.create!(
+  keyword: Keyword.find_by(name: "People"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  start_date: Date.today
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230336/__dpy8yi.png")
+picture3 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: challenge3
+)
+picture3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture3.save
+
+# Post 4
+
+challenge4 = Challenge.create!(
+  keyword: Keyword.find_by(name: "People"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  start_date: Date.today
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230372/Instagram_ngwy4a.jpg")
+picture4 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: challenge4
+)
+picture4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture4.save
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230434/_3_hi43vk.jpg")
+picture5 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+picture5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture5.save
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230471/__Kopie_2_wug2ll.jpg")
+picture6 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+picture6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture6.save
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230512/adrianmntz_zfvjew.jpg")
+picture7 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+picture7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture7.save
+
+song1 = Post.create!(
+  date: Date.today,
+  song_url: "https://open.spotify.com/intl-de/track/3NlJO0Tf9FLjUTHepZgxYf?si=34740abe24974148",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231888/__voqctw.jpg")
+picture8 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+picture8.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture8.save
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230569/%EF%B8%8F_mrllgf.jpg")
+picture9 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+picture9.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture9.save
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230615/zfdjstq3wucwupqnj2qh.jpg")
+picture10 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+picture10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture10.save
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230665/Paper_Collective_Three_Flowers_30x40_-_Affischer_Fra%CC%8An_Magasin_a1vzhp.jpg")
+picture11 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+picture11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture11.save
+
+song2 = Post.create!(
+  date: Date.today,
+  song_url: "https://open.spotify.com/intl-de/track/6INLpBxo9F5QMer04VXEnd?si=5516a253a4e04b9e",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230981/hehezee_fnjyrf.png")
+picture12 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+picture12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture12.save
+
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230759/jasminehendery_qqtasy.jpg")
+picture13 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+picture13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture13.save
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230868/b2pjgsrr8rlyw7veu6pz.jpg")
+picture14 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+picture14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture14.save
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230926/Monday_Reading_at_The_Non_Sequitur_pafvi4.jpg")
+picture15 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+picture15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture15.save
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231210/Patterns_Everywhere_ijoj99.jpg")
+picture16 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+picture16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture16.save
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231260/IMG_0730_gnhqfn.heic")
+picture17 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+picture17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture17.save
+
+text = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "Trust the Process",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231436/__2_fnlogw.jpg")
+picture18 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge_id: Challenge.last
+)
+picture18.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture18.save
+
 
 # puts 'Cleaning database'
 
@@ -59,110 +405,110 @@ require 'json'
 
 # -> Code from Toni
 
-# Seed Users
-user = User.create(
-  email: "john@example.com",
-  password: "password"
-)
+# # Seed Users
+# user = User.create(
+#   email: "john@example.com",
+#   password: "password"
+# )
 
-# Seed Categories
-categories = ["Category 1", "Category 2", "Category 3"]
-categories.each do |category_name|
-  category = Category.create(name: category_name)
-  puts "Category created: #{category.name}"
-end
+# # Seed Categories
+# categories = ["Category 1", "Category 2", "Category 3"]
+# categories.each do |category_name|
+#   category = Category.create(name: category_name)
+#   puts "Category created: #{category.name}"
+# end
 
-# Seed Keywords
-keyword = Keyword.create(
-  name: "Your Keyword Name",
-  category_id: Category.first.id  # Replace with the appropriate category_id
-)
+# # Seed Keywords
+# keyword = Keyword.create(
+#   name: "Your Keyword Name",
+#   category_id: Category.first.id  # Replace with the appropriate category_id
+# )
 
-# Seed Challenges
-challenge = Challenge.create(
-  keyword_id: keyword.id,
-  user_id: user.id,
-  start_date: Date.today
-)
+# # Seed Challenges
+# challenge = Challenge.create(
+#   keyword_id: keyword.id,
+#   user_id: user.id,
+#   start_date: Date.today
+# )
 
-# Seed Posts
-post = Post.create(
-  date: Date.today,
-  song_url: "https://spotify.com/your-song-url",
-  poem: "Your poem content",
-  text: "Your text content",
-  picture_url: "https://example.com/your-picture-url",
-  medium: "photo",
-  challenge_id: challenge.id
-)
+# # Seed Posts
+# post = Post.create(
+#   date: Date.today,
+#   song_url: "https://spotify.com/your-song-url",
+#   poem: "Your poem content",
+#   text: "Your text content",
+#   picture_url: "https://example.com/your-picture-url",
+#   medium: "photo",
+#   challenge_id: challenge.id
+# )
 
-# Seed User Categories
-UserCategory.create(
-  user_id: user.id,
-  category_id: Category.first.id  # Replace with the appropriate category_id
-)
+# # Seed User Categories
+# UserCategory.create(
+#   user_id: user.id,
+#   category_id: Category.first.id  # Replace with the appropriate category_id
+# )
 
-puts 'keywords added'
+# puts 'keywords added'
 
-# faking users with faker gem
-10.times do
-  User.create!(
-    # first_name: Faker::Name.first_name,
-    # last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    # location: Faker::Address.city,
-    avatar_url: Faker::Avatar.image,
-    password: "123456"
-  )
-end
+# # faking users with faker gem
+# 10.times do
+#   User.create!(
+#     # first_name: Faker::Name.first_name,
+#     # last_name: Faker::Name.last_name,
+#     email: Faker::Internet.email,
+#     # location: Faker::Address.city,
+#     avatar_url: Faker::Avatar.image,
+#     password: "123456"
+#   )
+# end
 
-puts "users created"
+# puts "users created"
 
-Toni = User.create(
-  email: "toni@mail.de",
-  avatar_url: Faker::Avatar.image,
-  password: "123456"
-)
+# Toni = User.create(
+#   email: "toni@mail.de",
+#   avatar_url: Faker::Avatar.image,
+#   password: "123456"
+# )
 
-puts 'toni created'
+# puts 'toni created'
 
-A = User.create(
-  email: "a@a.a",
-  avatar_url: Faker::Avatar.image,
-  password: "aaaaaa"
-)
+# A = User.create(
+#   email: "a@a.a",
+#   avatar_url: Faker::Avatar.image,
+#   password: "aaaaaa"
+# )
 
-puts 'a created as well'
-
-
-# Assuming you have Keyword and User models defined
-
-# Create some sample challenges
-10.times do
-  Challenge.create!(
-    keyword_id: Keyword.pluck(:id).sample,
-    user_id: User.pluck(:id).sample,
-    start_date: Faker::Date.forward(days: 30)
-  )
-end
-
-puts 'now we have Challenge'
+# puts 'a created as well'
 
 
+# # Assuming you have Keyword and User models defined
 
-30.times do
-  Post.create!(
-    date: Faker::Date.backward(days: 30),
-    # lines below add 1 randome cotent
-    # song_url: rand(0..1) == 0 ? Faker::Internet.url : nil,
-    # poem: rand(0..1) == 0 ? Faker::Lorem.paragraph : nil,
-    # text: rand(0..1) == 0 ? Faker::Lorem.sentence : nil, add to next line rand(0..1) == 0 ? and : nil, after image
-    picture_url: Faker::LoremFlickr.image,
-    medium: Faker::Lorem.word,
-    #gets randome ids from the previous created challenge id
-    challenge_id: Challenge.pluck(:id).sample
-  )
-end
+# # Create some sample challenges
+# 10.times do
+#   Challenge.create!(
+#     keyword_id: Keyword.pluck(:id).sample,
+#     user_id: User.pluck(:id).sample,
+#     start_date: Faker::Date.forward(days: 30)
+#   )
+# end
+
+# puts 'now we have Challenge'
+
+
+
+# 30.times do
+#   Post.create!(
+#     date: Faker::Date.backward(days: 30),
+#     # lines below add 1 randome cotent
+#     # song_url: rand(0..1) == 0 ? Faker::Internet.url : nil,
+#     # poem: rand(0..1) == 0 ? Faker::Lorem.paragraph : nil,
+#     # text: rand(0..1) == 0 ? Faker::Lorem.sentence : nil, add to next line rand(0..1) == 0 ? and : nil, after image
+#     picture_url: Faker::LoremFlickr.image,
+#     medium: Faker::Lorem.word,
+#     #gets randome ids from the previous created challenge id
+#     challenge_id: Challenge.pluck(:id).sample
+#   )
+# end
 
 puts 'post posted hehe '
 
