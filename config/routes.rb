@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end
 
   get 'posts', to: 'posts#index', as: :feed
+  get '/posts/:id', to: 'posts#show', as: 'post'
+
 
   get 'user_categories/new', to: 'user_categories#new'
   post 'user_categories', to: 'user_categories#create'

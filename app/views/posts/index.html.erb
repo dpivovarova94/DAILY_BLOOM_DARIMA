@@ -1,0 +1,13 @@
+<div class="content-wrap">
+<h1>Your Feed</h1>
+
+<div class="index-card-container">
+  <% @posts.each do |post| %>
+    <div class="standar-card">
+      <%= link_to post_path(post) do %>
+          <%= image_tag post.picture_url %>
+        <% end %>
+    </div>
+  <% end %>
+</div>
+</div>
