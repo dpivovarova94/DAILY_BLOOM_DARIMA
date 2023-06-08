@@ -15,6 +15,8 @@ class PostsController < ApplicationController
   def create
     @challenge = Challenge.find(params[:challenge_id])
     @post = Post.new(post_params)
+    @post.challenge = @challenge
+    raise
     if @post.save
       # case @post.medium
       # when 'photo'
@@ -30,7 +32,7 @@ class PostsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-    raise
+    # raise
   end
 
   private

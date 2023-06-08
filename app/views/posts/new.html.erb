@@ -84,16 +84,18 @@
   </div>
 </section>
 
-<%# this is display none also TARGET %>
-  <div>form for option 1
-    <%= simple_form_for [@challenge, @post] do |f| %>
 
+
+  <!-- Camera open function-->
+
+    <%= simple_form_for [@challenge, @post] do |f| %>
       <%# generate input type file
       also input type hidden name="medium" value="photo" %>
-
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photo, as: :file, label: "Open camera",
+      label_html: {class:"btn"},
+      input_html: {accept: "image/*",
+       capture:"environment",
+        id:"cameraFileInput"}%>
       <%= f.button :submit %>
     <% end %>
-  </div>
-
 </div>
