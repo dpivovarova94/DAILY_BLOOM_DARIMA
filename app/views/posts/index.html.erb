@@ -5,8 +5,16 @@
   <% @posts.each do |post| %>
     <div class="standar-card">
       <%= link_to post_path(post) do %>
-          <%= image_tag post.picture_url %>
-          <%# <%= cl_image_tag(post.photo.key, class: "card-img-top", crop: :thumb, gravity: :face) %> 
+          <%# <%= image_tag post.picture_url %>
+          <% if ! post.photo.key.nil? %>
+            <%= cl_image_tag(post.photo.key, class: "card-img-top", crop: :thumb, gravity: :face) %>
+          <% elsif ! post.text.nil? %>
+            <%= post.text %>
+          <% elsif ! post.poem.nil? %>
+            <%= post.poem %>
+          <% elsif ! post.song_url.nil? %>
+            <%= post.song_url %>
+          <% end %>
         <% end %>
     </div>
   <% end %>

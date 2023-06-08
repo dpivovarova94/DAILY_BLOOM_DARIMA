@@ -86,8 +86,8 @@
 
 
 
-  <!-- Camera open function-->
-
+  <!-- Camera open form-->
+  <div class="option1 m-5">
     <%= simple_form_for [@challenge, @post] do |f| %>
       <%# generate input type file
       also input type hidden name="medium" value="photo" %>
@@ -96,6 +96,7 @@
       input_html: {accept: "image/*",
        capture:"environment",
         id:"cameraFileInput"}%>
-      <%= f.button :submit %>
+      <%= f.button :submit, 'Submit'%>
     <% end %>
+  </div>
 </div>
