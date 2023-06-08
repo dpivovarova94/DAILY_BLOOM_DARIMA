@@ -1,4 +1,10 @@
-<%= simple_form_for(@challenge) do |f| %>
-  <%= f.input :keyword_id, as: :hidden, input_html: { value: @keyword.id} %>
-  <%= f.button :submit, 'Tap to see your bloom' %>
-<% end %>
+
+<div class="container">
+  <div class="challenge-card">
+    <%= simple_form_for(@challenge, html: {style: "width: 100%;"}) do |f| %>
+      <%= f.input :keyword_id, as: :hidden, input_html: { value: @keyword.id} %>
+      <%# f.button :submit, "Tap to plant today's seed", { class: "text-wrapper"}%>
+      <button type="submit" class="text-wrapper">Tap to plant today's seed</button>
+    <% end %>
+  </div>
+</div>
