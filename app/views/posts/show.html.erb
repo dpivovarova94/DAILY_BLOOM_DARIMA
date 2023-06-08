@@ -2,12 +2,15 @@
 
 
 <div class="content-wrap">
-  <div class="showcard" style="  border-radius: 0px;">
-    <%= image_tag @post.picture_url, style: 'width: 100%'%>
-  </div>
 
-  <div class="text-card-show">
-      <h4><%= @post.date.strftime('%d %B, %Y') %></h2>
-      <h4><%=  @keyword.name %></h2>
-  </div>
+    <div class="text-card-show">
+        <h5><%= @post.created_at.strftime('%d %B, %Y') %></h5>
+        <h5 style="font-style: italic"><%=  @keyword.name %></h5>
+    </div>
+
+    <div class="showcard" style="  border-radius: 0px;">
+      <%= cl_image_tag(@post.photo.key, class: "card-img-top", crop: :thumb, gravity: :face) %>
+    </div>
+<button class="btn-custom">edit</button>
+
 </div>
