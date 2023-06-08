@@ -87,3 +87,5 @@ gem 'inline_svg'
 
 #faker
 gem 'faker'
+
+gem "cloudinary"
