@@ -15,7 +15,6 @@ class PostsController < ApplicationController
   def create
     @challenge = Challenge.find(params[:challenge_id])
     @post = Post.new(post_params)
-
     if @post.save
       # case @post.medium
       # when 'photo'
@@ -31,12 +30,13 @@ class PostsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    raise
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:medium, :picture_url, :poem, :text, :song_url, :photo)
+    params.require(:post).permit(:medium, :poem, :text, :song_url, :photo)
   end
 
 end
