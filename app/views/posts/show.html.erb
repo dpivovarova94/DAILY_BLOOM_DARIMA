@@ -2,10 +2,12 @@
 
 
 <div class="content-wrap">
-<div class="showcard">
-  <%= image_tag @post.picture_url, style: 'width: 100%'%>
-</div>
+  <div class="showcard" style="  border-radius: 0px;">
+    <%= image_tag @post.picture_url, style: 'width: 100%'%>
+  </div>
 
-  <h2> <%= @post.date %> </h2>
-  <h2><%=  @post.medium %></h2>
+  <div class="text-card-show">
+      <h4><%= @post.date.strftime('%d %B, %Y') %></h2>
+      <h4><%=  @keyword.name %></h2>
+  </div>
 </div>

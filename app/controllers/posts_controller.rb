@@ -5,8 +5,10 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @challenge = @post.challenge
+    @keyword = @challenge.keyword
   end
-  
+
   def new
     @post = Post.new
   end

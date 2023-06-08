@@ -1,15 +1,24 @@
-.navbar-container{
-  padding-top: 22pt;
+.navbar-container {
+  position: sticky;
+  top: 0;
   width: auto;
   height: 60pt;
-  // background-color: white;
+  padding-top: 22pt;
   padding-left: 10pt;
   padding-right: 10pt;
   padding-bottom: 10pt;
   display: flex;
   justify-content: center;
-
+  background-color: $light-gray;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
+
+.navbar-container.hide {
+  opacity: 0;
+}
+
 
 .navbar-content {
   display: flex;
@@ -31,3 +40,5 @@
   height: 100%;
   object-fit: cover;
 }
+
+//hider
