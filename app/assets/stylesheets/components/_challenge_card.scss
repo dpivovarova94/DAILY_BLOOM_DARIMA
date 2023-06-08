@@ -5,13 +5,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   font-size: 30px;
   box-shadow: 0 5px 10px rgba(0,0,0,.2);
   background: rgb(203,172,255);
-  background: radial-gradient(circle, rgba(203,172,255,1) 5%, rgba(255,249,117,0.774969362745098) 22%, rgba(203,172,255,0.7245491946778712) 68%);
+  background: radial-gradient(circle, rgba(255,249,117,0.774969362745098) 35%, rgba(203,172,255,0.7245491946778712) 65%);
   margin: 30px auto;
   width: 300px;
 	height: 600px;
+
+  .x {
+    position: relative;
+    float: right;
+	  color: white;
+    top: -200px;
+    right: -115px;
+}
 }
 // here ends styling of challenge card
 
