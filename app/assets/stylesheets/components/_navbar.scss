@@ -32,7 +32,7 @@
   height: 28pt;
   border-radius: 50%;
   overflow: hidden;
-  outline: 1pt solid black;
+  // outline: 1pt solid black;
 }
 
 .avatar img {
@@ -44,6 +44,7 @@
 .icon{
   opacity: 1;
   transform: 0.3s;
+  fill: $gray;
 }
 
 .icon:active {
