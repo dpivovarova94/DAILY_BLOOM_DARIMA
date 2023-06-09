@@ -18,7 +18,7 @@
               <div class="card-song">
                 <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
                 <% if spotify_track_id.present? %>
-                  <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" width="90%" height="200" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                  <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" width="153" height="200" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <% end %>
               </div>
             <% end %>
