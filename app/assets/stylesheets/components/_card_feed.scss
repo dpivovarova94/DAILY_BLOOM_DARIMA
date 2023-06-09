@@ -39,16 +39,21 @@
 }
 
 .card-photo {
+  position: relative;
   background-color:$main-green;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   height: 200px;
   padding: 10px;
   border-radius: 12px;
 
   .img.card-photo {
     border-radius: 20px;
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 }
 
@@ -60,12 +65,12 @@
   height: 200px;
   padding: 10px;
   border-radius: 12px;
-}
-
-.card-song iframe {
-  border-radius: 12px;
-  width: 100%;
-  height: 100%;
+  
+  .card-song iframe {
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 
