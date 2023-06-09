@@ -1,3 +1,12 @@
+.content-wrap {
+  padding-top:5pt;
+  padding-left: 10pt;
+  padding-right: 10pt;
+  padding-bottom: 15pt;
+  // display: flex;
+
+}
+
 .index-card-container {
   display: flex;
   flex-wrap: wrap;
@@ -39,16 +48,21 @@
 }
 
 .card-photo {
+  position: relative;
   background-color:$main-green;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   height: 200px;
   padding: 10px;
   border-radius: 12px;
 
   .img.card-photo {
     border-radius: 20px;
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 }
 
@@ -60,12 +74,12 @@
   height: 200px;
   padding: 10px;
   border-radius: 12px;
-}
 
-.card-song iframe {
-  border-radius: 12px;
-  width: 100%;
-  height: 100%;
+  .card-song iframe {
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 
