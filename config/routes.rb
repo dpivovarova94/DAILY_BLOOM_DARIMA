@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: "pages#home"
+  # root to: "pages#home"
+  root 'welcome#index'
+
   get 'dashboard', to: 'pages#dashboard'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :challenges, only: [:show, :new, :create] do
@@ -14,4 +16,6 @@ Rails.application.routes.draw do
   post 'user_categories', to: 'user_categories#create'
 
   devise_for :users, controllers: { registrations: "users/registrations" }
+
+
 end
