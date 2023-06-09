@@ -13,7 +13,6 @@ Challenge.destroy_all
 User.destroy_all
 UserCategory.destroy_all
 Keyword.destroy_all
-Category.destroy_all
 puts "database cleaned 🧹"
 
 # Seed Users
@@ -82,25 +81,15 @@ keywords_animals.each do |keyword_name|
 end
 puts "Keywords created"
 
-# User Categories for User Lilly
-2.times do
-  UserCategory.create(
-    user: user,
-    category: Category.all.sample
-  )
-end
-
 # Create Seeds with personalized Challenges for Test User Lilly
 
 # Post 1
 challenge1 = Challenge.create!(
     keyword: Keyword.find_by(name: "Beach"),
     user: User.find_by(email: "lilly@bloom.com"),
-    created_at: Date.today - 25.days,
-    start_date: Date.today - 25.days
+    start_date: Date.today
   )
 
-puts "challenge changed to yesterday"
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230232/Hanna_Scho%CC%88nberg_dbdyak.jpg")
 picture1 = Post.create!(
@@ -121,8 +110,7 @@ puts "post 1 created"
 challenge2 = Challenge.create!(
   keyword: Keyword.find_by(name: "Green"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 1.days,
-  start_date: Date.today - 1.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230288/Green_tiles_zgejii.jpg")
@@ -142,8 +130,7 @@ picture2.save
 challenge3 = Challenge.create!(
   keyword: Keyword.find_by(name: "People"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 2.days,
-  start_date: Date.today - 2.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230336/__dpy8yi.png")
@@ -163,8 +150,7 @@ picture3.save
 challenge4 = Challenge.create!(
   keyword: Keyword.find_by(name: "Paintings"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 3.days,
-  start_date: Date.today - 3.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230372/Instagram_ngwy4a.jpg")
@@ -184,8 +170,7 @@ picture4.save
 challenge5 = Challenge.create!(
   keyword: Keyword.find_by(name: "Friendship"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 4.days,
-  start_date: Date.today - 4.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230434/_3_hi43vk.jpg")
@@ -205,8 +190,7 @@ picture5.save
 challenge6 = Challenge.create!(
   keyword: Keyword.find_by(name: "Cats"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 5.days,
-  start_date: Date.today - 5.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230471/__Kopie_2_wug2ll.jpg")
@@ -226,8 +210,7 @@ picture6.save
 challenge7 = Challenge.create!(
   keyword: Keyword.find_by(name: "Friendship"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 6.days,
-  start_date: Date.today - 6.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230512/adrianmntz_zfvjew.jpg")
@@ -247,8 +230,7 @@ picture7.save
 challenge8 = Challenge.create!(
   keyword: Keyword.find_by(name: "Love"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 7.days,
-  start_date: Date.today - 7.days
+  start_date: Date.today
 )
 
 
@@ -266,8 +248,7 @@ song1 = Post.create!(
 challenge9 = Challenge.create!(
   keyword: Keyword.find_by(name: "Extra Cheese"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 8.days,
-  start_date: Date.today - 8.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231888/__voqctw.jpg")
@@ -288,8 +269,7 @@ picture8.save
 challenge10 = Challenge.create!(
   keyword: Keyword.find_by(name: "Beach"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 9.days,
-  start_date: Date.today - 9.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230569/%EF%B8%8F_mrllgf.jpg")
@@ -309,8 +289,7 @@ picture9.save
 challenge11 = Challenge.create!(
   keyword: Keyword.find_by(name: "Dogs"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 10.days,
-  start_date: Date.today - 10.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230615/zfdjstq3wucwupqnj2qh.jpg")
@@ -330,8 +309,7 @@ picture10.save
 challenge12 = Challenge.create!(
   keyword: Keyword.find_by(name: "Flowers"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 11.days,
-  start_date: Date.today - 11.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230665/Paper_Collective_Three_Flowers_30x40_-_Affischer_Fra%CC%8An_Magasin_a1vzhp.jpg")
@@ -351,8 +329,7 @@ picture11.save
 challenge13 = Challenge.create!(
   keyword: Keyword.find_by(name: "Laughter"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 12.days,
-  start_date: Date.today - 12.days
+  start_date: Date.today
 )
 
 song2 = Post.create!(
@@ -369,8 +346,7 @@ song2 = Post.create!(
 challenge14 = Challenge.create!(
   keyword: Keyword.find_by(name: "Fruits"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 13.days,
-  start_date: Date.today - 13.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230981/hehezee_fnjyrf.png")
@@ -390,8 +366,7 @@ picture12.save
 challenge15 = Challenge.create!(
   keyword: Keyword.find_by(name: "Sun"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 14.days,
-  start_date: Date.today - 14.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230759/jasminehendery_qqtasy.jpg")
@@ -411,8 +386,7 @@ picture13.save
 challenge16 = Challenge.create!(
   keyword: Keyword.find_by(name: "Bread"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 15.days,
-  start_date: Date.today - 15.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230868/b2pjgsrr8rlyw7veu6pz.jpg")
@@ -432,8 +406,7 @@ picture14.save
 challenge16 = Challenge.create!(
   keyword: Keyword.find_by(name: "Muggle"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 16.days,
-  start_date: Date.today - 16.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230926/Monday_Reading_at_The_Non_Sequitur_pafvi4.jpg")
@@ -453,8 +426,7 @@ picture15.save
 challenge17 = Challenge.create!(
   keyword: Keyword.find_by(name: "Colours"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 17.days,
-  start_date: Date.today - 17.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231210/Patterns_Everywhere_ijoj99.jpg")
@@ -474,8 +446,7 @@ picture16.save
 challenge18 = Challenge.create!(
   keyword: Keyword.find_by(name: "Blue"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 18.days,
-  start_date: Date.today - 18.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231260/IMG_0730_gnhqfn.heic")
@@ -495,8 +466,7 @@ picture17.save
 challenge19 = Challenge.create!(
   keyword: Keyword.find_by(name: "Flowers"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 19.days,
-  start_date: Date.today - 19.days
+  start_date: Date.today
 )
 
 text = Post.create!(
@@ -513,8 +483,7 @@ text = Post.create!(
 challenge20 = Challenge.create!(
   keyword: Keyword.find_by(name: "Dogs"),
   user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 20.days,
-  start_date: Date.today - 20.days
+  start_date: Date.today
 )
 
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231436/__2_fnlogw.jpg")
