@@ -12,22 +12,20 @@
 
 }
 
-div.challenge-card {
-  pointer-events: none;
-}
+// div.challenge-card {
+//   pointer-events: none;
+// }
 .btn-challenge {
-  pointer-events: auto;
-
   width: 100pt;
   border: none;
   font-weight: lighter;
 }
 
-div.challenge-card:active {
-  // transition: 2s;
-  background: rgb(203,172,255);
-  background: radial-gradient(circle, rgba(255,249,117,0.774969362745098) 40%, white 60%);
-}
+// div.challenge-card:active {
+//   // transition: 2s;
+//   background: rgb(203,172,255);
+//   background: radial-gradient(circle, rgba(255,249,117,0.774969362745098) 40%, white 60%);
+// }
 
 .btn-custom:active {
   background-color: $main-yellow;
