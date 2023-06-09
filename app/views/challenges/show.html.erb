@@ -1,5 +1,10 @@
 <div class="container">
-  <div class="challenge-card scale-up-hor-center">
+  <div class="challenge-card scale-up-hor-center mb-5">
+    <div>
+      <%= link_to '', feed_path, class: "btn-close x" %>
+    </div>
     <%= @challenge.keyword.name %>
+     <br>
+    <%= link_to "Plant my seed", new_challenge_post_path(@challenge), class: "btn btn-custom mt-5 text-decoration-none" %>
   </div>
 </div>

@@ -5,4 +5,3 @@
 //= link popper.js
 //= link bootstrap.min.js
 //= link preview_cover.js
-
