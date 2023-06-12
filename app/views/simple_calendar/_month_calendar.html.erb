@@ -13,7 +13,8 @@
       <% date_range.each_slice(7) do |dates| %>
         <tr>
           <% dates.each do |date| %>
-            <% @post = Post.find_by(date: date) %>
+            <% @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }) %>
+            <% @post = @posts.find_by(date: date) %>
               <% if !@post.nil? %>
                 <% if @post.photo.attached? %>
                   <% my_event = "photo" %>
