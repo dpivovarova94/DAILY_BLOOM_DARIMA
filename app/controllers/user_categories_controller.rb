@@ -18,6 +18,16 @@ class UserCategoriesController < ApplicationController
     redirect_to new_challenge_path
   end
 
+  def update
+    @user_category = UserCategory.find(params[:id])
+
+    if @user_category.update(user_category_params)
+      redirect_to new_challenge_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def user_category_params

@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   get 'user_categories/new', to: 'user_categories#new'
   post 'user_categories', to: 'user_categories#create'
+  get 'user_categories/:id/edit', to: 'user_categories#edit', as: 'edit_user_category'
+  patch 'user_categories/:id', to: 'user_categories#update', as: 'update_user_category'
+
 
   devise_for :users, controllers: { registrations: "users/registrations" }
 

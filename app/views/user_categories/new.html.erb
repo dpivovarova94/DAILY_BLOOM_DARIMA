@@ -1,7 +1,10 @@
-<div class="content-wrap"><h1>Choose all topics you are interested in</h1>
+<div class="content-wrap">
+  <h1>Choose all topics you are interested in</h1>
 
-<%= simple_form_for(@user_category, multipart: true) do |f| %>
-  <%= f.input :category_id, collection: Category.all.map { |category| [category.name, category.id]} , as: :check_boxes %>
-  <%= f.submit  %>
-<% end %>
+  <%= simple_form_for(@user_category, multipart: true) do |f| %>
+    <%= f.input :category_id, collection: Category.all.map { |category| [category.name, category.id]}, as: :check_boxes,
+    input_html: { class: "tag-selector" },
+    item_wrapper_class: 'tag-item' %>
+<%= f.submit class: "btn-custom" %>
+  <% end %>
 </div>
