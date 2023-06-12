@@ -34,8 +34,8 @@
 
 .btn-list  {
   background-color: none;
-  border: 2pt solid $main-blue;
-  color: $main-blue;
+  border: 2pt solid $blue;
+  color: $blue;
   padding: 4pt 8pt;
   margin: 3pt;
   border-radius: 18pt;
@@ -44,7 +44,8 @@
   display: inline-block;
 }
 
-btn-list:checked {
+.btn-list-checked {
+  @extend .btn-list;
   border: 2pt solid $blue;
   background-color: $blue;
   color: white;

@@ -1,6 +1,7 @@
 class UserCategoriesController < ApplicationController
   def new
     @user_category = UserCategory.new
+    @categories = Category.all
   end
 
   def create
@@ -16,6 +17,13 @@ class UserCategoriesController < ApplicationController
     end
 
     redirect_to new_challenge_path
+  end
+
+  def edit
+    @user_category = UserCategory.new
+    @user_category = current_user.user_categories
+    @current_categories = current_user.categories
+    @user = current_user
   end
 
   def update
