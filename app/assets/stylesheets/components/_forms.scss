@@ -32,6 +32,7 @@
     border-radius: 4px;
     font-size: 16px;
     width: 220px;
+    padding: 8px 12px;
     cursor: pointer;
     display: block;
     margin: 0 auto;
@@ -70,9 +71,11 @@
 
   .form-control {
     font-size: 1.5rem;
+    background-color: white;
+    border: 4px dotted $main-blue;
     border-radius: 5px;
-    height: 300px;
-    // width: 100vw;
+    height: 320px;
+    width: 320px;
   }
 
   .inline {

@@ -124,9 +124,10 @@
   <!-- Poem open form-->
   <div id="option2" class="mb-3 form d-none" data-toggle-target="togglableElement">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
-      <div class="mb-3 text optional post_poem">
-        <%= f.input :poem, class:"form-control text optional", label: "Let your words blossom!", type:"text", placeholder:"Pen down your daily masterpiece of rhythm and rhyme right here. 🖋️ ", name:"post[poem]", id:"post_poem" %>
+      <div data-controller="character-counter" data-character-counter-limit-value="100" class="mb-3 text optional post_poem">
+        <%= f.input :poem, class:"form-control text optional", label: "Let your words blossom!", maxlength: 120, type:"text", placeholder:"Pen down your daily masterpiece of rhythm and rhyme right here. 🖋️ ", name:"post[poem]", id:"post_poem" %>
       </div>
+
       <div class="btn-container">
         <button type="submit" class="inline btn-custom">Submit</button>
         <%= link_to 'Back', new_challenge_post_path, class: 'inline btn-custom' %>
@@ -137,9 +138,10 @@
   <!-- Quote open form-->
   <div id="option3" class="form d-none" data-toggle-target="togglableElement">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
-      <div class="mb-3 text optional post_quote">
-        <%= f.input :text, class: "form-control text optional", label: "Share your daily dose of inspiration! Sprinkle some wisdom and motivation by entering your favorite quote here.",placeholder: "Let your words become rays of sunshine that brighten up your day!", name: "post[quote]", id: "post_quote" %>
+      <div data-controller="character-counter" data-character-counter-limit-value="50" class="mb-3 text optional post_quote">
+        <%= f.input :text, class: "form-control text optional", label: "Share your daily dose of inspiration! Sprinkle some wisdom and motivation by entering your favorite quote here.", maxlength: 60, placeholder: "Let your words become rays of sunshine that brighten up your day!", name: "post[quote]", id: "post_quote" %>
       </div>
+
       <button type="submit" class="btn-custom">Submit</button>
       <%= link_to 'Back', new_challenge_post_path, class: 'btn-custom' %>
     <% end %>
