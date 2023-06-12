@@ -242,24 +242,7 @@ picture7 = Post.create!(
 picture7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 picture7.save
 
-# Post Song 1
-
-challenge8 = Challenge.create!(
-  keyword: Keyword.find_by(name: "Love"),
-  user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 7.days,
-  start_date: Date.today - 7.days
-)
-
-
-song1 = Post.create!(
-  date: Date.today,
-  song_url: "https://open.spotify.com/intl-de/track/3NlJO0Tf9FLjUTHepZgxYf?si=34740abe24974148",
-  poem: "",
-  text: "",
-  picture_url: "",
-  challenge: challenge8
-)
+# Post Song 1 deleted
 
 # Post 8
 
@@ -346,23 +329,20 @@ picture11 = Post.create!(
 picture11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 picture11.save
 
-# Post Song 2
+# Post Song 2 deleted
 
-challenge13 = Challenge.create!(
-  keyword: Keyword.find_by(name: "Laughter"),
-  user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 12.days,
-  start_date: Date.today - 12.days
-)
+# challenge13 = Challenge.create!(
+#   keyword: Keyword.find_by(name: "Laughter"),
+#   user: User.find_by(email: "lilly@bloom.com"),
+#   created_at: Date.today - 12.days,
+#   start_date: Date.today - 12.days
+# )
 
-song2 = Post.create!(
-  date: Date.today,
-  song_url: "https://open.spotify.com/intl-de/track/6INLpBxo9F5QMer04VXEnd?si=5516a253a4e04b9e",
-  poem: "",
-  text: "",
-  picture_url: "",
-  challenge: challenge13
-)
+# song2 = Post.create!(
+#   date: Date.today,
+#   song_url: "https://open.spotify.com/embed/track/6INLpBxo9F5QMer04VXEnd?",
+#   challenge: challenge13
+# )
 
 # Post 12
 
@@ -469,26 +449,26 @@ picture16 = Post.create!(
 picture16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 picture16.save
 
-# Post 17
+# Post 17 photo not loading properly
 
-challenge18 = Challenge.create!(
-  keyword: Keyword.find_by(name: "Blue"),
-  user: User.find_by(email: "lilly@bloom.com"),
-  created_at: Date.today - 18.days,
-  start_date: Date.today - 18.days
-)
+# challenge18 = Challenge.create!(
+#   keyword: Keyword.find_by(name: "Blue"),
+#   user: User.find_by(email: "lilly@bloom.com"),
+#   created_at: Date.today - 18.days,
+#   start_date: Date.today - 18.days
+# )
 
-file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231260/IMG_0730_gnhqfn.heic")
-picture17 = Post.create!(
-  date: Date.today,
-  song_url: "",
-  poem: "",
-  text: "",
-  picture_url: "",
-  challenge: challenge18
-)
-picture17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-picture17.save
+# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231260/IMG_0730_gnhqfn.heic")
+# picture17 = Post.create!(
+#   date: Date.today,
+#   song_url: "",
+#   poem: "",
+#   text: "",
+#   picture_url: "",
+#   challenge: challenge18
+# )
+# picture17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+# picture17.save
 
 # Post Text 1
 

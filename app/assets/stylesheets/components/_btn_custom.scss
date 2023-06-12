@@ -3,7 +3,7 @@
   border: 2px solid black;
   color: black;
   padding: 10px;
-  width: 70pt;
+  width: 100pt;
   margin: 10pt;
   border-radius: 10pt;
   font-size: 14pt;
@@ -17,8 +17,9 @@
 // }
 .btn-challenge {
   width: 100pt;
-  border: none;
+  border: 1px solid black;
   font-weight: lighter;
+  padding: 5px;
 }
 
 // div.challenge-card:active {
