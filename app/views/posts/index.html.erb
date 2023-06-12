@@ -3,26 +3,55 @@
   <div class="index-card-container">
     <% @posts.each do |post| %>
       <div class="posts_cards">
-        <%= link_to post_path(post) do %>
+        <%# <%= link_to post_path(post) do %>
             <% if ! post.photo.key.nil? %>
-              <%= cl_image_tag(post.photo.key, class:"card-photo", crop: :thumb, gravity: :face) %>
+              <div data-controller="keyword">
+                <div class="front" data-action="click->keyword#showKeyword">
+                  <%= cl_image_tag(post.photo.key, class:"card-photo", crop: :thumb, gravity: :face) %>
+                </div>
+                <div data-keyword-target="figure" class="d-none">
+                  <%= post.challenge.keyword.name %>
+                </div>
+              </div>
             <% elsif ! post.text.nil? %>
-              <div class="card-quote">
-                <%= post.text %>
+              <div data-controller="keyword">
+                <div class="card-quote">
+                  <div class="front" data-action="click->keyword#showKeyword">
+                    <%= post.text %>
+                  </div>
+                </div>
+                <div data-keyword-target="figure" class="d-none">
+                  <%= post.challenge.keyword.name %>
+                </div>
               </div>
             <% elsif ! post.poem.nil? %>
-              <div class="card-poem">
-                <%= post.poem %>
+              <div data-controller="keyword">
+                <div class="card-poem">
+                  <div class="front" data-action="click->keyword#showKeyword">
+                    <%= post.poem %>
+                  </div>
+                </div>
+                <div data-keyword-target="figure" class="d-none">
+                  <%= post.challenge.keyword.name %><br>
+                  <p><%= post.created_at.strftime('%d %B %Y')%></p>
+                </div>
               </div>
             <% elsif !post.song_url.nil? %>
-              <div class="card-song">
-                <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
-                <% if spotify_track_id.present? %>
-                  <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" width="153" height="200" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                <% end %>
+              <div data-controller="keyword">
+                <div class="card-song">
+                  <div class="front" data-action="click->keyword#showKeyword">
+                    <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
+                    <% if spotify_track_id.present? %>
+                      <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" width="153" height="200" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <% end %>
+                  </div>
+                </div>
+                <div data-keyword-target="figure" class="d-none">
+                    <%= post.challenge.keyword.name %>
+                </div>
               </div>
             <% end %>
-          <% end %>
+          <%# <% end %>
       </div>
     <% end %>
   </div>
