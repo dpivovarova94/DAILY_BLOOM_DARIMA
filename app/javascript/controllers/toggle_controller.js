@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="toggle"
 export default class extends Controller {
-  static targets = ["togglableElement", "bubbleContainer"]
+  static targets = ["togglableElement", "bubbleContainer", "keyword"]
 
   connect() {
     // console.log("Hello from toggle_controller.js")
@@ -12,6 +12,8 @@ export default class extends Controller {
     this.togglableElementTargets.forEach((element) => {
       element.classList.add("d-none")
     })
+
+
 
     const formId = event.currentTarget.dataset.formId;
 
@@ -27,6 +29,7 @@ export default class extends Controller {
 
     // })
     this.bubbleContainerTarget.classList.add("d-none")
+    this.keywordTarget.classList.add("d-none")
 
 
     // data action on the button, action opposite of fire console.log(event.currentTarget.dataset.formId)

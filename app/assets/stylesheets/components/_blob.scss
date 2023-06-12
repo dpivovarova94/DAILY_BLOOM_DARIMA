@@ -10,7 +10,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  // min-height: 100vh;
   min-width: 100vw;
 }
 
@@ -23,6 +23,14 @@ section {
 .blob-dashboard {
   width: 100%;
   height: 100%;
+}
+
+.character-font {
+  font-family: $character-font;
+}
+
+.text-font {
+  font-weight: lighter;
 }
 
 //dashboard

@@ -4,7 +4,6 @@
   padding-right: 10pt;
   padding-bottom: 15pt;
   // display: flex;
-
 }
 
 .index-card-container {
@@ -19,6 +18,7 @@
 }
 
 .card-quote {
+  position: relative;
   background-color:$main-yellow;
   display: flex;
   justify-content: center;
@@ -31,6 +31,29 @@
   text-align: center;
   font-size: 24px;
 }
+
+figure {
+  display: grid;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+figure > * {
+  grid-area: 1/1;
+  transition: .4s;
+}
+
+figure figcaption {
+  display: grid;
+  align-items: end;
+
+}
+figure:hover figcaption{
+  --_i: 20%;
+}
+
+
 
 .card-poem {
   background-color:$main-blue;

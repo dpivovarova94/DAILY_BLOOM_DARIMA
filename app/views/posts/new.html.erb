@@ -1,44 +1,44 @@
-<div class="container">
-  <div class="m-5 text-center">
+<div class="container" data-controller="toggle">
+  <div class="m-5 text-center" data-toggle-target="keyword">
     <h2 class="character-font"><%# @challenge.keyword.name %>Lumos</h2><br>
     <h4 class="text-font">What suits your creative mood today?</h4>
   </div>
 
-  <div class="blob-card" data-controller="toggle">
+  <div class="container">
 
   <%# here STARTS the BUTTON feature %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <section data-toggle-target="bubbleContainer">
-      <div class="blob" style="transform: translate(-30px,200px);" class="mt-5">
-      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <div class="blob"
+      style="transform: translate(-5px, -30px);"
+      class="mt-5">
+      <svg viewBox="0 0 320 400" xmlns="http://www.w3.org/2000/svg">
 
-        <!-- First Blob -->
-
-          <g class="option1"  data-action="click->toggle#fire" data-form-id="option1" data-toggle-target="bubble">
-            <%# <%= link_to feed_path do %>
-              <g transform="translate(150 150)">
-                <path id="animated-path1" fill="#6DF0B1">
-                  <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
-                    M46,-48.8C60.3,-42.8,73.2,-29,71.9,-15.7C70.6,-2.5,55.1,10.2,43,18.9C30.9,27.7,22.2,32.5,10.8,41.9C-0.6,51.4,-14.8,65.5,-29,66.2C-43.3,66.9,-57.7,54.2,-64.1,39C-70.5,23.7,-69.1,5.9,-61.6,-6.3C-54,-18.6,-40.4,-25.3,-29.1,-31.9C-17.9,-38.5,-8.9,-45.1,3.4,-49.2C15.8,-53.3,31.6,-54.9,46,-48.8Z;
-                    M44,-54.2C50.8,-46.8,45.7,-27,43.1,-12C40.4,2.9,40.2,13,37.1,24.4C34.1,35.8,28.2,48.6,18.8,52.3C9.4,56,-3.5,50.5,-15,44.8C-26.4,39,-36.5,32.9,-43.1,23.8C-49.8,14.6,-53,2.3,-49.4,-7C-45.7,-16.4,-35.2,-22.9,-25.8,-29.8C-16.4,-36.7,-8.2,-44.1,5.2,-50.3C18.6,-56.5,37.3,-61.6,44,-54.2Z;
-                    M46,-48.8C60.3,-42.8,73.2,-29,71.9,-15.7C70.6,-2.5,55.1,10.2,43,18.9C30.9,27.7,22.2,32.5,10.8,41.9C-0.6,51.4,-14.8,65.5,-29,66.2C-43.3,66.9,-57.7,54.2,-64.1,39C-70.5,23.7,-69.1,5.9,-61.6,-6.3C-54,-18.6,-40.4,-25.3,-29.1,-31.9C-17.9,-38.5,-8.9,-45.1,3.4,-49.2C15.8,-53.3,31.6,-54.9,46,-48.8Z">
-                  </animate>
-
-
-                </path>
-                <text text-anchor="middle" dominant-baseline="middle">
-                  <textPath xlink:href="#animated-path1" startOffset="85%">PHOTO</textPath>
-                </text>
-              </g>
-            <%# <% end %>
-          </g>
+      <!-- First Blob -->
+        <g class="option1"  data-action="click->toggle#fire" data-form-id="option1" data-toggle-target="bubble">
+          <%# <%= link_to feed_path do %>
+            <g transform="translate(70 100)">
+              <path id="animated-path1" fill="#6DF0B1">
+                <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
+                  M57.5,-57C69.5,-45.4,70.9,-22.7,70.3,-0.6C69.7,21.4,67,42.9,54.9,59.4C42.9,75.9,21.4,87.6,3.1,84.4C-15.2,81.3,-30.4,63.5,-44.2,47C-58,30.4,-70.3,15.2,-72,-1.8C-73.8,-18.8,-65.1,-37.6,-51.3,-49.1C-37.6,-60.7,-18.8,-65.1,2,-67C22.7,-69,45.4,-68.6,57.5,-57Z;
+                  M59.5,-60.1C73.7,-45.3,79.4,-22.7,77.7,-1.7C76,19.3,66.9,38.5,52.7,51C38.5,63.5,19.3,69.2,0.3,68.9C-18.6,68.6,-37.3,62.3,-49.2,49.8C-61.2,37.3,-66.4,18.6,-65.4,1C-64.4,-16.7,-57.2,-33.4,-45.3,-48.1C-33.4,-62.9,-16.7,-75.8,3,-78.8C22.7,-81.8,45.3,-74.9,59.5,-60.1Z;
+                  M57.5,-57C69.5,-45.4,70.9,-22.7,70.3,-0.6C69.7,21.4,67,42.9,54.9,59.4C42.9,75.9,21.4,87.6,3.1,84.4C-15.2,81.3,-30.4,63.5,-44.2,47C-58,30.4,-70.3,15.2,-72,-1.8C-73.8,-18.8,-65.1,-37.6,-51.3,-49.1C-37.6,-60.7,-18.8,-65.1,2,-67C22.7,-69,45.4,-68.6,57.5,-57Z">
+                </animate>
+              </path>
+              <text text-anchor="middle" dominant-baseline="middle">
+                <textPath xlink:href="#animated-path1" startOffset="85%">PHOTO</textPath>
+              </text>
+            </g>
+          <%# <% end %>
+        </g>
 
       <!-- Second Blob -->
         <g class="option2" data-action="click->toggle#fire" data-form-id="option2" data-toggle-target="bubble">
           <%# <%= link_to feed_path do %>
-            <g transform="translate(300 150)">
+            <g transform="translate(220 100)">
               <path id="animated-path2" fill="#81D2FF">
-                <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M62,-51C74.4,-34,74.2,-8.6,66.3,10.7C58.4,30,42.7,43.1,24.6,52.3C6.6,61.4,-14,66.5,-34.7,60.8C-55.4,55.2,-76.4,38.7,-81.2,18.3C-86.1,-2.1,-74.9,-26.4,-58.6,-44.3C-42.4,-62.1,-21.2,-73.5,1.8,-74.9C24.9,-76.4,49.7,-67.9,62,-51Z;
+                <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
+                  M62,-51C74.4,-34,74.2,-8.6,66.3,10.7C58.4,30,42.7,43.1,24.6,52.3C6.6,61.4,-14,66.5,-34.7,60.8C-55.4,55.2,-76.4,38.7,-81.2,18.3C-86.1,-2.1,-74.9,-26.4,-58.6,-44.3C-42.4,-62.1,-21.2,-73.5,1.8,-74.9C24.9,-76.4,49.7,-67.9,62,-51Z;
                   M39.2,-30.8C48.6,-19.4,52.7,-3.2,52.3,17.3C51.9,37.8,47,62.7,33.6,68.9C20.1,75.1,-2,62.6,-23.4,51.3C-44.9,40,-65.6,29.8,-69.4,15.3C-73.1,0.8,-59.7,-18.1,-45.3,-30.6C-30.9,-43.2,-15.5,-49.5,-0.3,-49.2C14.9,-49,29.7,-42.3,39.2,-30.8Z;
                   M62,-51C74.4,-34,74.2,-8.6,66.3,10.7C58.4,30,42.7,43.1,24.6,52.3C6.6,61.4,-14,66.5,-34.7,60.8C-55.4,55.2,-76.4,38.7,-81.2,18.3C-86.1,-2.1,-74.9,-26.4,-58.6,-44.3C-42.4,-62.1,-21.2,-73.5,1.8,-74.9C24.9,-76.4,49.7,-67.9,62,-51Z">
                 </animate>
@@ -53,7 +53,7 @@
       <!-- Third Blob -->
         <g class="option3" data-action="click->toggle#fire" data-form-id="option3" data-toggle-target="bubble">
           <%# <%= link_to feed_path do %>
-            <g transform="translate(150 300)">
+            <g transform="translate(70 270)">
               <path id="animated-path3" fill="#FFF975">
                 <animate attributeName="d" dur="10s" repeatCount="indefinite" values=
                   "M65,-53.5C79.7,-33.5,83.8,-6.7,78.4,18.3C73,43.3,58.2,66.6,37.7,75.2C17.3,83.9,-8.6,77.9,-28.2,65.7C-47.7,53.5,-60.8,35.2,-66.6,14C-72.4,-7.2,-70.8,-31.2,-58.5,-50.7C-46.2,-70.1,-23.1,-85.1,1,-85.9C25.2,-86.7,50.4,-73.5,65,-53.5Z;
@@ -71,7 +71,7 @@
       <!-- Fourth Blob -->
         <g class="option4" data-action="click->toggle#fire" data-form-id="option4" data-toggle-target="bubble">
           <%# <%= link_to feed_path do %>
-            <g transform="translate(300 300)">
+            <g transform="translate(220 270)">
               <path id="animated-path4" fill="#CBACFF">
                 <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
                   M56.8,-48.7C65.6,-34.1,59.5,-11,54.7,13.6C50,38.1,46.7,64.1,32.9,72.2C19.2,80.3,-5,70.5,-25.9,58.6C-46.8,46.7,-64.4,32.7,-66.7,16.9C-69,1.1,-56,-16.6,-42.3,-32.3C-28.6,-47.9,-14.3,-61.6,4.8,-65.4C23.9,-69.2,47.9,-63.3,56.8,-48.7Z;
@@ -90,56 +90,129 @@
     </section>
   <%# here ENDS the BUTTON feature %>
 
-  <%# here STARTS the FORMS feature %>
-    <!-- Camera open form-->
-    <div id="option1" class="m-5 d-none" data-toggle-target="togglableElement">
-      <%= simple_form_for [@challenge, @post] do |f| %>
-        <%# generate input type file
-        also input type hidden name="medium" value="photo" %>
-        <%= f.input :photo, as: :file, label: "Open camera",
-        label_html: {class:"btn-camera"},
-        input_html: {accept: "image/*",
-        capture:"environment",
-          id:"cameraFileInput"}%>
-        <button type="submit" class="btn-custom">Submit</button>
-        <%= link_to 'Back', new_challenge_post_path, class: 'btn-custom' %>
-      <% end %>
-    </div>
+<%# here STARTS the FORMS feature %>
+  <!-- Camera open form-->
+  <div id="option1" class="form d-none" data-toggle-target="togglableElement">
+  <%= simple_form_for [@challenge, @post], html: { id: 'photo-upload-form' } do |f| %>
+    <%# Generate input type file %>
+    <%= f.input :medium, as: :hidden, input_html: { value: 'photo' } %>
+    <h3>Don't be shy, show us what makes your day bloom!</h3>
+    <%= f.input :photo, as: :file,
+                label: "Open your camera here",
+                label_html: { class: "btn-camera" },
+                input_html: { accept: "image/*", capture: "environment", id: "cameraFileInput" } %>
 
-    <!-- Poem open form-->
-    <div id="option2" class="m-5 d-none" data-toggle-target="togglableElement">
-      <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
-        <div class="mb-3 text optional post_poem">
-          <%= f.input :poem, class:"form-control text optional", label: "Poem",type:"text", placeholder:"Share your Poem", name:"post[poem]", id:"post_poem" %>
-        </div>
-        <button type="submit" class="btn-custom">Submit</button>
-        <%= link_to 'Back', new_challenge_post_path, class: 'btn-custom' %>
-      <% end %>
-    </div>
+    <div id="image-preview-container"></div>
 
-    <!-- Quote open form-->
-    <div id="option3" class="m-5 d-none" data-toggle-target="togglableElement">
-      <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
-        <div class="mb-3 text optional post_quote">
-          <%= f.input :text, class: "form-control text optional", label: "Quote",placeholder: "Share your Quote of the day", name: "post[quote]", id: "post_quote" %>
-        </div>
-        <button type="submit" class="btn-custom">Submit</button>
-        <%= link_to 'Back', new_challenge_post_path, class: 'btn-custom' %>
-      <% end %>
+    <div class="btn-container">
+      <%= link_to 'Back', new_challenge_post_path, class: 'inline btn-custom' %>
+      <button type="submit" class="inline btn-custom">Submit</button>
     </div>
+  <% end %>
+</div>
 
-    <!-- Song open form-->
-    <div id="option4" class="m-5 d-none" data-toggle-target="togglableElement">
-      <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
-        <div class="mb-3 text optional post_song">
-          <%# upload your song here %>
-          <%= f.input :song_url, class: 'form-control text optional', label: "Song", placeholder: 'Upload your Song', id: 'post_song' %>
-        </div>
-        <%# preview of the uploaded link here %>
-        <div id="cover_preview"></div>
-        <button type="submit" class="btn-custom">Submit</button>
-        <%= link_to 'Back', new_challenge_post_path, class: 'btn-custom' %>
-      <% end %>
-    </div>
+  <%# Functionality to preview the selected image %>
+  <script>
+    function previewImage(event) {
+      const reader = new FileReader();
+      reader.onload = function() {
+        const output = document.createElement('img');
+        output.src = reader.result;
+        output.classList.add('preview-image');
+        output.loading = 'lazy';
+        document.getElementById('image-preview-container').innerHTML = '';
+        document.getElementById('image-preview-container').appendChild(output);
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+    // Listen for file input changes and trigger the preview
+    document.getElementById('cameraFileInput').addEventListener('change', previewImage);
+  </script>
+
+  <!-- Poem open form-->
+  <div id="option2" class="mb-3 form d-none" data-toggle-target="togglableElement">
+    <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
+      <div class="mb-3 text optional post_poem">
+        <%= f.input :poem,
+                    class:"form-control text optional",
+                    label: "Let your words blossom!",
+                    maxlength: 120, type:"text",
+                    placeholder:"Pen down your daily masterpiece of rhythm and rhyme right here. 🖋️ ",
+                    name:"post[poem]", id:"post_poem" %>
+      </div>
+
+      <div class="btn-container">
+        <%= link_to 'Back', new_challenge_post_path, class: 'inline btn-custom' %>
+        <button type="submit" class="inline btn-custom">Submit</button>
+      </div>
+    <% end %>
   </div>
+
+  <!-- Quote open form-->
+  <div id="option3" class="form d-none" data-toggle-target="togglableElement">
+    <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
+      <div class="mb-3 text optional post_quote">
+        <%= f.input :text,
+                    class: "form-control text optional",
+                    label: "Share your daily dose of inspiration!",
+                    maxlength: 60,
+                    placeholder: "Let your words become rays of sunshine that brighten up your day!",
+                    name: "post[quote]",
+                    id: "post_quote" %>
+      </div>
+
+      <div class="btn-container">
+        <%= link_to 'Back', new_challenge_post_path, class: 'inline btn-custom' %>
+        <button type="submit" class="inline btn-custom">Submit</button>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Song open form-->
+  <div id="option4" class="form d-none" data-toggle-target="togglableElement">
+    <h2></h2>
+    <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
+      <div class="mb-3 text optional post_song">
+        <%# upload your song here %>
+        <h2>Time to groove and share your daily anthem!</h2>
+        <%= f.text_field :song_url,
+                        class: 'form-control text optional',
+                        label: "Share your Spotify Link here",
+                        placeholder: 'Drop the beats and melodies that make your heart dance right here. 🎵',
+                        id: 'post_song' %>
+      </div>
+
+      <%# preview of the uploaded link here %>
+      <div id="cover_preview"></div>
+
+      <div class="btn-container">
+        <%= link_to 'Back', new_challenge_post_path, class:"btn-custom inline" %>
+        <button type="submit" class="btn-custom inline">Submit</button>
+      </div>
+    <% end %>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const songUrlInput = document.getElementById('post_song');
+      const coverPreview = document.getElementById('cover_preview');
+
+      songUrlInput.addEventListener('input', function() {
+        const url = songUrlInput.value.trim();
+
+        if (url.includes('open.spotify.com')) {
+          const trackId = url.split('/').pop().split('?')[0];
+          const embedCode = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/${trackId}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+          coverPreview.innerHTML = embedCode;
+        } else if (url.includes('youtube.com') || url.includes('youtu.be')) {
+          const videoId = url.includes('youtube.com') ? url.split('v=')[1].split('&')[0] : url.split('/').pop();
+          const embedCode = `<iframe style="border-radius:12px" src="https://www.youtube.com/embed/${videoId}" width="100%" height="352" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+          coverPreview.innerHTML = embedCode;
+        } else {
+          coverPreview.innerHTML = '';
+        }
+      });
+    });
+    </script>
+  </div>
+<!-- TOGGLE javascript-->
 </div>
