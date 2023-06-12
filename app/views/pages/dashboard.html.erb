@@ -53,8 +53,22 @@
     <% end %>
 <%# here ends the calendar %>
 
-    <%# here counter for completed challenges %>
-    <p>You solved <strong><%= @posts.count %></strong> challenges this month 💖</p>
+    <%# here starts counter for completed challenges %>
+
+      <% if @monthly_posts.count == 1 %>
+        <p class="mb-0">You solved <strong><%= @posts.count %></strong> challenge this month 💔 </p>
+        <p>Let's grow 🪴</p>
+      <% elsif @monthly_posts.count >= 2 && @posts.count < 10 %>
+        <p class="mb-0">You solved <strong><%= @posts.count %></strong> challenges this month 🌱 </p>
+        <p>Let's grow 🪴 </p>
+      <% elsif @monthly_posts.count >= 11 && @posts.count < 20  %>
+        <p class="mb-0">You solved <strong><%= @posts.count %></strong> challenges this month ⚡️ </p>
+        <p>Yayy!!💛 Keep on blooming 🌼</p>
+      <% elsif @monthly_posts.count >= 21%>
+        <p class="mb-0">You solved <strong><%= @posts.count %></strong> challenges this month 💖</p>
+        <p>What a beautiful garden 💐</p>
+      <% end %>
+    <%# here ends counter for completed challenges %>
   </div>
 
   <%# here counter for categories %>

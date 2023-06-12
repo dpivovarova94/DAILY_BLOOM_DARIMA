@@ -29,8 +29,6 @@
                 <% my_event = "none" %>
               <% end %>
 
-
-
             <%= content_tag :td, class: [calendar.td_classes_for(date), my_event].flatten do %>
               <% passed_block.call date.day, sorted_events.fetch(date, []) %>
             <% end %>
