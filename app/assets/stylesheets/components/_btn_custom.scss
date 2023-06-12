@@ -35,12 +35,11 @@
 .btn-list {
   background-color: none;
   border: 2px solid $main-blue;
-  color: black;
-  padding: 10px;
-  width: 70pt;
-  margin: 10pt;
+  color: $main-blue;
+  padding: 8pt;
+  margin: 3pt;
   border-radius: 10pt;
-  font-size: 14pt;
+  font-size: 12pt;
   font-family: $body-font;
-  font-weight: bold;
+  display: inline-block;
 }
