@@ -88,36 +88,57 @@
 
 <%# here STARTS the FORMS feature %>
   <!-- Camera open form-->
-  <div id="option1" class="m-5 d-none" data-toggle-target="togglableElement">
-    <%= simple_form_for [@challenge, @post] do |f| %>
-      <%# generate input type file
-      also input type hidden name="medium" value="photo" %>
-      <%= f.input :photo, as: :file, label: "Open camera",
-      label_html: {class:"btn-camera"},
-      input_html: {accept: "image/*",
-      capture:"environment",
-        id:"cameraFileInput"}%>
-      <button type="submit" class="btn-custom">Submit</button>
-      <%= link_to 'Back', new_challenge_post_path, class: 'btn-custom' %>
-    <% end %>
-  </div>
+  <div id="option1" class="form d-none" data-toggle-target="togglableElement">
+  <%= simple_form_for [@challenge, @post], html: { id: 'photo-upload-form' } do |f| %>
+    <%# Generate input type file %>
+    <%= f.input :medium, as: :hidden, input_html: { value: 'photo' } %>
+    <h3>Don't be shy, show us what makes your day bloom!</h3>
+    <%= f.input :photo, as: :file, label: "Open your camera here",
+      label_html: { class: "btn-camera" },
+      input_html: { accept: "image/*", capture: "environment", id: "cameraFileInput" } %>
+    <div id="image-preview-container"></div>
+    <button type="submit" class="inline btn-custom">Submit</button>
+    <%= link_to 'Back', new_challenge_post_path, class: 'inline btn-custom' %>
+  <% end %>
+</div>
+
+<script>
+  // Function to preview the selected image
+  function previewImage(event) {
+    var reader = new FileReader();
+    reader.onload = function() {
+      var output = document.createElement('img');
+      output.src = reader.result;
+      output.classList.add('preview-image');
+      output.loading = 'lazy'; // Add lazy loading attribute
+      document.getElementById('image-preview-container').innerHTML = '';
+      document.getElementById('image-preview-container').appendChild(output);
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  }
+
+  // Listen for file input changes and trigger the preview
+  document.getElementById('cameraFileInput').addEventListener('change', previewImage);
+</script>
 
   <!-- Poem open form-->
-  <div id="option2" class="m-5 d-none" data-toggle-target="togglableElement">
+  <div id="option2" class="mb-3 form d-none" data-toggle-target="togglableElement">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
       <div class="mb-3 text optional post_poem">
-        <%= f.input :poem, class:"form-control text optional", label: "Poem",type:"text", placeholder:"Share your Poem", name:"post[poem]", id:"post_poem" %>
+        <%= f.input :poem, class:"form-control text optional", label: "Let your words blossom!", type:"text", placeholder:"Pen down your daily masterpiece of rhythm and rhyme right here. 🖋️ ", name:"post[poem]", id:"post_poem" %>
       </div>
-      <button type="submit" class="btn-custom">Submit</button>
-      <%= link_to 'Back', new_challenge_post_path, class: 'btn-custom' %>
+      <div class="btn-container">
+        <button type="submit" class="inline btn-custom">Submit</button>
+        <%= link_to 'Back', new_challenge_post_path, class: 'inline btn-custom' %>
+      </div>
     <% end %>
   </div>
 
   <!-- Quote open form-->
-  <div id="option3" class="m-5 d-none" data-toggle-target="togglableElement">
+  <div id="option3" class="form d-none" data-toggle-target="togglableElement">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
       <div class="mb-3 text optional post_quote">
-        <%= f.input :text, class: "form-control text optional", label: "Quote",placeholder: "Share your Quote of the day", name: "post[quote]", id: "post_quote" %>
+        <%= f.input :text, class: "form-control text optional", label: "Share your daily dose of inspiration! Sprinkle some wisdom and motivation by entering your favorite quote here.",placeholder: "Let your words become rays of sunshine that brighten up your day!", name: "post[quote]", id: "post_quote" %>
       </div>
       <button type="submit" class="btn-custom">Submit</button>
       <%= link_to 'Back', new_challenge_post_path, class: 'btn-custom' %>
@@ -125,12 +146,12 @@
   </div>
 
   <!-- Song open form-->
-  <div id="option4" class="m-5 d-none" data-toggle-target="togglableElement">
+  <div id="option4" class="form d-none" data-toggle-target="togglableElement">
   <h2></h2>
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
       <div class="mb-3 text optional post_song">
         <%# upload your song here %>
-        <%= f.input :song_url, class: 'form-control text optional', label: "Song", placeholder: 'Upload your Song', id: 'post_song' %>
+        <%= f.input :song_url, class: 'form-control text optional', label: "Time to groove and share your daily anthem!", placeholder: 'Drop the beats and melodies that make your heart dance right here. 🎵', id: 'post_song' %>
       </div>
       <%# preview of the uploaded link here %>
       <div id="cover_preview"></div>

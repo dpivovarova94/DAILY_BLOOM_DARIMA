@@ -1,14 +1,92 @@
+.form {
+  padding-top:5pt;
+  padding-left: 10pt;
+  padding-right: 10pt;
+  padding-bottom: 15pt;
+}
+
 // camera
 #option1 {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  .inline {
+    display: inline;
+  }
+
+  h3 {
+    margin-bottom: 10px;
+    font-family: $body-font;
+    font-size: 40px;
+    color: $main-green;
+    display: block;
+    text-align: center;
+  }
+
+  .btn-camera {
+    display: inline-block;
+    background-color:$main-green;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 220px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  #image-preview-container {
+    width: 300px; /* Adjust the width as needed */
+    height: 300px; /* Adjust the height as needed */
+    border-radius: 10px; /* Adjust the border radius as needed for rounded edges */
+    overflow: hidden;
+    margin-bottom: 10px; /* Adjust the margin-bottom as needed */
+    background-color:white;
+    border: 2px solid $main-green; /* Adjust the background color as needed */
+    display: block;
+    margin: 0 auto;
+  }
+
+  .preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    text-align: center;
+  }
 }
 
 // poem
 #option2 {
+  margin-top: 50px;
+
   .form-control {
     font-size: 1.5rem;
+    border-radius: 5px;
     height: 300px;
-    width: 300px;
+    // width: 100vw;
+  }
+
+  .inline {
+    display: inline;
+  }
+
+  .form-label {
+    margin-bottom: 10px;
+    font-family: $body-font;
+    font-size: 40px;
+    color: $main-blue;
+    display: block;
+    text-align: center;
   }
 }
 
