@@ -22,6 +22,11 @@ user = User.create(
   password: "123456"
 )
 
+user2 = User.create(
+  email: "rose@bloom.com",
+  password: "123456"
+)
+
 puts "test user created"
 
 # Seed Categories
@@ -89,6 +94,15 @@ puts "Keywords created"
     category: Category.all.sample
   )
 end
+
+# User Categories for User Rose
+2.times do
+  UserCategory.create(
+    user: user2,
+    category: Category.all.sample
+  )
+end
+
 
 # Create Seeds with personalized Challenges for Test User Lilly
 
@@ -508,6 +522,43 @@ picture18 = Post.create!(
 )
 picture18.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 picture18.save
+
+# Create Seeds with personalized Challenges and Posts for Test User Rose
+challenge21 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Sun"),
+  user: User.find_by(email: "rose@bloom.com"),
+  created_at: Date.today - 21.days,
+  start_date: Date.today - 21.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686575190/8d7fda0939878e93edcfd824f54d71e8_wbbiwp.jpg")
+picture19 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge21
+)
+picture19.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture19.save
+
+# Text post for Rose
+challenge22 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Flowers"),
+  user: User.find_by(email: "rose@bloom.com"),
+  created_at: Date.today - 22.days,
+  start_date: Date.today - 22.days
+)
+
+text2 = Post.create!(
+  date: Date.today,
+  song_url: "",
+  poem: "",
+  text: "Nature is the purest portal to inner peace",
+  picture_url: "",
+  challenge: challenge22
+)
 
 
 # puts 'Cleaning database'
