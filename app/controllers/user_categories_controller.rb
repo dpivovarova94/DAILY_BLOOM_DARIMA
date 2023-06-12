@@ -5,7 +5,7 @@ class UserCategoriesController < ApplicationController
   end
 
   def create
-    @category_ids = params[:user_category][:category_id]
+    @category_ids = params[:user][:category_ids]
 
     @category_ids.each do |category|
       if category == ""
@@ -20,17 +20,15 @@ class UserCategoriesController < ApplicationController
   end
 
   def edit
-    @user_category = UserCategory.new
-    @user_category = current_user.user_categories
-    @current_categories = current_user.categories
     @user = current_user
+    @categories = Category.all
   end
 
   def update
-    @user_category = UserCategory.find(params[:id])
+    @user = User.find(params[:id])
 
-    if @user_category.update(user_category_params)
-      redirect_to new_challenge_path
+    if @user.update(user_params)
+      redirect_to dashboard_path, notice: 'Challenge was successfully created.'
     else
       render :edit
     end
@@ -38,7 +36,7 @@ class UserCategoriesController < ApplicationController
 
   private
 
-  def user_category_params
-    params.require(:user_category).permit(:category_id)
+  def user_params
+    params.require(:user).permit(category_ids: [])
   end
 end
