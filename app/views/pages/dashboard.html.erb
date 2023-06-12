@@ -42,11 +42,11 @@
 
 
 <%# here starts the calendar %>
-  <%= month_calendar do |date, challenges| %>
+  <%= month_calendar do |date, posts| %>
     <%= date %>
-    <% challenges.each do |challenge| %>
+    <% posts.each do |post| %>
       <div>
-        <p><%= challenge.name %></p>
+        <p><%= post.challenge %></p>
       </div>
     <% end %>
   <% end %>
