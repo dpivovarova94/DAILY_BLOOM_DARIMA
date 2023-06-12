@@ -29,7 +29,6 @@
     display: inline-block;
     background-color:$main-green;
     color: white;
-    padding: 8px 12px;
     border-radius: 4px;
     font-size: 16px;
     width: 220px;
@@ -51,7 +50,7 @@
     overflow: hidden;
     margin-bottom: 10px; /* Adjust the margin-bottom as needed */
     background-color:white;
-    border: 2px solid $main-green; /* Adjust the background color as needed */
+    border: 4px dotted $main-green; /* Adjust the background color as needed */
     display: block;
     margin: 0 auto;
   }
