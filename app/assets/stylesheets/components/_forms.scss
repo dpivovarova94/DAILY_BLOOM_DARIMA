@@ -5,6 +5,16 @@
   padding-bottom: 15pt;
 }
 
+.btn-custom {
+  background-color: white;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 // camera
 #option1 {
   margin-top: 50px;
@@ -20,33 +30,30 @@
     margin-bottom: 10px;
     font-family: $body-font;
     font-size: 40px;
-    color: $main-green;
+    color: rgb(30, 30, 30);
+    text-shadow: $main-green 1px 0 10px;
     display: block;
     text-align: center;
   }
 
   .btn-camera {
-    display: inline-block;
-    background-color:$main-green;
-    color: white;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 220px;
+    display: block;
+    font-size: 14pt;
+    background-color:white;
+    color: $main-green;
+    border: 2px solid #1cde63;
+    border-radius: 10pt;
+    height: 50px; //this is so every button has the same height/ask toni: error from forms
+    width: 250px;
+    margin: 10pt;
     padding: 8px 12px;
     cursor: pointer;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .btn-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    margin: 20px auto;
   }
 
   #image-preview-container {
-    width: 300px; /* Adjust the width as needed */
-    height: 300px; /* Adjust the height as needed */
+    width: 320px; /* Adjust the width as needed */
+    height: 320px; /* Adjust the height as needed */
     border-radius: 10px; /* Adjust the border radius as needed for rounded edges */
     overflow: hidden;
     margin-bottom: 10px; /* Adjust the margin-bottom as needed */
@@ -76,6 +83,8 @@
     border-radius: 5px;
     height: 320px;
     width: 320px;
+    display: block;
+    margin: 0 auto;
   }
 
   .inline {
@@ -86,7 +95,8 @@
     margin-bottom: 10px;
     font-family: $body-font;
     font-size: 40px;
-    color: $main-blue;
+    color: rgb(30, 30, 30);
+    text-shadow: $main-blue 1px 0 10px;
     display: block;
     text-align: center;
   }
@@ -94,18 +104,77 @@
 
 // quote
 #option3 {
+  margin-top: 50px;
+
   .form-control {
-    font-size: 3rem;
-    height: 300px;
-    width: 300px;
+    font-size: 1.5rem;
+    background-color: white;
+    border: 4px dotted $main-yellow;
+    border-radius: 5px;
+    height: 320px;
+    width: 320px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .inline {
+    display: inline;
+  }
+
+  .form-label {
+    margin-bottom: 10px;
+    font-family: $body-font;
+    font-size: 40px;
+    color: rgb(30, 30, 30);
+    text-shadow: $main-yellow 1px 0 10px;
+    display: block;
+    text-align: center;
   }
 }
 
 // song
 #option4 {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   .form-control {
     font-size: 1rem;
+    background-color: white;
+    border: 4px dotted $main-purple;
+    border-radius: 5px;
     height: 50px;
-    width: 300px;
+    width: 320px;
+    display: block;
+    margin: 0 auto;
   }
+
+  .inline {
+    display: inline;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+    font-family: $body-font;
+    font-size: 40px;
+    color: rgb(30, 30, 30);
+    text-shadow: $main-purple 1px 0 10px;
+    display: block;
+    text-align: center;
+  }
+
+  .form-control {
+    display: block;
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+  }
+
+  // #cover_preview {
+  //   border: 4px dotted $main-purple;
+  //   border-radius: 5px;
+  //   height: 320px;
+  //   width: 320px;
+  // }
 }
