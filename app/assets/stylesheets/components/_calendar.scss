@@ -17,13 +17,29 @@
     aspect-ratio: 1/ 1;
     border-style: none;
     border-radius: 50%;
+    background-color: grey;
   }
 
   .day {
     height: auto;
     text-align: center;
     vertical-align: middle;
-    background-color: #e0e0e0;
+  }
+
+  .photo{
+    background-color: $main-green;
+  }
+
+  .song {
+    background-color: $main-purple;
+  }
+
+  .quote {
+    background-color: $main-yellow;
+  }
+
+  .poem {
+    background-color: $main-blue;
   }
 
   .wday-0 {}
@@ -35,7 +51,7 @@
   .wday-6 {}
 
   .today {
-    background: #0015ff;
+    border: 1px solid black;
     color: white;
   }
 
