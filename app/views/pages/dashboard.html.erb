@@ -42,14 +42,16 @@
 
 
 <%# here starts the calendar %>
-  <%= month_calendar do |date, posts| %>
-    <%= date %>
-    <% posts.each do |post| %>
-      <div>
-        <p><%= post.challenge %></p>
-      </div>
+  <div class="container">
+    <%= month_calendar do |date, posts| %>
+      <%= date %>
+      <% posts.each do |post| %>
+        <div>
+          <p><%= post.challenge %></p>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
   <%# here counter for completed challenges %>
 
   <%# here counter for categories %>
