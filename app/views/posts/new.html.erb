@@ -1,10 +1,11 @@
-<div class="container">
-  <div class="m-5 text-center">
+<div class="container" data-controller="toggle">
+  <div class="m-5 text-center" data-toggle-target="keyword">
     <h2 class="character-font"><%# @challenge.keyword.name %>Lumos</h2><br>
     <h4 class="text-font">What suits your creative mood today?</h4>
   </div>
 
-  <div class="container" data-controller="toggle">
+  <div class="container">
+
   <%# here STARTS the BUTTON feature %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <section data-toggle-target="bubbleContainer">
