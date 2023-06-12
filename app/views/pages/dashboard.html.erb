@@ -51,11 +51,13 @@
         </div>
       <% end %>
     <% end %>
+<%# here ends the calendar %>
+
+    <%# here counter for completed challenges %>
+    <p>You solved <strong><%= @posts.count %></strong> challenges this month 💖</p>
   </div>
-  <%# here counter for completed challenges %>
 
   <%# here counter for categories %>
-<%# here ends the calendar %>
 
 <%# here starts Logout %>
 <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn-custom", style: "position: relative" %>

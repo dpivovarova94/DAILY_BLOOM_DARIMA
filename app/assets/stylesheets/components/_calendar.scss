@@ -20,9 +20,16 @@
     width: auto;
   }
 
+  .calendar-title {
+    font-size: 14pt;
+    margin-bottom: 0px;
+    // margin-left: 3pt;
+    // margin-right: 3pt;
+  }
+
   .day {
     height: 30pt;
-    margin-bottom: 4pt;
+    margin-bottom: 5pt;
     text-align: center;
     vertical-align: middle;
   }
