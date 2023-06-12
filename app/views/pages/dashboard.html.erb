@@ -27,10 +27,9 @@
 " >
 <h4><%= @user.email %></h4>
 
-<h4>Selected Categories:</h4>
-<ul style="display: inline-block;">
+<ul style="display: inline-block;" class="m3">
   <% @selected_categories.each do |category| %>
-    <li class="btn-list"><%= @category.name %></li>
+    <li class="btn-list"><%= category.name %></li>
   <% end %>
 </ul>
 </div>
@@ -43,5 +42,5 @@
       </div>
     <% end %>
   <% end %>
-<%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger float-right" %>
+<%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn-custom", style: "position: relative" %>
 </div>
