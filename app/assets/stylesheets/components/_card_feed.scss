@@ -1,109 +1,156 @@
-.content-wrap {
+.container_feed {
   padding-top:5pt;
   padding-left: 10pt;
   padding-right: 10pt;
   padding-bottom: 15pt;
-  // display: flex;
-}
+  // // display: flex;
 
-.index-card-container {
-  display: flex;
-  flex-wrap: wrap;
+
+.feed {
+  grid-gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-between;
+
+
+  .posts_cards {
+    // width: 50vw;
+    height: 50vw;
+    position: relative;
+
+    .card-quote {
+      position: relative;
+      background-color:$main-yellow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      padding: 10px;
+      border-radius: 12px;
+      color: black;
+      text-decoration: none;
+      text-align: center;
+      font-size: 24px;
+    }
+
+// The Code for optional card hover flip - Darima
+  // figure {
+  //   display: grid;
+  //   border-radius: 1rem;
+  //   overflow: hidden;
+  //   cursor: pointer;
+  // }
+
+  // figure > * {
+  //   grid-area: 1/1;
+  //   transition: .4s;
+  // }
+
+  // figure figcaption {
+  //   display: grid;
+  //   align-items: end;
+
+  // }
+  // figure:hover figcaption{
+  //   --_i: 20%;
+  // }
+
+
+
+    .card-poem {
+      background-color:$main-blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      padding: 10px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: black;
+      text-decoration: none;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .card-photo {
+      position: relative;
+      background-color:$main-green;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 200px;
+      padding: 10px;
+      border-radius: 12px;
+
+      .img.card-photo {
+        border-radius: 20px;
+        max-height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .card-song {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      padding: 10px;
+      border-radius: 12px;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px dashed #000;
+      }
+    }
+
+
+    @media {
+      .dECpSYmWqPAhq6xqf2t3 {
+        height: 152px;
+        margin: 12.5px;
+
+        -webkit-transform-origin: center bottom;
+        transform-origin: center bottom;
+        -webkit-transition-delay: .1s;
+        transition-delay: .1s;
+        width: 152px;
+      }
+    }
+  }
+}
 }
 
-.posts_cards {
-  width: calc(50% - 5px);
-  margin-bottom: 15px;
-}
-
-.card-quote {
-  position: relative;
-  background-color:$main-yellow;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  padding: 10px;
-  border-radius: 12px;
-  color: black;
-  text-decoration: none;
-  text-align: center;
-  font-size: 24px;
-}
-
-figure {
-  display: grid;
-  border-radius: 1rem;
+.gMx7ZQAGhBSydDebRjyI {
+  border-radius: 0.75rem;
+  isolation: isolate;
   overflow: hidden;
-  cursor: pointer;
-}
-
-figure > * {
-  grid-area: 1/1;
-  transition: .4s;
-}
-
-figure figcaption {
-  display: grid;
-  align-items: end;
-
-}
-figure:hover figcaption{
-  --_i: 20%;
+  overflow: clip;
+  /* position: relative; */
 }
 
 
+//   .embed-widget-container:not(.has-track-list) .dECpSYmWqPAhq6xqf2t3 {
+//     height: 130px;
+//     margin: 5px;
+//     width: 140px;
+//   }
 
-.card-poem {
-  background-color:$main-blue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  padding: 10px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: black;
-  text-decoration: none;
-  text-align: center;
-  font-size: 12px;
-}
-
-.card-photo {
-  position: relative;
-  background-color:$main-green;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 200px;
-  padding: 10px;
-  border-radius: 12px;
-
-  .img.card-photo {
-    border-radius: 20px;
-    max-height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-}
-
-.card-song {
-  background-color:$main-purple;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  padding: 10px;
-  border-radius: 12px;
-
-  .card-song iframe {
-    border-radius: 12px;
-    width: 100%;
-    height: 100%;
-  }
-}
+//   .LKKneJCVRLbYQrEtNZ8g {
+//     background-color: #0d6efd;
+//     bottom: 0;
+//     left: 0;
+//     position: absolute;
+//     right: 0;
+//     top: 0;
+//     z-index: 0;
+//   }
 
 .button-selection {
   display: flex;
@@ -112,20 +159,19 @@ figure:hover figcaption{
 }
 
 
+/////////// Old Code from First Talk ///////////
+        // .card-song {
+        //   background-color:$main-purple;
+        //   display: flex;
+        //   justify-content: center;
+        //   align-items: center;
+        //   height: 200px;
+        //   padding: 10px;
+        //   border-radius: 12px;
 
-// .standard-card img {
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-// }
-
-// .showcard {
-//   width: 100%;
-//   border-radius: 40px;
-//   overflow: hidden;
-// }
-
-// dont know yet how to apply only if the number or image is odd
-// .index-card-container > :last-child {
-//   flex-basis: 100%;
-// }
+        //   .iframe {
+        //     border-radius: 12px;
+        //     width: 100%;
+        //     height: 100%;
+        //   }
+        // }
