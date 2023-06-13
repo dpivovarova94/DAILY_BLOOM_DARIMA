@@ -54,20 +54,26 @@
 <%# here ends the calendar %>
 
     <%# here starts counter for completed challenges %>
+    <%# @monthly_posts.count %>
+    <%# @posts.count %>
 
+    <% if @monthly_posts.nil? || @monthly_posts.count == 0 %>
+      <p>No challenge solved yet.</p>
+    <% else %>
       <% if @monthly_posts.count == 1 %>
-        <p class="mb-0">You solved <strong><%= @posts.count %></strong> challenge this month 💔 </p>
-        <p>Let's grow 🪴</p>
-      <% elsif @monthly_posts.count >= 2 && @posts.count < 10 %>
-        <p class="mb-0">You solved <strong><%= @posts.count %></strong> challenges this month 🌱 </p>
+        <p class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenge this month 💔 </p>
+        <p>Time to find some positivity ✨</p>
+      <% elsif @monthly_posts.count >= 2 && @monthly_posts.count < 10 %>
+        <p class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges this month 🌱 </p>
         <p>Let's grow 🪴 </p>
-      <% elsif @monthly_posts.count >= 11 && @posts.count < 20  %>
-        <p class="mb-0">You solved <strong><%= @posts.count %></strong> challenges this month ⚡️ </p>
+      <% elsif @monthly_posts.count >= 10 && @monthly_posts.count < 20  %>
+        <p class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges this month ⚡️ </p>
         <p>Yayy!!💛 Keep on blooming 🌼</p>
       <% elsif @monthly_posts.count >= 21%>
-        <p class="mb-0">You solved <strong><%= @posts.count %></strong> challenges this month 💖</p>
+        <p class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges this month 💖</p>
         <p>What a beautiful garden 💐</p>
       <% end %>
+    <% end %>
     <%# here ends counter for completed challenges %>
   </div>
 
