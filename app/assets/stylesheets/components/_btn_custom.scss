@@ -26,14 +26,15 @@
 .btn-calendar {
   width: 60pt;
   padding: 5px;
-  font-size: 10pt;
+  font-size: 14pt;
   font-weight: lighter;
   margin-left: 0pt;
   margin-right: 0pt;
+  border: none;
 
   &:active {
     background-color: $main-yellow;
-  border: none;
+    border: none;
   }
 
 }

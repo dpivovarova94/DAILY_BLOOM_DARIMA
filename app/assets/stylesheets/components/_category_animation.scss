@@ -1,0 +1,164 @@
+@import url(https://fonts.googleapis.com/css?family=Damion|Montserrat:400,900);
+
+$after-color: $main-green;
+$before-color: $main-purple;
+$background-color: none;
+$main-font: 'Montserrat', sans-serif;
+$additional-font: 'Damion', cursive;
+// %centering {
+//   position: absolute;
+//   top: 90%;
+//   left: 50%;
+//   // transform: translate(-50%, -50%);
+// }
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+      @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+      @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+      @content;
+    }
+    @-o-keyframes #{$animation-name} {
+      @content;
+    }
+    @keyframes #{$animation-name} {
+      @content;
+    }
+}
+.content {
+  background-color: $background-color;
+  border: none;
+  // @extend %centering;
+  font-family: $main-font;
+  // max-width: 300px;
+  // min-height: 100px;
+
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    color: #fff;
+    text-shadow: -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    &:before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0.1em;
+      left: -0.15em;
+      z-index: -1;
+      color: $before-color;
+      animation: before-anim 1.2s infinite;
+    }
+    &:after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0.2em;
+      left: -0.3em;
+      z-index: -2;
+      color: $after-color;
+      animation: after-anim 1.2s infinite;
+    }
+  }
+  .content_star {
+      position: absolute;
+      top: 77%;
+      left: 47%;
+      width: 50px;
+      height: 50px;
+      background-image: url(https://cdn140.picsart.com/275056284004211.png?c256x256);
+      -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: rotate-star-anim 2s linear infinite;
+     &.star-2 {
+      top: 72%;
+      left: 65%;
+      width: 30px;
+      height: 30px;
+      animation: rotate-star-anim 1.2s linear infinite;
+     }
+    &.star-3 {
+      width: 38px;
+      height: 38px;
+      top: 20%;
+      left: 85%;
+      animation: rotate-star-anim 2s linear infinite;
+    }
+    &.star-4 {
+      width: 34px;
+      height: 34px;
+      top: 2%;
+      left: 10%;
+      animation: rotate-star-anim 1s linear infinite;
+    }
+    &.star-5 {
+      width: 46px;
+      height: 46px;
+      top: -8%;
+      left: 45%;
+      animation: rotate-star-anim 1.5s linear infinite;
+    }
+  }
+  .content_arrow-wrapper {
+    position: absolute;
+    right: -20%;
+    top: 75%;
+    width: 150px;
+    height: 150px;
+    .content_arrow {
+      width: 80%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(180deg);
+    }
+    .content_arrow-cute {
+      position: absolute;
+      font-size: 2.4em;
+      margin: 0;
+      bottom: 0;
+      left: 50%;
+      font-family: $additional-font;
+      animation: rotate-cute-anim .8s infinite forwards;
+      transform: rotate(30deg);
+    }
+  }
+}
+
+@include keyframes(after-anim) {
+  25% { color: $before-color; }
+  50% { color: $after-color; }
+  76% { color: $before-color; }
+  100% { color: $after-color; }
+}
+
+@include keyframes(before-anim) {
+  25% { color: $after-color; }
+  50% { color: $before-color; }
+  76% { color: $after-color; }
+  100% { color: $before-color; }
+}
+
+@include keyframes(rotate-star-anim) {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@include keyframes(rotate-cute-anim) {
+  from { transform: rotate(30deg) };
+  50% { transform: rotate(-30deg)}
+  to { transform: rotate(30deg) }
+}
