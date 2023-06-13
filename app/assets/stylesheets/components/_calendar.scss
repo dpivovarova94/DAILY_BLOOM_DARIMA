@@ -1,4 +1,8 @@
 .simple-calendar {
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  padding: 15px;
+
   table {
     -webkit-border-horizontal-spacing: 0px;
     -webkit-border-vertical-spacing: 0px;
@@ -21,7 +25,7 @@
   }
 
   .calendar-title {
-    font-size: 14pt;
+    font-size: 16pt;
     margin-bottom: 0px;
     // margin-left: 3pt;
     // margin-right: 3pt;

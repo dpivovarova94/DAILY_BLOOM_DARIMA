@@ -1,7 +1,7 @@
 <div class="content-wrap">
 
 <%# here starts the avatar %>
-  <div class="blob-dashboard" style="width = 60pt; height = 60pt; position: relative;">
+  <div class="blob-dashboard" style="width = 30pt; height = 30pt; position: relative;">
     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
       <path fill="#6DF0B1" d="M37.5,-52.3C46.3,-37.3,49.5,-23.3,52,-9.1C54.6,5.1,56.6,19.5,50.9,29.3C45.1,39.1,31.6,44.4,17.8,50C3.9,55.6,-10.3,61.5,-23.2,58.9C-36.1,56.3,-47.6,45.2,-55.8,31.8C-63.9,18.5,-68.7,2.8,-67.1,-12.9C-65.6,-28.5,-57.8,-44,-45.6,-58.3C-33.3,-72.6,-16.7,-85.7,-1.1,-84.4C14.4,-83,28.7,-67.2,37.5,-52.3Z"
       transform="translate(100 100)">
@@ -24,12 +24,11 @@
       <% end %>
     <% end %>
   </div>
-<div class="m3" style= "text-align: center;
-" >
-<h4><%= @user.email %></h4>
+<div class="m3" style= "text-align: center;" >
+
+<h2>Hey <%= @user.username %> 🌻</h2>
 
 <%# here ends the avatar %>
-
 
 <%# here start the categories %>
 <ul style="display: inline-block;" class="m3">
@@ -45,6 +44,7 @@
 
 <%# here starts the calendar %>
   <div class="container">
+  <h4 class="my-3 text-center headline">Your Personal Tracking</h4>
     <%= month_calendar do |date, posts| %>
       <%= date %>
       <% posts.each do |post| %>
@@ -56,30 +56,50 @@
 <%# here ends the calendar %>
 
     <%# here starts counter for completed challenges %>
-    <%# @monthly_posts.count %>
-    <%# @posts.count %>
-
-    <% if @monthly_posts.nil? || @monthly_posts.count == 0 %>
-      <p>No challenge solved yet.</p>
-    <% else %>
-      <% if @monthly_posts.count == 1 %>
-        <p class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenge this month 💔 </p>
-        <p>Time to find some positivity ✨</p>
-      <% elsif @monthly_posts.count >= 2 && @monthly_posts.count < 10 %>
-        <p class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges this month 🌱 </p>
-        <p>Let's grow 🪴 </p>
-      <% elsif @monthly_posts.count >= 10 && @monthly_posts.count < 20  %>
-        <p class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges this month ⚡️ </p>
-        <p>Yayy!!💛 Keep on blooming 🌼</p>
-      <% elsif @monthly_posts.count >= 21%>
-        <p class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges this month 💖</p>
-        <p>What a beautiful garden 💐</p>
+    <div class="my-4 card-tracking yellow">
+      <% if @monthly_posts.nil? || @monthly_posts.count == 0 %>
+        <h5>No challenge solved yet.</h5>
+      <% else %>
+        <% if @monthly_posts.count == 1 %>
+          <h5 class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenge this month 💔 </h5>
+          <h5>Time to find some positivity ✨</h5>
+        <% elsif @monthly_posts.count >= 2 && @monthly_posts.count < 10 %>
+          <h5 class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges this month 🌱 </h5>
+          <h5>Let's grow 🪴 </h5>
+        <% elsif @monthly_posts.count >= 10 && @monthly_posts.count < 20  %>
+          <h5 class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges this month ⚡️ </h5>
+          <h5>Yayy!! 💛 Keep on blooming 🌼</h5>
+        <% elsif @monthly_posts.count >= 21%>
+          <h5 class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges this month 💖</h5>
+          <h5>What a beautiful garden 💐</h5>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
     <%# here ends counter for completed challenges %>
+
+  <%# here starts counter for categories %>
+  <div class="card-tracking">
+    <% @monthly_categories = [] %>
+
+    <% @monthly_posts.each do |post| %>
+      <% @monthly_keyword = post.challenge.keyword %>
+      <% @monthly_categories << @monthly_keyword.category.name %>
+    <% end %>
+
+    <% if @monthly_posts.count >= 1 %>
+      <% duplicate_counts = @monthly_categories.group_by(&:itself).transform_values(&:count) %>
+      <% @monthly_categories.count %>
+      <% max_count = duplicate_counts.values.max %>
+      <% most_common_categories = duplicate_counts.select { |_, count| count == max_count }.keys %>
+
+      <div class="content">
+        <h4>Your top category was:</h4>
+        <h1 data-text="<%= most_common_categories.join(', ') %>"><%= most_common_categories.join(', ') %></h1>
+      </div>
+    <% end %>
+  </div>
   </div>
 
-  <%# here counter for categories %>
 
 <%# here starts Logout %>
 <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn-custom", style: "position: relative" %>
