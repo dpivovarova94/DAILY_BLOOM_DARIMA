@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).order(created_at: :desc)
+    
+    # .where(category: params[:category])
     # @posts = Post.all
     # @posts.challenges
     # @posts = @user.challenge
