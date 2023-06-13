@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  layout 'show_layout', only: :show
+
   def index
     @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).order(created_at: :desc)
     # @posts = Post.all
@@ -8,6 +10,7 @@ class PostsController < ApplicationController
   end
 
   def show
+     # No navbar
     @post = Post.find(params[:id])
     @challenge = @post.challenge
     @keyword = @challenge.keyword

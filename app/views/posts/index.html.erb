@@ -2,11 +2,11 @@
 
   <div class="index-card-container">
     <% @posts.each do |post| %>
-      <div class="posts_cards">
+      <div class="posts_cards" data-bs-toggle="modal" data-bs-target="#exampleModal" data-post-id="<%= post.id %>">
         <%# <%= link_to post_path(post) do %>
             <% if ! post.photo.key.nil? %>
               <div data-controller="keyword">
-                <div class="front" data-action="click->keyword#showKeyword">
+                <div class="front"  >
                   <%= cl_image_tag(post.photo.key, class:"card-photo", crop: :thumb, gravity: :face) %>
                 </div>
                 <div data-keyword-target="figure" class="d-none">
@@ -33,7 +33,7 @@
                 </div>
                 <div data-keyword-target="figure" class="d-none">
                   <%= post.challenge.keyword.name %><br>
-                  <p><%= post.created_at.strftime('%d %B %Y')%></p>
+                  <%# <p><%= post.created_at.strftime('%d %B %Y')%>
                 </div>
               </div>
             <% elsif !post.song_url.nil? %>
@@ -61,3 +61,33 @@
 <%# <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2IHcAcZ4D6QRGZgmWGgGhc?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 https://open.spotify.com/track/2IHcAcZ4D6QRGZgmWGgGhc?si=ffa0a0a62b344ee8
 https://open.spotify.com/embed/track/2IHcAcZ4D6QRGZgmWGgGhc?utm_source=generator %>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#exampleModal').on('show.bs.modal', function(event) {
+      var postId = $(event.relatedTarget).data('post-id'); // Get the post ID from the clicked element
+
+      $.ajax({
+        url: 'posts/' + postId, // Use the post ID in the URL
+        method: 'GET',
+        success: function(response) {
+          $('#modal-body-content').html(response);
+        },
+        error: function() {
+          $('#modal-body-content').html('Error loading content.');
+        }
+      });
+    });
+  });
+</script>

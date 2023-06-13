@@ -1,16 +1,30 @@
-
-
-
 <div class="content-wrap">
-
-    <div class="text-card-show">
-        <h5><%= @post.created_at.strftime('%d %B, %Y') %></h5>
-        <h5 style="font-style: italic"><%=  @keyword.name %></h5>
+  <div class="index-card-container">
+    <div class="standar-card">
+      <% if ! @post.photo.key.nil? %>
+        <div class="show-photo-card">
+          <%= cl_image_tag(@post.photo.key, crop: :thumb, gravity: :face) %>
+        </div>
+      <% elsif ! @post.text.nil? %>
+        <div class="card-quote">
+          <%= @post.text %>
+        </div>
+      <% elsif ! @post.poem.nil? %>
+        <div class="card-poem">
+          <%= @post.poem %>
+        </div>
+      <% elsif !@post.song_url.nil? %>
+        <div class="card-song">
+          <% spotify_track_id = extract_spotify_track_id(@post.song_url) %>
+          <% if spotify_track_id.present? %>
+            <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" width="100%" height="auto" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="keyword">
+        <%= @post.challenge.keyword.name %>
+                  <p><%= @post.created_at.strftime('%d %B %Y')%></p>
+      </div>
     </div>
-
-    <div class="showcard" style="  border-radius: 0px;">
-      <%= cl_image_tag(@post.photo.key, class: "card-img-top", crop: :thumb, gravity: :face) %>
-    </div>
-<button class="btn-custom">edit</button>
-
+  </div>
 </div>
