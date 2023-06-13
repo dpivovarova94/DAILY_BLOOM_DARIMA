@@ -1,6 +1,6 @@
-<div class="content-wrap">
+<div class="container_feed">
 
-  <div class="index-card-container">
+  <div class="feed">
     <% @posts.each do |post| %>
       <div class="posts_cards">
         <%# <%= link_to post_path(post) do %>
@@ -39,12 +39,10 @@
             <% elsif !post.song_url.nil? %>
               <div data-controller="keyword">
                 <div class="card-song">
-                  <div class="front" data-action="click->keyword#showKeyword">
-                    <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
-                    <% if spotify_track_id.present? %>
-                      <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" width="153" height="200" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                    <% end %>
-                  </div>
+                  <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
+                  <% if spotify_track_id.present? %>
+                    <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" style="border-radius:12px" width="352" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                  <% end %>
                 </div>
                 <div data-keyword-target="figure" class="d-none">
                     <%= post.challenge.keyword.name %>
@@ -56,8 +54,3 @@
     <% end %>
   </div>
 </div>
-
-
-<%# <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2IHcAcZ4D6QRGZgmWGgGhc?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-https://open.spotify.com/track/2IHcAcZ4D6QRGZgmWGgGhc?si=ffa0a0a62b344ee8
-https://open.spotify.com/embed/track/2IHcAcZ4D6QRGZgmWGgGhc?utm_source=generator %>
