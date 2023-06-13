@@ -17,11 +17,19 @@
     aspect-ratio: 1/ 1;
     border-style: none;
     border-radius: 50%;
-    background-color: grey;
+    width: auto;
+  }
+
+  .calendar-title {
+    font-size: 14pt;
+    margin-bottom: 0px;
+    // margin-left: 3pt;
+    // margin-right: 3pt;
   }
 
   .day {
-    height: auto;
+    height: 30pt;
+    margin-bottom: 5pt;
     text-align: center;
     vertical-align: middle;
   }
@@ -42,6 +50,10 @@
     background-color: $main-blue;
   }
 
+  .none {
+    background-color: white;
+  }
+
   .wday-0 {}
   .wday-1 {}
   .wday-2 {}
@@ -51,8 +63,7 @@
   .wday-6 {}
 
   .today {
-    border: 1px solid black;
-    color: white;
+    border: 2px solid black;
   }
 
   .past {}
@@ -61,10 +72,14 @@
   .start-date {}
 
   .prev-month {
-    color: #747474;
+    color: black;
+    background-color: rgb(234, 233, 233);
+    ;
   }
   .next-month {
-    color: #747474;
+    color: black;
+    background-color: rgb(234, 233, 233);
+    ;
   }
   .current-month {}
 
