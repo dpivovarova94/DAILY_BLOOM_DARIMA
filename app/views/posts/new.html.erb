@@ -132,13 +132,15 @@
   <!-- Poem open form-->
   <div id="option2" class="mb-3 form d-none" data-toggle-target="togglableElement">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
-      <div class="mb-3 text optional post_poem">
+      <div data-controller="character-counter" class="mb-3 text optional post_poem">
         <%= f.input :poem,
+                    input_html: { data: { character_counter_target: "input" } },
                     class:"form-control text optional",
                     label: "Let your words blossom!",
                     maxlength: 120, type:"text",
                     placeholder:"Pen down your daily masterpiece of rhythm and rhyme right here. 🖋️ ",
                     name:"post[poem]", id:"post_poem" %>
+      <p>Description is currently <strong data-character-counter-target="counter"></strong> characters long.</p>
       </div>
 
       <div class="btn-container">
@@ -151,14 +153,16 @@
   <!-- Quote open form-->
   <div id="option3" class="form d-none" data-toggle-target="togglableElement">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
-      <div class="mb-3 text optional post_quote">
+      <div data-controller="character-counter" class="mb-3 text optional post_quote">
         <%= f.input :text,
+                    input_html: { data: { character_counter_target: "input" } },
                     class: "form-control text optional",
                     label: "Share your daily dose of inspiration!",
                     maxlength: 60,
                     placeholder: "Let your words become rays of sunshine that brighten up your day!",
                     name: "post[quote]",
                     id: "post_quote" %>
+        <p>Description is currently <strong data-character-counter-target="counter"></strong> characters long.</p>
       </div>
 
       <div class="btn-container">
@@ -169,7 +173,7 @@
   </div>
 
   <!-- Song open form-->
-  <div id="option4" class="form d-none" data-toggle-target="togglableElement">
+  <div data-controller="character-counter" id="option4" class="form d-none" data-toggle-target="togglableElement">
     <h2></h2>
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
       <div class="mb-3 text optional post_song">
