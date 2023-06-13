@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     start_date = params.fetch(:start_date, Date.today).to_date
     @user = current_user
     @selected_categories = @user.categories
-    @posts = Post.all
+    @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id })
   end
 
 
