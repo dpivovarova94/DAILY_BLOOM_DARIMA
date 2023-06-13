@@ -5,7 +5,7 @@ class UserCategoriesController < ApplicationController
   end
 
   def create
-    @category_ids = params[:user][:category_ids]
+    @category_ids = params[:user_category][:category_id]
 
     @category_ids.each do |category|
       if category == ""
