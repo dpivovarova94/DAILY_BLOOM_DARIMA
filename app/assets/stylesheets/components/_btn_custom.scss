@@ -35,14 +35,51 @@
   border: none;
 }
 
-.btn-list {
+.btn-list  {
   background-color: none;
-  border: 2px solid $main-blue;
-  color: $main-blue;
-  padding: 8pt;
+  border: 2pt solid $blue;
+  color: $blue;
+  padding: 4pt 8pt;
   margin: 3pt;
-  border-radius: 10pt;
+  border-radius: 18pt;
   font-size: 12pt;
   font-family: $body-font;
   display: inline-block;
+}
+
+.btn-list-checked {
+  @extend .btn-list;
+  border: 2pt solid $blue;
+  background-color: $blue;
+  color: white;
+}
+
+
+// categories listing bellow
+
+
+.tag-item {
+  display: inline-block;
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12pt;
+  border-radius: 18pt;
+  padding: 4pt 8pt;
+  background-color: none;
+  color: $blue;
+  border: 2px solid $blue;
+  margin: 3pt;
+}
+
+.tag-selector:checked + label {
+  background-color: $blue;
+  color: white;
 }
