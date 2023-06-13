@@ -23,6 +23,22 @@
   padding: 5px;
 }
 
+.btn-calendar {
+  width: 60pt;
+  padding: 5px;
+  font-size: 10pt;
+  font-weight: lighter;
+  margin-left: 0pt;
+  margin-right: 0pt;
+
+  &:active {
+    background-color: $main-yellow;
+  border: none;
+  }
+
+}
+
+
 // div.challenge-card:active {
 //   // transition: 2s;
 //   background: rgb(203,172,255);
