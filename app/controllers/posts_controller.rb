@@ -1,12 +1,14 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).order(created_at: :desc)
-    
-    # .where(category: params[:category])
-    # @posts = Post.all
-    # @posts.challenges
-    # @posts = @user.challenge
-    # @task = Task.new(:user => @current_user)
+    if params[:medium].present?
+      if params[:medium] == "photo"
+        @posts = Post.joins(:photo_attachment).where.not(active_storage_attachments: { blob_id: nil })
+      else
+        @posts = Post.where.not(params[:medium] => "")
+      end
+    else
+      @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).order(created_at: :desc)
+    end
   end
 
   def show
