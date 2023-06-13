@@ -2,7 +2,7 @@
 
   <div class="index-card-container">
     <% @posts.each do |post| %>
-      <div class="posts_cards" data-bs-toggle="modal" data-bs-target="#exampleModal" data-post-id="<%= post.id %>">
+      <div class="posts_cards" data-bs-toggle="modal" data-bs-target="#exampleModal<%= post.id %>" data-post-id="<%= post.id %>">
         <%# <%= link_to post_path(post) do %>
             <% if ! post.photo.key.nil? %>
               <div>
@@ -16,7 +16,7 @@
             <% elsif ! post.text.nil? %>
               <div>
                 <div class="card-quote">
-                  <div class="front">
+                  <div class="front" data-action="click->keyword#showKeyword">
                     <%= post.text %>
                   </div>
                 </div>
@@ -27,7 +27,7 @@
             <% elsif ! post.poem.nil? %>
               <div>
                 <div class="card-poem">
-                  <div class="front">
+                  <div class="front" data-action="click->keyword#showKeyword">
                     <%= post.poem %>
                   </div>
                 </div>
@@ -39,7 +39,7 @@
             <% elsif !post.song_url.nil? %>
               <div>
                 <div class="card-song">
-                  <div class="front">
+                  <div class="front" data-action="click->keyword#showKeyword">
                     <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
                     <% if spotify_track_id.present? %>
                       <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" width="153" height="200" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -53,8 +53,49 @@
             <% end %>
           <%# <% end %>
       </div>
-    <% end %>
-  </div>
+
+<%# modal starts here %>
+
+      <div class="modal fade" id="exampleModal<%= post.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div id="modal-body-content">
+                <div class="content-wrap">
+                  <div class="index-card-container">
+                    <div class="standar-card">
+                      <% if ! post.photo.key.nil? %>
+                          <div class="show-photo-card">
+                              <%= cl_image_tag(post.photo.key, crop: :thumb, gravity: :face) %>
+                          </div>
+                      <% elsif ! post.text.nil? %>
+                          <div class="card-quote">
+                          <%= post.text %>
+                          </div>
+                      <% elsif ! post.poem.nil? %>
+                          <div class="card-poem">
+                          <%= post.poem %>
+                          </div>
+                      <% elsif !post.song_url.nil? %>
+                          <div class="card-song">
+                            <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
+                              <% if spotify_track_id.present? %>
+                              <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" width="100%" height="auto" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                              <% end %>
+                            </div>
+                          <% end %>
+                          <div class="keyword">
+                            <%= post.challenge.keyword.name %>
+                            <p><%= post.created_at.strftime('%d %B %Y')%></p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+      <% end %>
+    </div>
 </div>
 
 
@@ -64,18 +105,21 @@ https://open.spotify.com/embed/track/2IHcAcZ4D6QRGZgmWGgGhc?utm_source=generator
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<%# <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div id="modal-body-content"></div>
+      <div id="modal-body-content">hello</div>
     </div>
   </div>
-</div>
+</div> %>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<%# <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(document).ready(function() {
+    console.log("b");
     $('#exampleModal').on('show.bs.modal', function(event) {
+      console.log("a");
       var postId = $(event.relatedTarget).data('post-id'); // Get the post ID from the clicked element
 
       $.ajax({
@@ -90,4 +134,4 @@ https://open.spotify.com/embed/track/2IHcAcZ4D6QRGZgmWGgGhc?utm_source=generator
       });
     });
   });
-</script>
+</script> %>
