@@ -133,6 +133,9 @@
   <div id="option2" class="mb-3 form d-none" data-toggle-target="togglableElement">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
       <div data-controller="character-counter" class="mb-3 text optional post_poem">
+
+        <%# <% hidden_field_tag :medium, "poem" %>
+
         <%= f.input :poem,
                     input_html: { data: { character_counter_target: "input" } },
                     class:"form-control text optional",
