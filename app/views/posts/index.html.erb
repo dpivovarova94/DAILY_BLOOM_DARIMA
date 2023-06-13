@@ -5,7 +5,7 @@
       <div class="posts_cards" data-bs-toggle="modal" data-bs-target="#exampleModal" data-post-id="<%= post.id %>">
         <%# <%= link_to post_path(post) do %>
             <% if ! post.photo.key.nil? %>
-              <div data-controller="keyword">
+              <div>
                 <div class="front"  >
                   <%= cl_image_tag(post.photo.key, class:"card-photo", crop: :thumb, gravity: :face) %>
                 </div>
@@ -14,9 +14,9 @@
                 </div>
               </div>
             <% elsif ! post.text.nil? %>
-              <div data-controller="keyword">
+              <div>
                 <div class="card-quote">
-                  <div class="front" data-action="click->keyword#showKeyword">
+                  <div class="front">
                     <%= post.text %>
                   </div>
                 </div>
@@ -25,9 +25,9 @@
                 </div>
               </div>
             <% elsif ! post.poem.nil? %>
-              <div data-controller="keyword">
+              <div>
                 <div class="card-poem">
-                  <div class="front" data-action="click->keyword#showKeyword">
+                  <div class="front">
                     <%= post.poem %>
                   </div>
                 </div>
@@ -37,9 +37,9 @@
                 </div>
               </div>
             <% elsif !post.song_url.nil? %>
-              <div data-controller="keyword">
+              <div>
                 <div class="card-song">
-                  <div class="front" data-action="click->keyword#showKeyword">
+                  <div class="front">
                     <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
                     <% if spotify_track_id.present? %>
                       <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" width="153" height="200" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
