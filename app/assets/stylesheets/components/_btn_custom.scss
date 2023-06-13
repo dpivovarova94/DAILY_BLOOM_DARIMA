@@ -70,6 +70,59 @@
 }
 
 
+// medium selection buttons on the feed
+
+.btn-quote {
+  background-color: $main-yellow;
+  border: 2pt solid $blue;
+  color: $blue;
+  padding: 4pt 8pt;
+  margin: 3pt;
+  border-radius: 18pt;
+  font-size: 12pt;
+  font-family: $body-font;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-song {
+  background-color: $main-purple;
+  border: 2pt solid $blue;
+  color: $blue;
+  padding: 4pt 8pt;
+  margin: 3pt;
+  border-radius: 18pt;
+  font-size: 12pt;
+  font-family: $body-font;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-poem {
+  background-color: $main-blue;
+  border: 2pt solid $blue;
+  color: $blue;
+  padding: 4pt 8pt;
+  margin: 3pt;
+  border-radius: 18pt;
+  font-size: 12pt;
+  font-family: $body-font;
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-photo {
+  background-color: $main-green;
+  border: 2pt solid $blue;
+  color: $blue;
+  padding: 4pt 8pt;
+  margin: 3pt;
+  border-radius: 18pt;
+  font-size: 12pt;
+  font-family: $body-font;
+  display: inline-block;
+  text-decoration: none;
+}
+
 // categories listing bellow
 
 
