@@ -18,11 +18,13 @@ puts "database cleaned 🧹"
 
 # Seed Users
 user = User.create(
+  username: "Lilly",
   email: "lilly@bloom.com",
   password: "123456"
 )
 
 user2 = User.create(
+  username: "Rose",
   email: "rose@bloom.com",
   password: "123456"
 )
