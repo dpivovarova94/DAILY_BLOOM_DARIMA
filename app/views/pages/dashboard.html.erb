@@ -15,13 +15,13 @@
 
 
     <% if user_signed_in? && current_user.avatar_url.present? %>
-      <%= link_to dashboard_path do %>
-      <%= image_tag current_user.avatar_url, class: "avatar" %>
-      <% end %>
+    <%= link_to edit_user_registration_path do %>
+    <%= image_tag current_user.avatar_url, class: "avatar" %>
+    <% end %>
     <% else %>
-      <%= link_to dashboard_path do %>
-      <%= inline_svg("avatar.svg", class: "avatar") %>
-      <% end %>
+    <%= link_to edit_user_registration_path do %>
+    <%= inline_svg("avatar.svg", class: "avatar") %>
+    <% end %>
     <% end %>
   </div>
 <div class="m3" style= "text-align: center;" >
