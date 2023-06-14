@@ -51,16 +51,29 @@
   border: none;
 }
 
-.btn-list  {
-  background-color: none;
-  border: 2pt solid $blue;
-  color: $blue;
+///////// OLD BUTTON LIST DESIGN ////////
+// .btn-list  {
+//   background-color: none;
+//   border: 2pt solid $blue;
+//   color: $blue;
+//   padding: 4pt 8pt;
+//   margin: 3pt;
+//   border-radius: 18pt;
+//   font-size: 12pt;
+//   font-family: $body-font;
+//   display: inline-block;
+// }
+
+.btn-list {
+  background-color: white;
+  border: 2pt dashed black;
+  color: black;
   padding: 4pt 8pt;
-  margin: 3pt;
   border-radius: 18pt;
-  font-size: 12pt;
-  font-family: $body-font;
+  font-size: 16pt;
+  font-family: "Inter", "sans-serif";
   display: inline-block;
+  text-decoration: none;
 }
 
 .btn-list-checked {
@@ -75,58 +88,52 @@
 
 .btn-quote {
   background-color: $main-yellow;
-  border: 2pt solid $blue;
-  color: $blue;
+  border: 2pt dashed black;
+  color: black;
   padding: 4pt 8pt;
-  margin: 3pt;
   border-radius: 18pt;
-  font-size: 12pt;
-  font-family: $body-font;
+  font-size: 16pt;
+  font-family: "Inter", "sans-serif";
   display: inline-block;
   text-decoration: none;
 }
 
 .btn-song {
   background-color: $main-purple;
-  border: 2pt solid $blue;
-  color: $blue;
+  border: 2pt dashed black;
+  color: black;
   padding: 4pt 8pt;
-  margin: 3pt;
   border-radius: 18pt;
-  font-size: 12pt;
-  font-family: $body-font;
+  font-size: 16pt;
+  font-family: "Inter", "sans-serif";
   display: inline-block;
   text-decoration: none;
 }
 
 .btn-poem {
   background-color: $main-blue;
-  border: 2pt solid $blue;
-  color: $blue;
+  border: 2pt dashed black;
+  color: black;
   padding: 4pt 8pt;
-  margin: 3pt;
   border-radius: 18pt;
-  font-size: 12pt;
-  font-family: $body-font;
+  font-size: 16pt;
+  font-family: "Inter", "sans-serif";
   display: inline-block;
   text-decoration: none;
 }
 .btn-photo {
   background-color: $main-green;
-  border: 2pt solid $blue;
-  color: $blue;
+  border: 2pt dashed black;
+  color: black;
   padding: 4pt 8pt;
-  margin: 3pt;
   border-radius: 18pt;
-  font-size: 12pt;
-  font-family: $body-font;
+  font-size: 16pt;
+  font-family: "Inter", "sans-serif";
   display: inline-block;
   text-decoration: none;
 }
 
 // categories listing bellow
-
-
 .tag-item {
   display: inline-block;
 }
@@ -139,16 +146,87 @@
 .tag-selector + label {
   cursor: pointer;
   display: inline-block;
-  font-size: 12pt;
-  border-radius: 18pt;
+  // font-size: 12pt;
+  // border-radius: 18pt;
+  // padding: 4pt 8pt;
+  // background-color: none;
+  // color: $blue;
+  // border: 2px solid $blue;
+  // margin: 3pt;
+  background-color: white;
+  border: 2pt dashed black;
+  color: black;
   padding: 4pt 8pt;
-  background-color: none;
-  color: $blue;
-  border: 2px solid $blue;
-  margin: 3pt;
+  border-radius: 18pt;
+  font-size: 16pt;
+  font-family: "Inter", "sans-serif";
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .tag-selector:checked + label {
-  background-color: $blue;
+  background-color: $black;
   color: white;
 }
+
+
+
+
+
+
+
+
+
+///// Aternative Index Button //////
+    // .btn-quote {
+    //   background-color: $main-yellow;
+    //   border: 2pt solid $blue;
+    //   color: $blue;
+    //   padding: 4pt 8pt;
+    //   margin: 3pt;
+    //   border-radius: 18pt;
+    //   font-size: 12pt;
+    //   font-family: $body-font;
+    //   display: inline-block;
+    //   text-decoration: none;
+    // }
+
+    // .btn-song {
+    //   background-color: $main-purple;
+    //   border: 2pt solid $blue;
+    //   color: $blue;
+    //   padding: 4pt 8pt;
+    //   margin: 3pt;
+    //   border-radius: 18pt;
+    //   font-size: 12pt;
+    //   font-family: $body-font;
+    //   display: inline-block;
+    //   text-decoration: none;
+    // }
+
+    // .btn-poem {
+    //   background-color: $main-blue;
+    //   border: 2pt solid $blue;
+    //   color: $blue;
+    //   padding: 4pt 8pt;
+    //   margin: 3pt;
+    //   border-radius: 18pt;
+    //   font-size: 12pt;
+    //   font-family: $body-font;
+    //   display: inline-block;
+    //   text-decoration: none;
+    // }
+    // .btn-photo {
+    //   background-color: $main-green;
+    //   border: 2pt solid $blue;
+    //   color: $blue;
+    //   padding: 4pt 8pt;
+    //   margin: 3pt;
+    //   border-radius: 18pt;
+    //   font-size: 12pt;
+    //   font-family: $body-font;
+    //   display: inline-block;
+    //   text-decoration: none;
+    // }
