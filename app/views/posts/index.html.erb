@@ -35,46 +35,46 @@
           <%# <% end %>
       </div>
 
-<%# modal starts here %>
+<%# modal starts here  keep it inside post card div%>
 
-      <div class="modal fade" id="exampleModal<%= post.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-              <div id="modal-body-content">
-                <div class="content-wrap">
-                  <div class="index-card-container">
-                    <div class="standar-card">
-                      <% if ! post.photo.key.nil? %>
-                          <div class="show-photo-card">
-                              <%= cl_image_tag(post.photo.key, crop: :thumb, gravity: :face) %>
-                          </div>
-                      <% elsif ! post.text.nil? %>
-                          <div class="card-quote">
-                          <%= post.text %>
-                          </div>
-                      <% elsif ! post.poem.nil? %>
-                          <div class="card-poem">
-                          <%= post.poem %>
-                          </div>
-                      <% elsif !post.song_url.nil? %>
-                          <div class="card-song">
-                            <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
-                              <% if spotify_track_id.present? %>
-                              <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" width="100%" height="auto" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                              <% end %>
+            <div class="modal fade" id="exampleModal<%= post.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div id="modal-body-content">
+                      <div class="content-wrap">
+                        <div class="index-card-container">
+                          <div class="standar-card">
+                            <% if ! post.photo.key.nil? %>
+                                <div class="show-photo-card">
+                                    <%= cl_image_tag(post.photo.key, crop: :thumb, gravity: :face) %>
+                                </div>
+                            <% elsif ! post.text.nil? %>
+                                <div class="card-quote">
+                                <%= post.text %>
+                                </div>
+                            <% elsif ! post.poem.nil? %>
+                                <div class="card-poem">
+                                <%= post.poem %>
+                                </div>
+                            <% elsif !post.song_url.nil? %>
+                                <div class="card-song">
+                                  <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
+                                    <% if spotify_track_id.present? %>
+                                    <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" width="100%" height="auto" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                                    <% end %>
+                                  </div>
+                                <% end %>
+                                <div class="keyword">
+                                  <%= post.challenge.keyword.name %>
+                                  <p><%= post.created_at.strftime('%d %B %Y')%></p>
+                                  </div>
+                              </div>
                             </div>
-                          <% end %>
-                          <div class="keyword">
-                            <%= post.challenge.keyword.name %>
-                            <p><%= post.created_at.strftime('%d %B %Y')%></p>
-                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
                   </div>
-                </div>
-            </div>
-        </div>
+              </div>
       <% end %>
     </div>
 </div>
