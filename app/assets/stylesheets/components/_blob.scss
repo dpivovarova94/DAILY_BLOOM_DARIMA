@@ -1,4 +1,5 @@
 *
+//dashboard blob settings and avatar here
 {
   margin: 0;
   padding: 0;
@@ -38,6 +39,11 @@ section {
 .blob-dashboard {
   position: relative;
   filter: drop-shadow(0 0 15px $main-green);
+    // outline: 4pt solid $gray;
+    fill: $main-green; /* white fill */
+  // stroke: green; /* green stroke */
+  stroke-width: 4; /* stroke width, adjust as needed */
+
 
 }
 
@@ -47,6 +53,7 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 40%; /* adjust as needed */
+
   height: auto; /* adjust as needed */
   // outline: 4pt solid $gray;
   outline: none;
