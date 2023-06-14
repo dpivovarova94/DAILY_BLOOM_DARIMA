@@ -9,5 +9,9 @@ class PagesController < ApplicationController
     @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id })
   end
 
+  def wrapped
+    @user = current_user
+    @last_posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).last(4)
+  end
 
 end
