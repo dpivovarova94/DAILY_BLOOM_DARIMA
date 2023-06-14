@@ -1,79 +1,73 @@
-<div class="content-wrap container_feed">
-<div class="button-selection mb-3">
-  <%= link_to 'Quote', feed_path(medium: (params[:medium] == 'text' ? nil : 'text')), class: 'btn-quote' %>
-  <%= link_to 'Song', feed_path(medium: (params[:medium] == 'song_url' ? nil : 'song_url')), class: 'btn-song' %>
-  <%= link_to 'Poem', feed_path(medium: (params[:medium] == 'poem' ? nil : 'poem')), class: 'btn-poem' %>
-  <%= link_to 'Photo', feed_path(medium: (params[:medium] == 'photo' ? nil : 'photo')), class: 'btn-photo' %>
-</div>
-  <div class="index-card-container feed">
+<div class="container_feed">
+  <div class="button-selection">
+    <%= link_to 'Quote', feed_path(medium: (params[:medium] == 'text' ? nil : 'text')), class: 'btn-quote' %>
+    <%= link_to 'Song', feed_path(medium: (params[:medium] == 'song_url' ? nil : 'song_url')), class: 'btn-song' %>
+    <%= link_to 'Poem', feed_path(medium: (params[:medium] == 'poem' ? nil : 'poem')), class: 'btn-poem' %>
+    <%= link_to 'Photo', feed_path(medium: (params[:medium] == 'photo' ? nil : 'photo')), class: 'btn-photo' %>
+  </div>
+
+  <div class="feed">
     <% @posts.each do |post| %>
       <div class="posts_cards" data-bs-toggle="modal" data-bs-target="#exampleModal<%= post.id %>" data-post-id="<%= post.id %>">
-        <%# <%= link_to post_path(post) do %>
-            <% if ! post.photo.key.nil? %>
-              <%= cl_image_tag(post.photo.key, class:"card-photo", crop: :thumb, gravity: :face) %>
-            <% elsif ! post.text.nil? %>
-              <div class="card-quote">
-                <%= post.text %>
-              </div>
-            <% elsif ! post.poem.nil? %>
-              <div class="card-poem">
-                <%= post.poem %>
-              </div>
-            <% elsif !post.song_url.nil? %>
-              <div>
-                <div class="card-song">
-                  <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
-                  <% if spotify_track_id.present? %>
-                    <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" style="border-radius:12px" width="352" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                  <% end %>
-                </div>
-                <div data-keyword-target="figure" class="d-none">
-                    <%= post.challenge.keyword.name %>
-                </div>
-              </div>
+        <% if ! post.photo.key.nil? %>
+          <%= cl_image_tag(post.photo.key, class:"card-photo", crop: :thumb, gravity: :face) %>
+        <% elsif ! post.text.nil? %>
+          <div class="card-quote">
+            <%= post.text %>
+          </div>
+        <% elsif ! post.poem.nil? %>
+          <div class="card-poem">
+            <%= post.poem %>
+          </div>
+        <% elsif !post.song_url.nil? %>
+          <div class="card-song">
+            <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
+            <% if spotify_track_id.present? %>
+              <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" style="border-radius:12px" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             <% end %>
+          </div>
+        <% end %>
       </div>
 
-<%# modal starts here  keep it inside post card div%>
-
-            <div class="modal fade" id="exampleModal<%= post.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div id="modal-body-content">
-                      <div class="content-wrap">
-                        <div class="index-card-container">
-                          <div class="standar-card">
-                            <% if ! post.photo.key.nil? %>
-                                <div class="show-photo-card">
-                                    <%= cl_image_tag(post.photo.key, crop: :thumb, gravity: :face) %>
-                                </div>
-                            <% elsif ! post.text.nil? %>
-                                <div class="card-quote">
-                                <%= post.text %>
-                                </div>
-                            <% elsif ! post.poem.nil? %>
-                                <div class="card-poem">
-                                <%= post.poem %>
-                                </div>
-                            <% elsif !post.song_url.nil? %>
-                                <div class="card-song">
-                                  <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
-                                    <% if spotify_track_id.present? %>
-                                    <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" width="100%" height="auto" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                                    <% end %>
-                                  </div>
-                                <% end %>
-                                <div class="keyword">
-                                  <%= post.challenge.keyword.name %>
-                                  <p><%= post.created_at.strftime('%d %B %Y')%></p>
-                                  </div>
-                              </div>
-                            </div>
-                          </div>
+        <!-- Modal starts here -->
+        <div class="modal fade" id="exampleModal<%= post.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="height: 70vh;border-radius: 10pt;">
+              <div id="modal-body-content">
+                <div class="content-wrap" style="padding-top: 10pt;">
+                  <div class="index-card-container">
+                    <div class="standar-card d-flex flex-column">
+                      <% if ! post.photo.key.nil? %>
+                        <div class="show-photo-card" style="max-height: 60vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                          <%= cl_image_tag(post.photo.key, crop: :fill, gravity: :face, class: 'img-responsive', style: 'max-height: 100%; width: auto;') %>
                         </div>
+                      <% elsif ! post.text.nil? %>
+                        <div class="card-quote flex-grow-1" style="height: 60vh; font-size: 30pt !important;">
+                          <div><%= post.text %></div>
+                        </div>
+                      <% elsif ! post.poem.nil? %>
+                        <div class="card-poem flex-grow-1" style="height: 60vh; font-size: 30pt !important;">
+                          <div><%= post.poem %></div>
+                        </div>
+                      <% elsif !post.song_url.nil? %>
+                        <div class="card-song">
+                          <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
+                          <% if spotify_track_id.present? %>
+                            <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" width="100%" height="auto" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                          <% end %>
+                        </div>
+                      <% end %>
+                      <div class="keyword" style="height: 5vh;">
+                        <%= post.challenge.keyword.name %>
+                        <p><%= post.created_at.strftime('%d %B %Y')%></p>
                       </div>
+                    </div> <!-- Missing closing tag added here -->
                   </div>
+                </div>
               </div>
-      <% end %>
-    </div>
+            </div>
+          </div>
+        </div> <!-- Modal ends here -->
+    <% end %>
+  </div>
 </div>
