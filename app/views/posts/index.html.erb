@@ -46,16 +46,13 @@
                           </div>
 
                       <% elsif ! post.text.nil? %>
-                          <div class="card-quote flex-grow-1" style="height: 60vh;">
-                              <%= simple_format(post.text, {}, wrapper_tag: "div") do |text| %><!-- inserts the text in a div with the content in it to set the text size -->
-                              <p style="font-size: 24pt !important;"><%= text %></p> <!-- text size here -->
-                              <% end %>
+                          <div class="card-quote flex-grow-1" style="height: 60vh; font-size: 30pt !important;">
+                          <div><%= post.text %></div>
                           </div>
+
                       <% elsif ! post.poem.nil? %>
-                          <div class="card-quote flex-grow-1" style="height: 60vh;">
-                              <%= simple_format(post.poem, {}, wrapper_tag: "div") do |poem| %>
-                              <p style="font-size: 24pt !important;"><%= poem %></p> <!-- text size here -->
-                              <% end %>
+                          <div class="card-poem flex-grow-1" style="height: 60vh; font-size: 30pt !important;">
+                          <div><%= post.poem %></div>
                           </div>
                       <% elsif !post.song_url.nil? %>
                           <div class="card-song">
