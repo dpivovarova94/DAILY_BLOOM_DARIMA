@@ -256,7 +256,7 @@ challenge1 = Challenge.create!(
 
 test = Post.create!(
 date: Date.today - 1,
-song_url: "https://open.spotify.com/embed/track/6INLpBxo9F5QMer04VXEnd?utm_source=generator",
+song_url: "https://open.spotify.com/track/3vUlwYTnFIHHHmUCDbvHkR?si=JbB3xYWLSyaUaKttWVp15Q",
 challenge: challenge1
 )
 
