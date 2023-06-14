@@ -34,17 +34,17 @@ alex = User.create(
 )
 
 # Seed Users
-# user = User.create(
-#   username: "Lilly",
-#   email: "lilly@bloom.com",
-#   password: "123456"
-# )
+user = User.create(
+  username: "Lilly",
+  email: "lilly@bloom.com",
+  password: "123456"
+)
 
-# user2 = User.create(
-#   username: "Rose",
-#   email: "rose@bloom.com",
-#   password: "123456"
-# )
+user2 = User.create(
+  username: "Rose",
+  email: "rose@bloom.com",
+  password: "123456"
+)
 
 puts "test user created"
 
@@ -231,20 +231,20 @@ UserCategory.create(
 )
 
 # User Categories for User Lilly
-# 2.times do
-#   UserCategory.create(
-#     user: user,
-#     category: Category.all.sample
-#   )
-# end
+2.times do
+  UserCategory.create(
+    user: user,
+    category: Category.all.sample
+  )
+end
 
-# # User Categories for User Rose
-# 2.times do
-#   UserCategory.create(
-#     user: user2,
-#     category: Category.all.sample
-#   )
-# end
+# User Categories for User Rose
+2.times do
+  UserCategory.create(
+    user: user2,
+    category: Category.all.sample
+  )
+end
 
 # AXEL POSTS
 axel1 = Challenge.create!(
@@ -463,7 +463,7 @@ picture14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 picture14.save
 
 
-# ALEX POSTS
+# ALEX POSTS ####################################################
 
 alex1 = Challenge.create!(
   keyword: Keyword.find_by(name: "Magic"),
@@ -472,33 +472,37 @@ alex1 = Challenge.create!(
   start_date: Date.today - 1.days
 )
 
-alex1 = Post.create!(
-date: Date.today - 1.days,
-text: "Trust the Process",
-challenge: alex1
+Post.create!(
+  date: Date.today - 1.days,
+  text: "Trust the Process",
+  challenge: alex1
 )
 
+#######################################
+
 alex2 = Challenge.create!(
-  keyword: Keyword.find_by(name: "Beach"),
+  keyword: Keyword.find_by(name: "Sun"),
   user: User.find_by(username: "Alex"),
   created_at: Date.today - 2.days,
   start_date: Date.today - 2.days
 )
-
-alex2 = Post.create!(
-date: Date.today - 2.days,
-song_url: "https://open.spotify.com/track/3vUlwYTnFIHHHmUCDbvHkR?si=JbB3xYWLSyaUaKttWVp15Q",
-challenge: alex2
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686771872/heaven-ly-mind_sqnmes.jpg")
+picture2 = Post.create!(
+  date: Date.today - 2.days,
+  challenge: alex2
 )
+picture2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture2.save
+
+#######################################
 
 alex3 = Challenge.create!(
-  keyword: Keyword.find_by(name: "Exploration"),
+  keyword: Keyword.find_by(name: "Dogs"),
   user: User.find_by(username: "Alex"),
   created_at: Date.today - 3.days,
   start_date: Date.today - 3.days
 )
-
-file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686761453/VALERIEVERHEUL_csv24a.jpg")
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686774534/IMG_1024_qnnj0j.jpg")
 picture3 = Post.create!(
   date: Date.today - 3.days,
   challenge: alex3
@@ -506,33 +510,38 @@ picture3 = Post.create!(
 picture3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 picture3.save
 
+#######################################
+
 alex4 = Challenge.create!(
   keyword: Keyword.find_by(name: "Magic"),
   user: User.find_by(username: "Alex"),
   created_at: Date.today - 4.days,
   start_date: Date.today - 4.days
 )
-
-alex4 = Post.create!(
-date: Date.today - 4.days,
-text: "Trust the Process",
-challenge: alex4
+Post.create!(
+  date: Date.today - 4.days,
+  poem: "Lost in lines of code, I find solace, my heart dances with HTML.",
+  challenge: alex4
 )
 
+#######################################
+
 alex5 = Challenge.create!(
-  keyword: Keyword.find_by(name: "Friends"),
+  keyword: Keyword.find_by(name: "Friendship"),
   user: User.find_by(username: "Alex"),
   created_at: Date.today - 5.days,
   start_date: Date.today - 5.days
 )
-
-file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686761526/jasminehendery_oudkb5.jpg")
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686771996/_3_oetxsx.jpg")
 picture5 = Post.create!(
   date: Date.today - 5.days,
-  challenge: alex3
+  challenge: alex5
 )
 picture5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 picture5.save
+
+
+#######################################
 
 alex6 = Challenge.create!(
   keyword: Keyword.find_by(name: "Magic"),
@@ -540,13 +549,276 @@ alex6 = Challenge.create!(
   created_at: Date.today - 6.days,
   start_date: Date.today - 6.days
 )
+Post.create!(
+  date: Date.today - 6.days,
+  song_url: "https://open.spotify.com/intl-de/track/2IHcAcZ4D6QRGZgmWGgGhc?si=5f078b3dc13845da",
+  challenge: alex6
+)
+#######################################
 
-alex6 = Post.create!(
-date: Date.today - 6.days,
-poem: "Trust the Process",
-challenge: alex6
+alex7 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Dogs"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 7.days,
+  start_date: Date.today - 7.days
+)
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686774528/IMG_1025_gnfhrh.jpg")
+picture7 = Post.create!(
+  date: Date.today - 7.days,
+  challenge: alex7
+)
+picture7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture7.save
+
+#######################################
+
+alex8 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Magic"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 8.days,
+  start_date: Date.today - 8.days
+)
+Post.create!(
+  date: Date.today - 8.days,
+  text: "A photo a day keeps the blues away",
+  challenge: alex8
 )
 
+#######################################
+
+alex9 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Magic"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 9.days,
+  start_date: Date.today - 9.days
+)
+Post.create!(
+  date: Date.today - 9.days,
+  song_url: "https://open.spotify.com/intl-de/track/3NlJO0Tf9FLjUTHepZgxYf?si=5888c1557bae47f9",
+  challenge: alex9
+)
+
+#######################################
+
+alex10 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Paintings"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 10.days,
+  start_date: Date.today - 10.days
+)
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686772074/__qsdtmu.jpg")
+picture10 = Post.create!(
+  date: Date.today - 10.days,
+  challenge: alex10
+)
+picture10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture10.save
+
+#######################################
+
+alex11 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Dogs"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 11.days,
+  start_date: Date.today - 11.days
+)
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686771835/PHOTO-2023-06-14-19-42-30_2_x1gs3u.jpg")
+picture11 = Post.create!(
+  date: Date.today - 11.days,
+  challenge: alex11
+)
+picture11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture11.save
+
+
+#######################################
+
+alex12 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Sun"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 12.days,
+  start_date: Date.today - 12.days
+)
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686772826/roomdecoration_roominspiration_lbq0qz.jpg")
+picture12 = Post.create!(
+  date: Date.today - 12.days,
+  challenge: alex12
+)
+picture12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture12.save
+
+#######################################
+
+alex13 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Cats"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 13.days,
+  start_date: Date.today - 13.days
+)
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686772787/PHOTO-2023-06-14-20-02-37_ufzjb7.jpg")
+picture13 = Post.create!(
+  date: Date.today - 13.days,
+  challenge: alex13
+)
+picture13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture13.save
+
+
+#######################################
+
+alex14 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Magic"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 14.days,
+  start_date: Date.today - 14.days
+)
+Post.create!(
+  date: Date.today - 14.days,
+  song_url: "https://open.spotify.com/track/7Fx3o9QtK1vtpkEWkM6OJu?si=14fd24d50cf04957",
+  challenge: alex14
+)
+#######################################
+#######################################
+
+alex15 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Exploration"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 15.days,
+  start_date: Date.today - 15.days
+)
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686761453/VALERIEVERHEUL_csv24a.jpg")
+picture15 = Post.create!(
+  date: Date.today - 15.days,
+  challenge: alex15
+)
+picture15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture15.save
+
+#######################################
+
+alex16 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Magic"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 16.days,
+  start_date: Date.today - 16.days
+)
+Post.create!(
+  date: Date.today - 16.days,
+  poem: "Blossoms bloom, a vibrant array,
+  Nature's artwork in the light of day.",
+  challenge: alex16
+)
+
+
+#######################################
+
+alex18 = Challenge.create!(
+  keyword: Keyword.find_by(name: "People"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 18.days,
+  start_date: Date.today - 18.days
+)
+Post.create!(
+  date: Date.today - 18.days,
+  song_url: "https://open.spotify.com/track/3vUlwYTnFIHHHmUCDbvHkR?si=JbB3xYWLSyaUaKttWVp15Q",
+  challenge: alex18
+)
+
+
+#######################################
+
+alex20 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Magic"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 20.days,
+  start_date: Date.today - 20.days
+)
+Post.create!(
+  date: Date.today - 20.days,
+  poem: "Pixels on my screen, they sparkle like stars, creating digital dreams.",
+  challenge: alex20
+)
+
+#######################################
+
+alex21 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Friendship"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 21.days,
+  start_date: Date.today - 21.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686761526/jasminehendery_oudkb5.jpg")
+picture21 = Post.create!(
+  date: Date.today - 21.days,
+  challenge: alex21
+)
+picture21.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture21.save
+
+#######################################
+
+alex22 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Magic"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 22.days,
+  start_date: Date.today - 22.days
+)
+Post.create!(
+  date: Date.today - 22.days,
+  poem: "Code flows, magic grows.",
+  challenge: alex22
+)
+
+
+#######################################
+
+alex23 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Magic"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 23.days,
+  start_date: Date.today - 23.days
+)
+Post.create!(
+  date: Date.today - 23.days,
+  song_url: "https://open.spotify.com/intl-de/track/2uG7RbrJSq5bZWv7ufDyTg?si=d886edeab3914d15",
+  challenge: alex23
+)
+
+#######################################
+
+
+alex24 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Magic"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 24.days,
+  start_date: Date.today - 24.days
+)
+Post.create!(
+  date: Date.today - 24.days,
+  poem: "At Le Wagon, the Hogwarts on Rails,
+  they teach us some magical spells,
+  and just if it seems too hard,
+  debugger brings light into the dark.",
+  challenge: alex24
+)
+
+#######################################
+
+alex25 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Magic"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 25.days,
+  start_date: Date.today - 25.days
+)
+Post.create!(
+  date: Date.today - 25.days,
+  poem: "Each bloom tells a story, delicate and rare,
+  Nature's poetry, floating on fragrant air.",
+  challenge: alex25
+)
+
+#######################################
 
 puts "posts created"
 
@@ -562,458 +834,458 @@ puts "posts created"
 # Create Seeds with personalized Challenges for Test User Lilly
 
 # Post 1
-# challenge1 = Challenge.create!(
-#     keyword: Keyword.find_by(name: "Beach"),
-#     user: User.find_by(email: "lilly@bloom.com"),
-#     created_at: Date.today - 25.days,
-#     start_date: Date.today - 25.days
-#   )
+challenge1 = Challenge.create!(
+    keyword: Keyword.find_by(name: "Beach"),
+    user: User.find_by(email: "lilly@bloom.com"),
+    created_at: Date.today - 25.days,
+    start_date: Date.today - 25.days
+  )
 
 # puts "challenge changed to yesterday"
 
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230232/Hanna_Scho%CC%88nberg_dbdyak.jpg")
-# picture1 = Post.create!(
-#   date: Date.today - 25.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge1
-# )
-# picture1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture1.save
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230232/Hanna_Scho%CC%88nberg_dbdyak.jpg")
+picture1 = Post.create!(
+  date: Date.today - 25.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge1
+)
+picture1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture1.save
 
-# puts "post 1 created"
+puts "post 1 created"
 
-# # Post 2
+# Post 2
 
-# challenge2 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Green"),
+challenge2 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Green"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 1.days,
+  start_date: Date.today - 1.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230288/Green_tiles_zgejii.jpg")
+picture2 = Post.create!(
+  date: Date.today - 1.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge2
+)
+picture2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture2.save
+
+# Post 3
+
+challenge3 = Challenge.create!(
+  keyword: Keyword.find_by(name: "People"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 2.days,
+  start_date: Date.today - 2.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230336/__dpy8yi.png")
+picture3 = Post.create!(
+  date: Date.today - 2.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge3
+)
+picture3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture3.save
+
+# Post 4
+
+challenge4 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Paintings"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 3.days,
+  start_date: Date.today - 3.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230372/Instagram_ngwy4a.jpg")
+picture4 = Post.create!(
+  date: Date.today - 3.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge4
+)
+picture4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture4.save
+
+# Post 5
+
+challenge5 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Friendship"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 4.days,
+  start_date: Date.today - 4.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230434/_3_hi43vk.jpg")
+picture5 = Post.create!(
+  date: Date.today - 4.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge5
+)
+picture5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture5.save
+
+# Post 6
+
+challenge6 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Cats"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 5.days,
+  start_date: Date.today - 5.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230471/__Kopie_2_wug2ll.jpg")
+picture6 = Post.create!(
+  date: Date.today - 5.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge6
+)
+picture6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture6.save
+
+# Post 7
+
+challenge7 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Friendship"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 6.days,
+  start_date: Date.today - 6.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230512/adrianmntz_zfvjew.jpg")
+picture7 = Post.create!(
+  date: Date.today - 6.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge7
+)
+picture7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture7.save
+
+# Post Song 1 deleted
+
+# Post 8
+
+challenge9 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Extra Cheese"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 8.days,
+  start_date: Date.today - 8.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231888/__voqctw.jpg")
+picture8 = Post.create!(
+  date: Date.today - 8.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge9
+)
+picture8.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture8.save
+
+
+# Post 9
+
+challenge10 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Beach"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 9.days,
+  start_date: Date.today - 9.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230569/%EF%B8%8F_mrllgf.jpg")
+picture9 = Post.create!(
+  date: Date.today - 9.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge10
+)
+picture9.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture9.save
+
+# Post 10
+
+challenge11 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Dogs"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 10.days,
+  start_date: Date.today - 10.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230615/zfdjstq3wucwupqnj2qh.jpg")
+picture10 = Post.create!(
+  date: Date.today - 10.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge11
+)
+picture10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture10.save
+
+# Post 11
+
+challenge12 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Flowers"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 11.days,
+  start_date: Date.today - 11.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230665/Paper_Collective_Three_Flowers_30x40_-_Affischer_Fra%CC%8An_Magasin_a1vzhp.jpg")
+picture11 = Post.create!(
+  date: Date.today - 11.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge12
+)
+picture11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture11.save
+
+# Post Song 2 deleted
+
+# challenge13 = Challenge.create!(
+#   keyword: Keyword.find_by(name: "Laughter"),
 #   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 1.days,
-#   start_date: Date.today - 1.days
+#   created_at: Date.today - 12.days,
+#   start_date: Date.today - 12.days
 # )
 
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230288/Green_tiles_zgejii.jpg")
-# picture2 = Post.create!(
-#   date: Date.today - 1.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge2
+# song2 = Post.create!(
+#   date: Date.today,
+#   song_url: "https://open.spotify.com/embed/track/6INLpBxo9F5QMer04VXEnd?",
+#   challenge: challenge13
 # )
-# picture2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture2.save
 
-# # Post 3
+# Post 12
 
-# challenge3 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "People"),
+challenge14 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Fruits"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 13.days,
+  start_date: Date.today - 13.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230981/hehezee_fnjyrf.png")
+picture12 = Post.create!(
+  date: Date.today - 13.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge14
+)
+picture12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture12.save
+
+# Post 13
+
+challenge15 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Sun"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 14.days,
+  start_date: Date.today - 14.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230759/jasminehendery_qqtasy.jpg")
+picture13 = Post.create!(
+  date: Date.today - 14.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge15
+)
+picture13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture13.save
+
+# Post 14
+
+challenge16 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Bread"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 15.days,
+  start_date: Date.today - 15.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230868/b2pjgsrr8rlyw7veu6pz.jpg")
+picture14 = Post.create!(
+  date: Date.today - 15.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge16
+)
+picture14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture14.save
+
+# Post 15
+
+challenge16 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Muggle"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 16.days,
+  start_date: Date.today - 16.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230926/Monday_Reading_at_The_Non_Sequitur_pafvi4.jpg")
+picture15 = Post.create!(
+  date: Date.today - 16.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge16
+)
+picture15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture15.save
+
+# Post 16
+
+challenge17 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Colours"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 17.days,
+  start_date: Date.today - 17.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231210/Patterns_Everywhere_ijoj99.jpg")
+picture16 = Post.create!(
+  date: Date.today - 17.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge17
+)
+picture16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture16.save
+
+# Post 17 photo not loading properly
+
+# challenge18 = Challenge.create!(
+#   keyword: Keyword.find_by(name: "Blue"),
 #   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 2.days,
-#   start_date: Date.today - 2.days
+#   created_at: Date.today - 18.days,
+#   start_date: Date.today - 18.days
 # )
 
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230336/__dpy8yi.png")
-# picture3 = Post.create!(
-#   date: Date.today - 2.days,
+# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231260/IMG_0730_gnhqfn.heic")
+# picture17 = Post.create!(
+#   date: Date.today,
 #   song_url: "",
 #   poem: "",
 #   text: "",
 #   picture_url: "",
-#   challenge: challenge3
+#   challenge: challenge18
 # )
-# picture3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture3.save
+# picture17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+# picture17.save
 
-# # Post 4
+# Post Text 1
 
-# challenge4 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Paintings"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 3.days,
-#   start_date: Date.today - 3.days
-# )
+challenge19 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Flowers"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 19.days,
+  start_date: Date.today - 19.days
+)
 
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230372/Instagram_ngwy4a.jpg")
-# picture4 = Post.create!(
-#   date: Date.today - 3.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge4
-# )
-# picture4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture4.save
+text = Post.create!(
+  date: Date.today - 19.days,
+  song_url: "",
+  poem: "",
+  text: "Trust the Process",
+  picture_url: "",
+  challenge: challenge19
+)
 
-# # Post 5
+# Post 18
 
-# challenge5 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Friendship"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 4.days,
-#   start_date: Date.today - 4.days
-# )
+challenge20 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Dogs"),
+  user: User.find_by(email: "lilly@bloom.com"),
+  created_at: Date.today - 20.days,
+  start_date: Date.today - 20.days
+)
 
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230434/_3_hi43vk.jpg")
-# picture5 = Post.create!(
-#   date: Date.today - 4.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge5
-# )
-# picture5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture5.save
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231436/__2_fnlogw.jpg")
+picture18 = Post.create!(
+  date: Date.today - 20.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge20
+)
+picture18.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture18.save
 
-# # Post 6
+# Create Seeds with personalized Challenges and Posts for Test User Rose
+challenge21 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Sun"),
+  user: User.find_by(email: "rose@bloom.com"),
+  created_at: Date.today - 21.days,
+  start_date: Date.today - 21.days
+)
 
-# challenge6 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Cats"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 5.days,
-#   start_date: Date.today - 5.days
-# )
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686575190/8d7fda0939878e93edcfd824f54d71e8_wbbiwp.jpg")
+picture19 = Post.create!(
+  date: Date.today - 21.days,
+  song_url: "",
+  poem: "",
+  text: "",
+  picture_url: "",
+  challenge: challenge21
+)
+picture19.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture19.save
 
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230471/__Kopie_2_wug2ll.jpg")
-# picture6 = Post.create!(
-#   date: Date.today - 5.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge6
-# )
-# picture6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture6.save
+# Text post for Rose
+challenge22 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Flowers"),
+  user: User.find_by(email: "rose@bloom.com"),
+  created_at: Date.today - 22.days,
+  start_date: Date.today - 22.days
+)
 
-# # Post 7
-
-# challenge7 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Friendship"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 6.days,
-#   start_date: Date.today - 6.days
-# )
-
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230512/adrianmntz_zfvjew.jpg")
-# picture7 = Post.create!(
-#   date: Date.today - 6.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge7
-# )
-# picture7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture7.save
-
-# # Post Song 1 deleted
-
-# # Post 8
-
-# challenge9 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Extra Cheese"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 8.days,
-#   start_date: Date.today - 8.days
-# )
-
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231888/__voqctw.jpg")
-# picture8 = Post.create!(
-#   date: Date.today - 8.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge9
-# )
-# picture8.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture8.save
-
-
-# # Post 9
-
-# challenge10 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Beach"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 9.days,
-#   start_date: Date.today - 9.days
-# )
-
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230569/%EF%B8%8F_mrllgf.jpg")
-# picture9 = Post.create!(
-#   date: Date.today - 9.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge10
-# )
-# picture9.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture9.save
-
-# # Post 10
-
-# challenge11 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Dogs"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 10.days,
-#   start_date: Date.today - 10.days
-# )
-
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230615/zfdjstq3wucwupqnj2qh.jpg")
-# picture10 = Post.create!(
-#   date: Date.today - 10.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge11
-# )
-# picture10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture10.save
-
-# # Post 11
-
-# challenge12 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Flowers"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 11.days,
-#   start_date: Date.today - 11.days
-# )
-
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230665/Paper_Collective_Three_Flowers_30x40_-_Affischer_Fra%CC%8An_Magasin_a1vzhp.jpg")
-# picture11 = Post.create!(
-#   date: Date.today - 11.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge12
-# )
-# picture11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture11.save
-
-# # Post Song 2 deleted
-
-# # challenge13 = Challenge.create!(
-# #   keyword: Keyword.find_by(name: "Laughter"),
-# #   user: User.find_by(email: "lilly@bloom.com"),
-# #   created_at: Date.today - 12.days,
-# #   start_date: Date.today - 12.days
-# # )
-
-# # song2 = Post.create!(
-# #   date: Date.today,
-# #   song_url: "https://open.spotify.com/embed/track/6INLpBxo9F5QMer04VXEnd?",
-# #   challenge: challenge13
-# # )
-
-# # Post 12
-
-# challenge14 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Fruits"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 13.days,
-#   start_date: Date.today - 13.days
-# )
-
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230981/hehezee_fnjyrf.png")
-# picture12 = Post.create!(
-#   date: Date.today - 13.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge14
-# )
-# picture12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture12.save
-
-# # Post 13
-
-# challenge15 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Sun"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 14.days,
-#   start_date: Date.today - 14.days
-# )
-
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230759/jasminehendery_qqtasy.jpg")
-# picture13 = Post.create!(
-#   date: Date.today - 14.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge15
-# )
-# picture13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture13.save
-
-# # Post 14
-
-# challenge16 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Bread"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 15.days,
-#   start_date: Date.today - 15.days
-# )
-
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230868/b2pjgsrr8rlyw7veu6pz.jpg")
-# picture14 = Post.create!(
-#   date: Date.today - 15.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge16
-# )
-# picture14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture14.save
-
-# # Post 15
-
-# challenge16 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Muggle"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 16.days,
-#   start_date: Date.today - 16.days
-# )
-
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686230926/Monday_Reading_at_The_Non_Sequitur_pafvi4.jpg")
-# picture15 = Post.create!(
-#   date: Date.today - 16.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge16
-# )
-# picture15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture15.save
-
-# # Post 16
-
-# challenge17 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Colours"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 17.days,
-#   start_date: Date.today - 17.days
-# )
-
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231210/Patterns_Everywhere_ijoj99.jpg")
-# picture16 = Post.create!(
-#   date: Date.today - 17.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge17
-# )
-# picture16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture16.save
-
-# # Post 17 photo not loading properly
-
-# # challenge18 = Challenge.create!(
-# #   keyword: Keyword.find_by(name: "Blue"),
-# #   user: User.find_by(email: "lilly@bloom.com"),
-# #   created_at: Date.today - 18.days,
-# #   start_date: Date.today - 18.days
-# # )
-
-# # file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231260/IMG_0730_gnhqfn.heic")
-# # picture17 = Post.create!(
-# #   date: Date.today,
-# #   song_url: "",
-# #   poem: "",
-# #   text: "",
-# #   picture_url: "",
-# #   challenge: challenge18
-# # )
-# # picture17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# # picture17.save
-
-# # Post Text 1
-
-# challenge19 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Flowers"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 19.days,
-#   start_date: Date.today - 19.days
-# )
-
-# text = Post.create!(
-#   date: Date.today - 19.days,
-#   song_url: "",
-#   poem: "",
-#   text: "Trust the Process",
-#   picture_url: "",
-#   challenge: challenge19
-# )
-
-# # Post 18
-
-# challenge20 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Dogs"),
-#   user: User.find_by(email: "lilly@bloom.com"),
-#   created_at: Date.today - 20.days,
-#   start_date: Date.today - 20.days
-# )
-
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686231436/__2_fnlogw.jpg")
-# picture18 = Post.create!(
-#   date: Date.today - 20.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge20
-# )
-# picture18.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture18.save
-
-# # Create Seeds with personalized Challenges and Posts for Test User Rose
-# challenge21 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Sun"),
-#   user: User.find_by(email: "rose@bloom.com"),
-#   created_at: Date.today - 21.days,
-#   start_date: Date.today - 21.days
-# )
-
-# file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686575190/8d7fda0939878e93edcfd824f54d71e8_wbbiwp.jpg")
-# picture19 = Post.create!(
-#   date: Date.today - 21.days,
-#   song_url: "",
-#   poem: "",
-#   text: "",
-#   picture_url: "",
-#   challenge: challenge21
-# )
-# picture19.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# picture19.save
-
-# # Text post for Rose
-# challenge22 = Challenge.create!(
-#   keyword: Keyword.find_by(name: "Flowers"),
-#   user: User.find_by(email: "rose@bloom.com"),
-#   created_at: Date.today - 22.days,
-#   start_date: Date.today - 22.days
-# )
-
-# text2 = Post.create!(
-#   date: Date.today - 22.days,
-#   song_url: "",
-#   poem: "",
-#   text: "Nature is the purest portal to inner peace",
-#   picture_url: "",
-#   challenge: challenge22
-# )
+text2 = Post.create!(
+  date: Date.today - 22.days,
+  song_url: "",
+  poem: "",
+  text: "Nature is the purest portal to inner peace",
+  picture_url: "",
+  challenge: challenge22
+)
 
 
 
