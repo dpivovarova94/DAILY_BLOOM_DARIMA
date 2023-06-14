@@ -42,11 +42,11 @@
                           <%= cl_image_tag(post.photo.key, crop: :fill, gravity: :face, class: 'img-responsive', style: 'max-height: 100%; width: auto;') %>
                         </div>
                       <% elsif ! post.text.nil? %>
-                        <div class="card-quote flex-grow-1" style="height: 60vh; font-size: 30pt !important;">
-                          <div><%= post.text %></div>
+                        <div class="flex-grow-1" style="background-color: #FFF975; display: flex; justify-content: center; align-items: center; text-align: center; font-size: 30pt !important; height: 60vh;">
+                        <div><%= post.text %></div>
                         </div>
                       <% elsif ! post.poem.nil? %>
-                        <div class="card-poem flex-grow-1" style="height: 60vh; font-size: 30pt !important;">
+                        <div class="flex-grow-1" style="background-color: #81D2FF; display: flex; justify-content: center; align-items: center; text-align: center; font-size: 30pt !important; height: 60vh;">
                           <div><%= post.poem %></div>
                         </div>
                       <% elsif !post.song_url.nil? %>

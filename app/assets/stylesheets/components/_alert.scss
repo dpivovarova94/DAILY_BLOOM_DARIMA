@@ -3,4 +3,11 @@
   bottom: 16px;
   right: 16px;
   z-index: 1000;
+  color: $blue;
+  background-color: white;
+  border-radius: 10pt;
+  animation-name: fadeout;
+  animation-duration: 2s;
+  animation-delay: 2s; /* delay before the animation starts */
+  animation-fill-mode: forwards;
 }
