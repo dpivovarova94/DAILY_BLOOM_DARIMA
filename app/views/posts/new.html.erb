@@ -105,7 +105,7 @@
     <div id="image-preview-container"></div>
 
     <div class="btn-container">
-      <%= link_to 'Back', new_challenge_post_path, class: 'inline btn-custom', data_action:"click->toggle#back"%>
+      <p  class='inline btn-custom' data-action="click->toggle#back">Back</p>
       <button type="submit" class="inline btn-custom">Submit</button>
     </div>
   <% end %>
@@ -147,7 +147,7 @@
       </div>
 
       <div class="btn-container">
-        <%= link_to 'Back', new_challenge_post_path, class: 'inline btn-custom' %>
+        <p  class='inline btn-custom' data-action="click->toggle#back">Back</p>
         <button type="submit" class="inline btn-custom">Submit</button>
       </div>
     <% end %>
@@ -193,7 +193,7 @@
       <div id="cover_preview"></div>
 
       <div class="btn-container">
-        <%= link_to 'Back', new_challenge_post_path, class:"btn-custom inline" %>
+        <p  class='inline btn-custom' data-action="click->toggle#back">Back</p>
         <button type="submit" class="btn-custom inline">Submit</button>
       </div>
     <% end %>

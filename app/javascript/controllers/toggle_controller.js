@@ -14,7 +14,9 @@ export default class extends Controller {
       element.classList.add("d-none")
     })
     this.bubbleContainerTarget.classList.remove("d-none")
+    this.keywordTarget.classList.remove("d-none")
   }
+
   fire(event) {
     this.formTargets.forEach((element) => {
       element.classList.add("d-none")
