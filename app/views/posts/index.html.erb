@@ -1,5 +1,5 @@
 <div class="content-wrap container_feed">
-<div class="button-selection mb-3">
+<div class="button-selection">
   <%= link_to 'Quote', feed_path(medium: (params[:medium] == 'text' ? nil : 'text')), class: 'btn-quote' %>
   <%= link_to 'Song', feed_path(medium: (params[:medium] == 'song_url' ? nil : 'song_url')), class: 'btn-song' %>
   <%= link_to 'Poem', feed_path(medium: (params[:medium] == 'poem' ? nil : 'poem')), class: 'btn-poem' %>
@@ -24,7 +24,7 @@
                 <div class="card-song">
                   <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
                   <% if spotify_track_id.present? %>
-                    <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" style="border-radius:12px" width="352" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" style="border-radius:12px" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                   <% end %>
                 </div>
                 <div data-keyword-target="figure" class="d-none">
