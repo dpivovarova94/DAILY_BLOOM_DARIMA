@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  layout 'show_layout', only: :show
+
   def index
     if params[:medium].present?
       if params[:medium] == "photo"
@@ -12,6 +14,7 @@ class PostsController < ApplicationController
   end
 
   def show
+     # No navbar
     @post = Post.find(params[:id])
     @challenge = @post.challenge
     @keyword = @challenge.keyword
