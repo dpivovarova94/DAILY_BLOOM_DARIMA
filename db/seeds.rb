@@ -402,21 +402,150 @@ picture10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 picture10.save
 
 
+axel11 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Chickens"),
+  user: User.find_by(username: "Axel"),
+  created_at: Date.today - 11.days,
+  start_date: Date.today - 11.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686760751/pet_chicks_chicken_aesthetic_pet_lovers_pet_easter_basket_funny_animal_videos_funny_animal_portraits_k5spgm.jpg")
+picture11 = Post.create!(
+  date: Date.today - 11.days,
+  challenge: axel11
+)
+picture11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture11.save
+
+axel12 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Chickens"),
+  user: User.find_by(username: "Axel"),
+  created_at: Date.today - 12.days,
+  start_date: Date.today - 12.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686760797/Schlagwort_Ostern_2013_-_Sweet_Home_m6efol.jpg")
+picture12 = Post.create!(
+  date: Date.today - 12.days,
+  challenge: axel12
+)
+picture12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture12.save
+
+axel13 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Chickens"),
+  user: User.find_by(username: "Axel"),
+  created_at: Date.today - 13.days,
+  start_date: Date.today - 13.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686760826/__4_swul3y.jpg")
+picture13 = Post.create!(
+  date: Date.today - 13.days,
+  challenge: axel13
+)
+picture13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture13.save
+
+axel14 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Chickens"),
+  user: User.find_by(username: "Axel"),
+  created_at: Date.today - 14.days,
+  start_date: Date.today - 14.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686760916/Artist_Historian_Certified_Nerd__sjvn0j.jpg")
+picture14 = Post.create!(
+  date: Date.today - 14.days,
+  challenge: axel14
+)
+picture14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture14.save
+
+
 # ALEX POSTS
 
 alex1 = Challenge.create!(
-  keyword: Keyword.find_by(name: "Beach"),
+  keyword: Keyword.find_by(name: "Magic"),
   user: User.find_by(username: "Alex"),
   created_at: Date.today - 1.days,
   start_date: Date.today - 1.days
 )
 
-test = Post.create!(
-date: Date.today - 1,
-song_url: "https://open.spotify.com/track/3vUlwYTnFIHHHmUCDbvHkR?si=JbB3xYWLSyaUaKttWVp15Q",
+alex1 = Post.create!(
+date: Date.today - 1.days,
+text: "Trust the Process",
 challenge: alex1
 )
 
+alex2 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Beach"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 2.days,
+  start_date: Date.today - 2.days
+)
+
+alex2 = Post.create!(
+date: Date.today - 2.days,
+song_url: "https://open.spotify.com/track/3vUlwYTnFIHHHmUCDbvHkR?si=JbB3xYWLSyaUaKttWVp15Q",
+challenge: alex2
+)
+
+alex3 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Exploration"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 3.days,
+  start_date: Date.today - 3.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686761453/VALERIEVERHEUL_csv24a.jpg")
+picture3 = Post.create!(
+  date: Date.today - 3.days,
+  challenge: alex3
+)
+picture3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture3.save
+
+alex4 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Magic"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 4.days,
+  start_date: Date.today - 4.days
+)
+
+alex4 = Post.create!(
+date: Date.today - 4.days,
+text: "Trust the Process",
+challenge: alex4
+)
+
+alex5 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Friends"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 5.days,
+  start_date: Date.today - 5.days
+)
+
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686761526/jasminehendery_oudkb5.jpg")
+picture5 = Post.create!(
+  date: Date.today - 5.days,
+  challenge: alex3
+)
+picture5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+picture5.save
+
+alex6 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Magic"),
+  user: User.find_by(username: "Alex"),
+  created_at: Date.today - 6.days,
+  start_date: Date.today - 6.days
+)
+
+alex6 = Post.create!(
+date: Date.today - 6.days,
+poem: "Trust the Process",
+challenge: alex6
+)
 
 
 puts "posts created"
