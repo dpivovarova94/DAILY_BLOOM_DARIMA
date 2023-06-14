@@ -92,7 +92,7 @@
 
 <%# here STARTS the FORMS feature %>
   <!-- Camera open form-->
-  <div id="option1" class="form d-none" data-toggle-target="togglableElement">
+  <div id="option1" class="form d-none" data-toggle-target="form">
   <%= simple_form_for [@challenge, @post], html: { id: 'photo-upload-form' } do |f| %>
     <%# Generate input type file %>
     <%= f.input :medium, as: :hidden, input_html: { value: 'photo' } %>
@@ -130,7 +130,7 @@
   </script>
 
   <!-- Poem open form-->
-  <div id="option2" class="mb-3 form d-none" data-toggle-target="togglableElement">
+  <div id="option2" class="mb-3 form d-none" data-toggle-target="form">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
       <div data-controller="character-counter" class="mb-3 text optional post_poem">
 
@@ -154,7 +154,7 @@
   </div>
 
   <!-- Quote open form-->
-  <div id="option3" class="form d-none" data-toggle-target="togglableElement">
+  <div id="option3" class="form d-none" data-toggle-target="form">
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
       <div data-controller="character-counter" class="mb-3 text optional post_quote">
         <%= f.input :text,
@@ -176,7 +176,7 @@
   </div>
 
   <!-- Song open form-->
-  <div data-controller="character-counter" id="option4" class="form d-none" data-toggle-target="togglableElement">
+  <div data-controller="character-counter" id="option4" class="form d-none" data-toggle-target="form">
     <h2></h2>
     <%= simple_form_for [@challenge, @post], html: { class: 'form-inline' } do |f| %>
       <div class="mb-3 text optional post_song">
