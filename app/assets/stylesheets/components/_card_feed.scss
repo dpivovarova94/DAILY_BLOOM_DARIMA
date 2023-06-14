@@ -1,8 +1,8 @@
 .container_feed {
-  // padding-top:5pt;
-  // padding-left: 10pt;
-  // padding-right: 10pt;
-  // padding-bottom: 15pt;
+  padding-top:5pt;
+  padding-left: 10pt;
+  padding-right: 10pt;
+  padding-bottom: 15pt;
   // // display: flex;
 
 
@@ -11,7 +11,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
-
 
     .posts_cards {
       height: width;
