@@ -26,8 +26,10 @@ section {
   height: 100%;
 }
 
-.character-font {
-  font-family: $character-font;
+
+.body-font {
+  font-family: $body-font;
+  font-size: 40px;
 }
 
 .text-font {
