@@ -2,11 +2,11 @@
   <div class="m-5 text-center" data-toggle-target="keyword">
 
   <% if current_user == User.find_by(username: "Axel") %>
-      <h2 class="character-font">Sun</h2><br>
+      <h2 class="body-font">Sun</h2><br>
     <% elsif current_user == User.find_by(username: "Alex") %>
-      <h2 class="character-font">Flower</h2><br>
+      <h2 class="body-font">Flower</h2><br>
     <% else %>
-      <h2 class="character-font"><%= @challenge.keyword.name %></h2><br>
+      <h2 class="body-font"><%= @challenge.keyword.name %></h2><br>
     <% end %>
     <h4 class="text-font">What suits your creative mood today?</h4>
   </div>
