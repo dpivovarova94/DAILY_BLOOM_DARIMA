@@ -1,11 +1,11 @@
 <div class="content-wrap editpage">
-  <h1>Choose all topics you are interested in</h1>
+  <h1>Choose the topics you like!</h1>
   <%= simple_form_for @user, url: update_user_category_path(@user), method: :patch do |f| %>
     <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |c| %>
       <%= c.check_box(class: "tag-selector") + c.label(class: 'tag-item') %>
     <% end %>
     <div>
-      <%= f.submit class: "btn-custom btn-challenge" %>
+      <%= f.submit "Update", class: "custom-submit-button" %>
     </div>
   <% end %>
 </div>
