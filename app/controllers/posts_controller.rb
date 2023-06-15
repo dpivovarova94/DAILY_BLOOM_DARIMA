@@ -4,12 +4,12 @@ class PostsController < ApplicationController
   def index
     if params[:medium].present?
       if params[:medium] == "photo"
-        @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).joins(:photo_attachment).where.not(active_storage_attachments: { blob_id: nil }).order(created_at: :desc)
+        @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).joins(:photo_attachment).where.not(active_storage_attachments: { blob_id: nil }).order(date: :desc)
       else
-        @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).where.not(params[:medium] => "").order(created_at: :desc)
+        @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).where.not(params[:medium] => "").order(date: :desc)
       end
     else
-      @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).order(created_at: :desc)
+      @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).order(date: :desc)
     end
   end
 
