@@ -1,13 +1,14 @@
 .btn-custom {
-  border: 2px solid black;
+  border: 1px solid black;
   color: black;
-  padding: 10px;
+  // padding: 10px;
+  padding: 5px;
   width: 100pt;
   margin: 10pt;
   border-radius: 10pt;
   font-size: 14pt;
   font-family: $body-font;
-  font-weight: bold;
+  font-weight: lighter;
   text-decoration: none;
   text-align: center;
 }
@@ -32,39 +33,13 @@
     background-color: $main-yellow;
     border: none;
   }
-
 }
-
-
-// div.challenge-card:active {
-//   // transition: 2s;
-//   background: rgb(203,172,255);
-//   background: radial-gradient(circle, rgba(255,249,117,0.774969362745098) 40%, white 60%);
-// }
-
-.btn-custom:active {
-  background-color: $main-yellow;
-  border: none;
-}
-
-///////// OLD BUTTON LIST DESIGN ////////
-// .btn-list  {
-//   background-color: none;
-//   border: 2pt solid $blue;
-//   color: $blue;
-//   padding: 4pt 8pt;
-//   margin: 3pt;
-//   border-radius: 18pt;
-//   font-size: 12pt;
-//   font-family: $body-font;
-//   display: inline-block;
-// }
 
 .btn-list {
-  background-color: white;
-  border: 2pt dashed black;
-  color: black;
-  padding: 4pt 8pt;
+  background-color: black;
+  // border: 2pt dashed white;
+  color: white;
+  padding: 5pt 10pt;
   border-radius: 18pt;
   font-size: 16pt;
   font-family: "Inter", "sans-serif";
@@ -75,24 +50,25 @@
 
 .btn-list-checked {
   @extend .btn-list;
-  border: 2pt dashed black;
-  background-color: $white;
-  color: black;
+  // border: 2pt dashed white;
+  background-color: $black;
+  color: white;
 }
 
 .btn-list-add {
   @extend .btn-list;
-  border: 2pt solid black;
-  background-color: $black;
-  color: white;
-  text-decoration: none;
-  width: 11px;
-  height: 11px;
+  width: 50px;
+  background-color: $white;
+  border: 1pt solid black;
+  color: black;
+  border-radius: 50%;
 
   a {
-    color: white;
+    color: black;
+    font-weight: lighter;
   }
 }
+
 
 
 // medium selection buttons on the feed
@@ -109,6 +85,11 @@
   text-decoration: none;
 }
 
+.btn-quote:focus {
+  border: 2pt solid black;
+  color: black
+}
+
 .btn-song {
   background-color: $main-purple;
   border: 2pt dashed black;
@@ -119,6 +100,11 @@
   font-family: "Inter", "sans-serif";
   display: inline-block;
   text-decoration: none;
+}
+
+.btn-song:focus {
+  border: 2pt solid black;
+  color: black
 }
 
 .btn-poem {
@@ -132,6 +118,12 @@
   display: inline-block;
   text-decoration: none;
 }
+
+.btn-poem:focus {
+  border: 2pt solid black;
+  color: black
+}
+
 .btn-photo {
   background-color: $main-green;
   border: 2pt dashed black;
@@ -143,6 +135,13 @@
   display: inline-block;
   text-decoration: none;
 }
+
+.btn-photo:focus {
+  border: 2pt solid black;
+  color: black
+}
+
+
 
 // categories listing bellow
 .tag-item {
@@ -157,13 +156,6 @@
 .tag-selector + label {
   cursor: pointer;
   display: inline-block;
-  // font-size: 12pt;
-  // border-radius: 18pt;
-  // padding: 4pt 8pt;
-  // background-color: none;
-  // color: $blue;
-  // border: 2px solid $blue;
-  // margin: 3pt;
   background-color: white;
   border: 2pt dashed black;
   color: black;
@@ -184,60 +176,18 @@
 
 
 
+.editpage {
+  h1 {
+    margin-bottom: 10px;
+    font-family: $body-font;
+    font-size: 40px;
+    color: rgb(30, 30, 30);
+    text-shadow: $main-green 1px 0 10px;
+    display: block;
+    text-align: center;
+  }
 
-
-
-
-
-
-///// Aternative Index Button //////
-    // .btn-quote {
-    //   background-color: $main-yellow;
-    //   border: 2pt solid $blue;
-    //   color: $blue;
-    //   padding: 4pt 8pt;
-    //   margin: 3pt;
-    //   border-radius: 18pt;
-    //   font-size: 12pt;
-    //   font-family: $body-font;
-    //   display: inline-block;
-    //   text-decoration: none;
-    // }
-
-    // .btn-song {
-    //   background-color: $main-purple;
-    //   border: 2pt solid $blue;
-    //   color: $blue;
-    //   padding: 4pt 8pt;
-    //   margin: 3pt;
-    //   border-radius: 18pt;
-    //   font-size: 12pt;
-    //   font-family: $body-font;
-    //   display: inline-block;
-    //   text-decoration: none;
-    // }
-
-    // .btn-poem {
-    //   background-color: $main-blue;
-    //   border: 2pt solid $blue;
-    //   color: $blue;
-    //   padding: 4pt 8pt;
-    //   margin: 3pt;
-    //   border-radius: 18pt;
-    //   font-size: 12pt;
-    //   font-family: $body-font;
-    //   display: inline-block;
-    //   text-decoration: none;
-    // }
-    // .btn-photo {
-    //   background-color: $main-green;
-    //   border: 2pt solid $blue;
-    //   color: $blue;
-    //   padding: 4pt 8pt;
-    //   margin: 3pt;
-    //   border-radius: 18pt;
-    //   font-size: 12pt;
-    //   font-family: $body-font;
-    //   display: inline-block;
-    //   text-decoration: none;
-    // }
+  input {
+    background-color: green;
+  }
+}
