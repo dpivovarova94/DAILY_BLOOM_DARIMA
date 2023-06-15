@@ -1,5 +1,4 @@
 .btn-custom {
-  // background-color: none;
   border: 2px solid black;
   color: black;
   padding: 10px;
@@ -13,9 +12,6 @@
   text-align: center;
 }
 
-// div.challenge-card {
-//   pointer-events: none;
-// }
 .btn-challenge {
   width: 100pt;
   border: 1px solid black;
@@ -74,13 +70,28 @@
   font-family: "Inter", "sans-serif";
   display: inline-block;
   text-decoration: none;
+  margin: 3px;
 }
 
 .btn-list-checked {
   @extend .btn-list;
-  border: 2pt solid $blue;
-  background-color: $blue;
+  border: 2pt dashed black;
+  background-color: $white;
+  color: black;
+}
+
+.btn-list-add {
+  @extend .btn-list;
+  border: 2pt solid black;
+  background-color: $black;
   color: white;
+  text-decoration: none;
+  width: 11px;
+  height: 11px;
+
+  a {
+    color: white;
+  }
 }
 
 
