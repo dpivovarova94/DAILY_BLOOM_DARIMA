@@ -144,6 +144,7 @@
 
 
 // categories listing bellow
+
 .tag-item {
   display: inline-block;
 }
@@ -174,12 +175,16 @@
   color: white;
 }
 
-
+// #edit_user_8 {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+// }
 
 .editpage {
   h1 {
     margin-top: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     font-family: $body-font;
     font-size: 40px;
     color: rgb(30, 30, 30);
