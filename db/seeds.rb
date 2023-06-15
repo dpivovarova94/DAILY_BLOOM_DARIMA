@@ -257,6 +257,7 @@ axel1 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686758318/ddd2233b-823a-48f7-a4dc-a6779ba10185_wp0h7c.jpg")
 picture1 = Post.create!(
   date: Date.today - 1.days,
+  created_at: Date.today - 1.days,
   challenge: axel1
 )
 picture1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -269,9 +270,10 @@ axel2 = Challenge.create!(
   start_date: Date.today - 2.days
 )
 
-file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686758481/i_m_a_star_dg7tpz.jpg")
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686760916/Artist_Historian_Certified_Nerd__sjvn0j.jpg")
 picture2 = Post.create!(
   date: Date.today - 2.days,
+  created_at: Date.today - 2.days,
   challenge: axel2
 )
 picture2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -287,6 +289,7 @@ axel3 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686758498/happy_qpsfxf.jpg")
 picture3 = Post.create!(
   date: Date.today - 3.days,
+  created_at: Date.today - 3.days,
   challenge: axel3
 )
 picture3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -303,6 +306,7 @@ axel4 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686758579/__Photo_ohqdaw.png")
 picture4 = Post.create!(
   date: Date.today - 4.days,
+  created_at: Date.today - 4.days,
   challenge: axel4
 )
 picture4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -319,6 +323,7 @@ axel5 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686758635/pet_ducks_pet_meme_funny_duck_portrait_ducklings_funny_animals_print_cute_animal_wallpapers_cute_pet_tcci61.jpg")
 picture5 = Post.create!(
   date: Date.today - 5.days,
+  created_at: Date.today - 5.days,
   challenge: axel5
 )
 picture5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -334,6 +339,7 @@ axel6 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686758704/Chickens_in_Knitted_Caps_tbftjs.jpg")
 picture6 = Post.create!(
   date: Date.today - 6.days,
+  created_at: Date.today - 6.days,
   challenge: axel6
 )
 picture6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -349,6 +355,7 @@ axel7 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686758773/__szpvso.jpg")
 picture7 = Post.create!(
   date: Date.today - 7.days,
+  created_at: Date.today - 7.days,
   challenge: axel7
 )
 picture7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -364,6 +371,7 @@ axel8 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686758828/My_Pet_Chicken_s_Birthday_bugi9x.jpg")
 picture8 = Post.create!(
   date: Date.today - 8.days,
+  created_at: Date.today - 8.days,
   challenge: axel8
 )
 picture8.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -380,6 +388,7 @@ axel9 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686758891/A_hat_I_made_for_a_friend_q1cusp.jpg")
 picture9 = Post.create!(
   date: Date.today - 9.days,
+  created_at: Date.today - 9.days,
   challenge: axel9
 )
 picture9.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -396,6 +405,7 @@ axel10 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686758950/Selbstgemachtes_Gro%C3%9Fes_Huhn___Geflu%CC%88gel_Harness_fu%CC%88r_Laufen_auf_einer_Leine__NETT_f2o2lp.jpg")
 picture10 = Post.create!(
   date: Date.today - 10.days,
+  created_at: Date.today - 10.days,
   challenge: axel10
 )
 picture10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -412,6 +422,7 @@ axel11 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686760751/pet_chicks_chicken_aesthetic_pet_lovers_pet_easter_basket_funny_animal_videos_funny_animal_portraits_k5spgm.jpg")
 picture11 = Post.create!(
   date: Date.today - 11.days,
+  created_at: Date.today - 11.days,
   challenge: axel11
 )
 picture11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -427,6 +438,7 @@ axel12 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686760797/Schlagwort_Ostern_2013_-_Sweet_Home_m6efol.jpg")
 picture12 = Post.create!(
   date: Date.today - 12.days,
+  created_at: Date.today - 12.days,
   challenge: axel12
 )
 picture12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -442,25 +454,12 @@ axel13 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686760826/__4_swul3y.jpg")
 picture13 = Post.create!(
   date: Date.today - 13.days,
+  created_at: Date.today - 13.days,
   challenge: axel13
 )
 picture13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 picture13.save
 
-axel14 = Challenge.create!(
-  keyword: Keyword.find_by(name: "Chickens"),
-  user: User.find_by(username: "Axel"),
-  created_at: Date.today - 14.days,
-  start_date: Date.today - 14.days
-)
-
-file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686760916/Artist_Historian_Certified_Nerd__sjvn0j.jpg")
-picture14 = Post.create!(
-  date: Date.today - 14.days,
-  challenge: axel14
-)
-picture14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-picture14.save
 
 
 # ALEX POSTS ####################################################
@@ -475,6 +474,7 @@ alex1 = Challenge.create!(
 Post.create!(
   date: Date.today - 1.days,
   text: "Trust the Process",
+  created_at: Date.today - 1.days,
   challenge: alex1
 )
 
@@ -489,6 +489,7 @@ alex2 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686771872/heaven-ly-mind_sqnmes.jpg")
 picture2 = Post.create!(
   date: Date.today - 2.days,
+  created_at: Date.today - 2.days,
   challenge: alex2
 )
 picture2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -505,6 +506,7 @@ alex3 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686774534/IMG_1024_qnnj0j.jpg")
 picture3 = Post.create!(
   date: Date.today - 3.days,
+  created_at: Date.today - 3.days,
   challenge: alex3
 )
 picture3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -520,6 +522,7 @@ alex4 = Challenge.create!(
 )
 Post.create!(
   date: Date.today - 4.days,
+  created_at: Date.today - 4.days,
   poem: "Lost in lines of code, I find solace, my heart dances with HTML.",
   challenge: alex4
 )
@@ -535,6 +538,7 @@ alex5 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686771996/_3_oetxsx.jpg")
 picture5 = Post.create!(
   date: Date.today - 5.days,
+  created_at: Date.today - 5.days,
   challenge: alex5
 )
 picture5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -551,6 +555,7 @@ alex6 = Challenge.create!(
 )
 Post.create!(
   date: Date.today - 6.days,
+  created_at: Date.today - 6.days,
   song_url: "https://open.spotify.com/intl-de/track/2IHcAcZ4D6QRGZgmWGgGhc?si=5f078b3dc13845da",
   challenge: alex6
 )
@@ -565,6 +570,7 @@ alex7 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686774528/IMG_1025_gnfhrh.jpg")
 picture7 = Post.create!(
   date: Date.today - 7.days,
+  created_at: Date.today - 7.days,
   challenge: alex7
 )
 picture7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -580,6 +586,7 @@ alex8 = Challenge.create!(
 )
 Post.create!(
   date: Date.today - 8.days,
+  created_at: Date.today - 8.days,
   text: "A photo a day keeps the blues away",
   challenge: alex8
 )
@@ -594,6 +601,7 @@ alex9 = Challenge.create!(
 )
 Post.create!(
   date: Date.today - 9.days,
+  created_at: Date.today - 9.days,
   song_url: "https://open.spotify.com/intl-de/track/3NlJO0Tf9FLjUTHepZgxYf?si=5888c1557bae47f9",
   challenge: alex9
 )
@@ -609,6 +617,7 @@ alex10 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686772074/__qsdtmu.jpg")
 picture10 = Post.create!(
   date: Date.today - 10.days,
+  created_at: Date.today - 10.days,
   challenge: alex10
 )
 picture10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -625,6 +634,7 @@ alex11 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686771835/PHOTO-2023-06-14-19-42-30_2_x1gs3u.jpg")
 picture11 = Post.create!(
   date: Date.today - 11.days,
+  created_at: Date.today - 11.days,
   challenge: alex11
 )
 picture11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -642,6 +652,7 @@ alex12 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686772826/roomdecoration_roominspiration_lbq0qz.jpg")
 picture12 = Post.create!(
   date: Date.today - 12.days,
+  created_at: Date.today - 12.days,
   challenge: alex12
 )
 picture12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -658,6 +669,7 @@ alex13 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686772787/PHOTO-2023-06-14-20-02-37_ufzjb7.jpg")
 picture13 = Post.create!(
   date: Date.today - 13.days,
+  created_at: Date.today - 13.days,
   challenge: alex13
 )
 picture13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -674,6 +686,7 @@ alex14 = Challenge.create!(
 )
 Post.create!(
   date: Date.today - 14.days,
+  created_at: Date.today - 14.days,
   song_url: "https://open.spotify.com/track/7Fx3o9QtK1vtpkEWkM6OJu?si=14fd24d50cf04957",
   challenge: alex14
 )
@@ -689,6 +702,7 @@ alex15 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686761453/VALERIEVERHEUL_csv24a.jpg")
 picture15 = Post.create!(
   date: Date.today - 15.days,
+  created_at: Date.today - 15.days,
   challenge: alex15
 )
 picture15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -704,6 +718,7 @@ alex16 = Challenge.create!(
 )
 Post.create!(
   date: Date.today - 16.days,
+  created_at: Date.today - 16.days,
   poem: "Blossoms bloom, a vibrant array,
   Nature's artwork in the light of day.",
   challenge: alex16
@@ -720,6 +735,7 @@ alex18 = Challenge.create!(
 )
 Post.create!(
   date: Date.today - 18.days,
+  created_at: Date.today - 18.days,
   song_url: "https://open.spotify.com/track/3vUlwYTnFIHHHmUCDbvHkR?si=JbB3xYWLSyaUaKttWVp15Q",
   challenge: alex18
 )
@@ -735,6 +751,7 @@ alex20 = Challenge.create!(
 )
 Post.create!(
   date: Date.today - 20.days,
+  created_at: Date.today - 20.days,
   poem: "Pixels on my screen, they sparkle like stars, creating digital dreams.",
   challenge: alex20
 )
@@ -751,6 +768,7 @@ alex21 = Challenge.create!(
 file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686761526/jasminehendery_oudkb5.jpg")
 picture21 = Post.create!(
   date: Date.today - 21.days,
+  created_at: Date.today - 21.days,
   challenge: alex21
 )
 picture21.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -766,6 +784,7 @@ alex22 = Challenge.create!(
 )
 Post.create!(
   date: Date.today - 22.days,
+  created_at: Date.today - 22.days,
   poem: "Code flows, magic grows.",
   challenge: alex22
 )
@@ -781,6 +800,7 @@ alex23 = Challenge.create!(
 )
 Post.create!(
   date: Date.today - 23.days,
+  created_at: Date.today - 23.days,
   song_url: "https://open.spotify.com/intl-de/track/2uG7RbrJSq5bZWv7ufDyTg?si=d886edeab3914d15",
   challenge: alex23
 )
@@ -796,6 +816,7 @@ alex24 = Challenge.create!(
 )
 Post.create!(
   date: Date.today - 24.days,
+  created_at: Date.today - 24.days,
   poem: "At Le Wagon, the Hogwarts on Rails,
   they teach us some magical spells,
   and just if it seems too hard,
@@ -813,6 +834,7 @@ alex25 = Challenge.create!(
 )
 Post.create!(
   date: Date.today - 25.days,
+  created_at: Date.today - 25.days,
   poem: "Each bloom tells a story, delicate and rare,
   Nature's poetry, floating on fragrant air.",
   challenge: alex25

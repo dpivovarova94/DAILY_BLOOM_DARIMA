@@ -56,21 +56,23 @@
 <%# here ends the calendar %>
 
     <%# here starts counter for completed challenges %>
+    <% start_date = params[:start_date] ? Date.parse(params[:start_date]) : Date.current %>
+
     <div class="my-4 card-tracking yellow">
       <% if @monthly_posts.nil? || @monthly_posts.count == 0 %>
-        <h5>No challenge solved yet.</h5>
+        <h5>No challenge solved in <%= t('date.month_names')[start_date.month] %> 😿 </h5>
       <% else %>
         <% if @monthly_posts.count == 1 %>
-          <h5 class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenge this month 💔 </h5>
+          <h5 class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenge in <%= t('date.month_names')[start_date.month] %> 💔 </h5>
           <h5>Time to find some positivity ✨</h5>
         <% elsif @monthly_posts.count >= 2 && @monthly_posts.count < 10 %>
-          <h5 class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges this month 🌱 </h5>
+          <h5 class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges in <%= t('date.month_names')[start_date.month] %> 🌱 </h5>
           <h5>Let's grow 🪴 </h5>
         <% elsif @monthly_posts.count >= 10 && @monthly_posts.count < 20  %>
-          <h5 class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges this month ⚡️ </h5>
+          <h5 class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges in <%= t('date.month_names')[start_date.month] %> ⚡️ </h5>
           <h5>Yayy!! 💛 Keep on blooming 🌼</h5>
         <% elsif @monthly_posts.count >= 21%>
-          <h5 class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges this month 💖</h5>
+          <h5 class="mb-0">You solved <strong><%= @monthly_posts.count %></strong> challenges in <%= t('date.month_names')[start_date.month] %> 💖</h5>
           <h5>What a beautiful garden 💐</h5>
         <% end %>
       <% end %>
