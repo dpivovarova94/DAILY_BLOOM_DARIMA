@@ -199,9 +199,12 @@
     <% end %>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
       const songUrlInput = document.getElementById('post_song');
       const coverPreview = document.getElementById('cover_preview');
+
+      songUrlInput.addEventListener('click', function() {
+        songUrlInput.value = '';
+      });
 
       songUrlInput.addEventListener('input', function() {
         const url = songUrlInput.value.trim();
@@ -218,7 +221,6 @@
           coverPreview.innerHTML = '';
         }
       });
-    });
     </script>
   </div>
 <!-- TOGGLE javascript-->
