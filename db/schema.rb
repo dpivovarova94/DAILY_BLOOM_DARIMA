@@ -73,7 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_154215) do
     t.text "text"
     t.string "picture_url"
     t.string "medium"
-    t.datetime "created_at", null: false
+    t.datetime "c", null: false
     t.datetime "updated_at", null: false
     t.bigint "challenge_id"
     t.index ["challenge_id"], name: "index_posts_on_challenge_id"
