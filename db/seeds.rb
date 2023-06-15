@@ -270,7 +270,7 @@ axel2 = Challenge.create!(
   start_date: Date.today - 2.days
 )
 
-file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686758481/i_m_a_star_dg7tpz.jpg")
+file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686760916/Artist_Historian_Certified_Nerd__sjvn0j.jpg")
 picture2 = Post.create!(
   date: Date.today - 2.days,
   created_at: Date.today - 2.days,
@@ -460,21 +460,6 @@ picture13 = Post.create!(
 picture13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 picture13.save
 
-axel14 = Challenge.create!(
-  keyword: Keyword.find_by(name: "Chickens"),
-  user: User.find_by(username: "Axel"),
-  created_at: Date.today - 14.days,
-  start_date: Date.today - 14.days
-)
-
-file = URI.open("https://res.cloudinary.com/da5l8jaar/image/upload/v1686760916/Artist_Historian_Certified_Nerd__sjvn0j.jpg")
-picture14 = Post.create!(
-  date: Date.today - 14.days,
-  created_at: Date.today - 14.days,
-  challenge: axel14
-)
-picture14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-picture14.save
 
 
 # ALEX POSTS ####################################################
