@@ -1,3 +1,4 @@
+///////////HERE STARTS SCSS FOR BUBBLES FORMS///////////
 .form {
   padding-top:5pt;
   padding-left: 10pt;
@@ -17,6 +18,15 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+
+  p {
+    padding-top: 10px;
+  }
+
+  a {
+    padding-top: 10px;
+    text-decoration: none;
+  }
 }
 
 // camera
@@ -174,11 +184,4 @@
     display: block;
     margin: 20px auto;
   }
-
-  // #cover_preview {
-  //   border: 4px dotted $main-purple;
-  //   border-radius: 5px;
-  //   height: 320px;
-  //   width: 320px;
-  // }
 }
