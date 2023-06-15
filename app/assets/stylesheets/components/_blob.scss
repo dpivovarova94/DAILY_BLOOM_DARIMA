@@ -52,10 +52,12 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40%; /* adjust as needed */
+  width: 50%; /* adjust as needed */
 
-  height: auto; /* adjust as needed */
+  height: 50%; /* adjust as needed */
   // outline: 4pt solid $gray;
+  border-radius: 50%;
+  object-fit: cover;
   outline: none;
   background-color: $light-gray;
   filter: drop-shadow(0 0 15px $light-gray)
