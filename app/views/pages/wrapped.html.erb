@@ -1,0 +1,30 @@
+<div class="content-wrap container_feed">
+  <div class="index-card-container feed">
+      <% @last_posts.each do |post| %>
+      <div class="posts_cards">
+              <% if ! post.photo.key.nil? %>
+                <%= cl_image_tag(post.photo.key, class:"card-photo", crop: :thumb, gravity: :face) %>
+              <% elsif ! post.text.nil? %>
+                <div class="card-quote">
+                  <%= post.text %>
+                </div>
+              <% elsif ! post.poem.nil? %>
+                <div class="card-poem">
+                  <%= post.poem %>
+                </div>
+              <% elsif !post.song_url.nil? %>
+                <div>
+                  <div class="card-song">
+                    <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
+                    <% if spotify_track_id.present? %>
+                      <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" style="border-radius:12px" width="352" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <% end %>
+                  </div>
+                  <div data-keyword-target="figure" class="d-none">
+                      <%= post.challenge.keyword.name %>
+                  </div>
+                </div>
+              <% end %>
+        <% end %>
+    </div>
+</div>

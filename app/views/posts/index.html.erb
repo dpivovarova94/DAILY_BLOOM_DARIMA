@@ -42,7 +42,7 @@
                           <%= cl_image_tag(post.photo.key, crop: :fill, gravity: :face, class: 'img-responsive', style: 'max-height: 100%; width: auto;') %>
                         </div>
                       <% elsif ! post.text.nil? %>
-                        <div class="card-quote flex-grow-1" style="height: 60vh; font-size: 30pt !important;">
+                        <div class="feed card-quote flex-grow-1" style="height: 60vh; font-size: 30pt !important;">
                           <div><%= post.text %></div>
                         </div>
                       <% elsif ! post.poem.nil? %>
@@ -59,7 +59,7 @@
                       <% end %>
                       <div class="keyword" style="height: 5vh;">
                         <%= post.challenge.keyword.name %>
-                        <p><%= post.date.strftime('%d %B %Y')%></p>
+                        <p><%= post.created_at.strftime('%d %B %Y')%></p>
                       </div>
                     </div> <!-- Missing closing tag added here -->
                   </div>
