@@ -57,13 +57,14 @@
         height: 180px;
         padding: 12px;
         border-radius: 12px;
+        object-fit: cover;
 
-        .img.card-photo {
-          border-radius: 20px;
-          max-height: 100%;
-          width: 100%;
-          object-fit: cover;
-        }
+        // .img.card-photo {
+        //   border-radius: 20px;
+        //   max-height: 100%;
+        //   width: 100%;
+        //   object-fit: cover;
+        // }
       }
 
       .card-song {
