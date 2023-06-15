@@ -1,4 +1,4 @@
-<div class="content-wrap">
+<div class="content-wrap dashboard">
 
 <%# here starts the avatar %>
   <div class="blob-dashboard" style="width = 30pt; height = 30pt; position: relative;">
@@ -24,14 +24,15 @@
     <% end %>
     <% end %>
   </div>
-<div class="m3" style= "text-align: center;" >
+<div style= "text-align: center;" >
 
-<h2>Hey <%= @user.username %> 🌻</h2>
+<h2>Hey <%= @user.username %>🌻 <br> How are your today?</h2>
 
 <%# here ends the avatar %>
 
 <%# here start the categories %>
-<ul style="display: inline-block;" class="m3">
+<h4 class="my-3 mt-5 text-center headline">Your Categories</h4>
+<ul style="display: inline-block;">
   <% @selected_categories.each do |category| %>
     <li class="btn-list-checked"><%= category.name %>
   <% end %>
@@ -43,8 +44,8 @@
 
 
 <%# here starts the calendar %>
-  <div class="container">
-  <h4 class="my-3 text-center headline">Your Personal Tracking</h4>
+  <div class="container-dashboard">
+  <h4 class="my-3 mt-5 text-center headline">Your Personal Tracking</h4>
     <%= month_calendar do |date, posts| %>
       <%= date %>
       <% posts.each do |post| %>
@@ -104,7 +105,7 @@
 
 
 <%# here starts Logout %>
-<%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn-custom", style: "position: relative" %>
+<%= button_to "Logout", destroy_user_session_path, method: :delete, class: "log-button", style: "position: relative;background-color: #FFFFFF;border: 1pt solid black;color: black;padding: 5pt;border-radius: 10pt;font-size: 16pt;font-weight: lighter;display: block;margin: 10px auto;width: 100%; " %>
 <%# here ends Logout %>
 
 </div>
