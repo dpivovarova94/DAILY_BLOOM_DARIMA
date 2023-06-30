@@ -13,6 +13,33 @@
   text-align: center;
 }
 
+.btn-feed {
+  // border: 1px solid black;
+  // color: black;
+  // padding: 5px;
+  // width: 50px;
+  // margin: 10px;
+  // border-radius: 10px;
+  // font-size: 14px;
+  font-family: $body-font;
+  width: 170px;
+  font-weight: lighter;
+  // text-decoration: none;
+  text-align: center;
+
+  font-size: 14px;
+  text-transform: none;
+  line-height: 1em;
+  fill: #272621;
+  color: #272621;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: black;
+  border-radius: 30px 30px 30px 30px;
+  padding: 10px 23px 10px 23px;
+  text-decoration: none;
+}
+
 .btn-challenge {
   width: 100pt;
   border: 1px solid black;
@@ -75,14 +102,14 @@
 
 .btn-quote {
   background-color: $main-yellow;
-  border: 2pt dashed black;
-  color: black;
-  padding: 4pt 8pt;
-  border-radius: 18pt;
-  font-size: 16pt;
-  font-family: "Inter", "sans-serif";
-  display: inline-block;
-  text-decoration: none;
+  // border: 2pt dashed black;
+  // color: black;
+  // padding: 4pt 8pt;
+  // border-radius: 18pt;
+  // font-size: 16pt;
+  // font-family: "Inter", "sans-serif";
+  // display: inline-block;
+  // text-decoration: none;
 }
 
 .btn-quote:focus {
@@ -92,14 +119,14 @@
 
 .btn-song {
   background-color: $main-purple;
-  border: 2pt dashed black;
-  color: black;
-  padding: 4pt 8pt;
-  border-radius: 18pt;
-  font-size: 16pt;
-  font-family: "Inter", "sans-serif";
-  display: inline-block;
-  text-decoration: none;
+  // border: 2pt dashed black;
+  // color: black;
+  // padding: 4pt 8pt;
+  // border-radius: 18pt;
+  // font-size: 16pt;
+  // font-family: "Inter", "sans-serif";
+  // display: inline-block;
+  // text-decoration: none;
 }
 
 .btn-song:focus {
@@ -109,14 +136,14 @@
 
 .btn-poem {
   background-color: $main-blue;
-  border: 2pt dashed black;
-  color: black;
-  padding: 4pt 8pt;
-  border-radius: 18pt;
-  font-size: 16pt;
-  font-family: "Inter", "sans-serif";
-  display: inline-block;
-  text-decoration: none;
+  // border: 2pt dashed black;
+  // color: black;
+  // padding: 4pt 8pt;
+  // border-radius: 18pt;
+  // font-size: 16pt;
+  // font-family: "Inter", "sans-serif";
+  // display: inline-block;
+  // text-decoration: none;
 }
 
 .btn-poem:focus {
@@ -126,14 +153,14 @@
 
 .btn-photo {
   background-color: $main-green;
-  border: 2pt dashed black;
-  color: black;
-  padding: 4pt 8pt;
-  border-radius: 18pt;
-  font-size: 16pt;
-  font-family: "Inter", "sans-serif";
-  display: inline-block;
-  text-decoration: none;
+  // border: 2pt dashed black;
+  // color: black;
+  // padding: 4pt 8pt;
+  // border-radius: 18pt;
+  // font-size: 16pt;
+  // font-family: "Inter", "sans-serif";
+  // display: inline-block;
+  // text-decoration: none;
 }
 
 .btn-photo:focus {
