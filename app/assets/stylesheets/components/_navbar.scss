@@ -2,8 +2,8 @@
   position: sticky;
   top: 0;
   width: auto;
-  height: 60pt;
-  padding-top: 22pt;
+  height: auto;
+  padding-top: 10pt;
   padding-left: 10pt;
   padding-right: 10pt;
   padding-bottom: 10pt;
@@ -13,6 +13,8 @@
   z-index: 100;
   opacity: 1;
   transition: opacity 0.3s ease;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
 }
 
 .navbar-container.hide {

@@ -1,11 +1,11 @@
 <div class="navbar-container header">
   <div class="navbar-content">
       <%= link_to new_challenge_path do %>
-      <%= inline_svg("icon.svg", class: "icon", height: "28pt") %>
+      <%= inline_svg("icon.svg", class: "icon", height: "20pt") %>
       <% end %>
 
       <%= link_to "/posts" do %>
-      <%= inline_svg("logo.svg", class: "icon", height: "25pt") %>
+      <%= inline_svg("logo.svg", class: "icon", height: "18pt") %>
       <% end %>
       <% if user_signed_in? && current_user.avatar_url.present? %>
       <%= link_to dashboard_path do %>
@@ -13,7 +13,7 @@
       <% end %>
       <% else %>
       <%= link_to dashboard_path do %>
-      <%= inline_svg("avatar.svg", class: "avatar", height: "28pt") %>
+      <%= inline_svg("avatar.svg", class: "avatar", height: "20pt") %>
       <% end %>
       <% end %>
 
