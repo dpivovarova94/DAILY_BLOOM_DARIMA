@@ -65,11 +65,12 @@
   color: white;
   padding: 5pt 10pt;
   border-radius: 18pt;
-  font-size: 16pt;
+  font-size: 14pt;
   font-family: "Inter", "sans-serif";
   display: inline-block;
   text-decoration: none;
   margin: 3px;
+  text-align: center;
 }
 
 .btn-list-checked {
@@ -87,9 +88,11 @@
   color: black;
   border-radius: 50%;
 
+
   a {
     color: black;
     font-weight: lighter;
+
   }
 }
 
