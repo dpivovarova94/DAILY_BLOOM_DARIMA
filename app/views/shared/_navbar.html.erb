@@ -9,11 +9,11 @@
       <% end %>
       <% if user_signed_in? && current_user.avatar_url.present? %>
       <%= link_to dashboard_path do %>
-      <%= image_tag current_user.avatar_url, class: "avatar" %>
+      <%= image_tag current_user.avatar_url, class: "avatar-nav" %>
       <% end %>
       <% else %>
       <%= link_to dashboard_path do %>
-      <%= inline_svg("avatar.svg", class: "avatar", height: "20pt") %>
+      <%= inline_svg("avatar.svg", class: "avatar-nav", height: "20pt") %>
       <% end %>
       <% end %>
 
