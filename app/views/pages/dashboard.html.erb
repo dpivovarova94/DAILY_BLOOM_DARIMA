@@ -24,22 +24,21 @@
       <% end %>
       <% end %>
     </div>
-    <h2 class="dashboard-greeting">Hey <%= @user.username %> <br> How are you today?</h2>
+    <h1 class="dashboard-greeting">Hey, <%= @user.username %></h1>
+    <h3 class="mb-4 dashboard-greeting">How are you today?</h3>
   </div>
-
-<div class="content-wrap dashboard">
-  <div style= "text-align: center;" >
-
 <%# here ends the avatar %>
 
+
 <%# here start the categories %>
-    <h4 class="my-3 mt-5 text-center headline">Your Categories</h4>
-    <ul style="display: inline-block;">
+<h4 class="text-center mt-4">Your Categories</h4>
+<div class="content-wrap">
+    <ul>
       <% @selected_categories.each do |category| %>
         <li class="btn-list-checked"><%= category.name %>
       <% end %>
     <%# edit_user_category %>
-        <li class="btn-list-add"><%= link_to '+', user_path(current_user), style: "text-decoration: none; font-size: 12pt" %></li>
+        <li class="btn-list-add"><%= link_to '+', user_path(current_user), style: "text-decoration: none; font-size: 14pt" %></li>
     </ul>
   </div>
 <%# here end the categories %>
@@ -48,7 +47,7 @@
 
 <%# here starts the calendar %>
   <div class="container-dashboard">
-  <h4 class="my-3 mt-5 text-center headline">Your Personal Tracking</h4>
+  <h4 class="my-3 mt-2 text-center">Your Tracking</h4>
     <%= month_calendar do |date, posts| %>
       <%= date %>
       <% posts.each do |post| %>
@@ -84,7 +83,7 @@
     <%# here ends counter for completed challenges %>
 
   <%# here starts counter for categories %>
-  <div class="card-tracking">
+  <div class="card-tracking yellow">
     <% @monthly_categories = [] %>
 
     <% @monthly_posts.each do |post| %>
