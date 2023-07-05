@@ -234,3 +234,32 @@
   left: 10px;
   right: 10px;
 }
+
+.log-btn {
+  // position: relative;
+  // display: flex;
+  // align-items: center;
+  border: none;
+  // background-color: black;
+  // border: 1pt solid black;
+  // color: white;
+  // padding: 5pt;
+  // border-radius: 50%;
+  // font-size: 12pt;
+  // font-weight: lighter;
+  // display: block;
+  // margin-left: 10px;
+  // margin-right: 10px;
+  // margin-bottom: 10px;
+  // margin-top: 40px;
+  // width: 50pt;
+  // height: 50pt;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  height: 100%;
+}
