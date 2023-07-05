@@ -2,7 +2,7 @@
 
 $after-color: $main-green;
 $before-color: $main-purple;
-$background-color: white;
+$background-color: none;
 $main-font: 'Montserrat', sans-serif;
 $additional-font: 'Damion', cursive;
 // %centering {
@@ -48,13 +48,13 @@ $additional-font: 'Damion', cursive;
       1px 1px 0 #000;
     position: relative;
     display: inline-block;
-    margin-left: 8px;
+    margin-left: 10px;
     &:before {
       content: attr(data-text);
       position: absolute;
       top: 0.1em;
       left: -0.15em;
-      z-index: -1;
+      z-index: auto;
       color: $before-color;
       animation: before-anim 1.2s infinite;
     }
@@ -63,7 +63,7 @@ $additional-font: 'Damion', cursive;
       position: absolute;
       top: 0.2em;
       left: -0.3em;
-      z-index: -2;
+      z-index: auto;
       color: $after-color;
       animation: after-anim 1.2s infinite;
     }

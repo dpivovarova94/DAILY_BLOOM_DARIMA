@@ -98,7 +98,7 @@
       <% most_common_categories = duplicate_counts.select { |_, count| count == max_count }.keys %>
 
       <div class="content">
-        <h4>Your top category was:</h4>
+        <h5>Your top category was:</h5>
         <h1 data-text="<%= most_common_categories.join(', ') %>"><%= most_common_categories.join(', ') %></h1>
       </div>
     <% end %>
