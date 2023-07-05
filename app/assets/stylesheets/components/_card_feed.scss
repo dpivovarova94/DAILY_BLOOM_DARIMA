@@ -16,6 +16,8 @@
     .posts_cards {
       height: width;
       position: relative;
+      outline: 1px solid black;
+      border-radius: 12px;
 
       .card-quote {
         position: relative;
