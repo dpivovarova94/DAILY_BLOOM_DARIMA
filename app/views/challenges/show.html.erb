@@ -4,11 +4,11 @@
       <%= link_to '', feed_path, class: "btn-close x" %>
     </div>
     <% if current_user == User.find_by(username: "Axel") %>
-      <h1>Sun</h1>
+      <h1 class="dashboard-greeting">Sun</h1>
     <% elsif current_user == User.find_by(username: "Alex") %>
-       <h1>Flower</h1>
+       <h1 class="dashboard-greeting">Flower</h1>
     <% else %>
-      <h1><%= @challenge.keyword.name %></h1>
+      <h1 class="dashboard-greeting"><%= @challenge.keyword.name %></h1>
     <% end %>
      <br>
     <%= link_to "Ready to Bloom?", new_challenge_post_path(@challenge), class: "btn btn-custom btn-challenge mt-4 text-decoration-none" %>

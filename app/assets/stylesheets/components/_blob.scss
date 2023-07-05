@@ -28,7 +28,10 @@ section {
 
 
 .body-font {
-  font-family: $body-font;
+  font-family: 'DailyBloom';
+  src:url('DailyBloom.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
   font-size: 40px;
 }
 
