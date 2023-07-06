@@ -1,40 +1,50 @@
-.dashboard-gradient {
-  // display: flex;
-    border-bottom: 1px solid black;
-    overflow: hidden;
-    background: $main-green;
-    background: linear-gradient(45deg, $main-blue, $main-purple);
-    min-height: 100%;
-    position: relative;
-    z-index: 1;
-    box-shadow: inset -200px 0 100px -18px $main-purple,inset -3px -13px 65px -18px $main-blue;
 
-    &:before,&:after{
-        content:'';
-        position:absolute;
-        width:100%;
-        height:100%;
-    }
-
-    &:before{
-        background: $main-yellow;
-        box-shadow: 0 0 140px 64px $main-yellow;
-        z-index:2;
-        top: -100%;
-        left: -80%;
-        opacity: 0.8;
-    }
-
-    &:after {
-    background: $main-green;
-    z-index: 3;
-    bottom: -96%;
-    right: -72%;
-    box-shadow: 0 0 140px 64px $main-green;
-    opacity: 1;
-    border-radius: 100%;
-    }
+  .dashboard-gradient{
+    background:
+      radial-gradient(circle at 0% 0%, $main-purple, rgba(55,220,222,0) 80%),
+      radial-gradient(circle at 100% 0%, $main-green, rgba(255,20,222,0) 50%),
+      radial-gradient(circle at 100% 100%, $main-blue, rgba(255,0,0,0) 80%),
+      radial-gradient(circle at 50% 50%, $main-purple, rgba(255,0,0,.0) 80%),
+      radial-gradient(circle at 0% 100%, $main-yellow, rgba(255,20,222,0) 80%);
 }
+
+// old gradient
+  // // display: flex;
+  //   border-bottom: 1px solid black;
+  //   overflow: hidden;
+  //   background: $main-purple;
+  //   background: linear-gradient(60deg, $main-blue, $main-purple);
+  //   min-height: 100%;
+  //   position: relative;
+  //   z-index: 1;
+  //   box-shadow: inset -200px 100px 200px -18px $main-purple,inset -200px -100px 200px -18px $main-blue;
+
+  //   &:before,&:after{
+  //       content:'';
+  //       position:absolute;
+  //       width:100%;
+  //       height:100%;
+  //   }
+
+  //   &:before{
+  //       background: $main-yellow;
+  //       box-shadow: 100px 180px 100px 90px $main-yellow;
+  //       z-index: -1;
+  //       top: -100%;
+  //       left: -65%;
+  //       opacity: 0.8;
+  //   }
+
+  //   &:after {
+  //       background: $main-green;
+  //       z-index: -2;
+  //       bottom: -100%;
+  //       right: -60%;
+  //       box-shadow: -100px -180px 100px 90px $main-green;
+  //       opacity: 0.8;
+  //       // border-radius: 100%;
+  //   }
+
 
 .dashboard-greeting {
   color: white;

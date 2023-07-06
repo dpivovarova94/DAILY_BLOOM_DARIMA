@@ -1,5 +1,61 @@
-<div id="welcome-screen" data-controller="welcome" data-action="connect@window->welcome#rememberSeenWelcomeScreen">
-  <div data-welcome-target="screen">
-    <%= inline_svg("logo.svg", class: "icon-centered", height: "35pt") %>
+<%# <div id="welcome-screen" data-controller="welcome" data-action="connect@window->welcome#rememberSeenWelcomeScreen">
+  <div data-welcome-target="screen"> %>
+    <%# inline_svg("logo.svg", class: "icon-centered", height: "35pt") %>
+  <%# </div>
+</div> %>
+
+<%# Introduction to Daily Bloom %>
+  <div class="dashboard-gradient">
+    <h1 class="text-center">
+      <%= link_to "/posts" do %>
+        <%= inline_svg("logo.svg", class: "icon", height: "18pt") %>
+      <% end %>
+    </h1>
+    <div class="flexbox">
+      <div class="textbox">
+        <h2>Welcome to <%= inline_svg("logo.svg", class: "icon", height: "20pt") %></h2>
+        <h5>Your mental health website to find the beauty in every day </h5>
+        <p>Click here to try on your phone <%= inline_svg("icon.svg", class: "icon", height: "20pt") %></p>
+      </div>
+      <img src="" alt="placeholder for screenshot right">
+    </div>
   </div>
+
+<%# Challenge card animation %>
+<div class="beige flexbox">
+  <img src="" alt="placeholder for screenshot left">
+  <h5 class="textbox">Daily inspiration <br> We give you the seed and you can start blooming. A word as daily inspiration that gives you a little nudge to look out for the beauty in your daily routine. We help you to focus on the little things in life to stay positive & grateful!</h5>
 </div>
+<%# Upload options %>
+<div class="dashboard-gradient flexbox">
+  <div class="grow">
+    <h5 class="textbox">
+    Not another social media app - it's just for you!
+    Get creative by writing poems, quotes, linking your song or taking a picture
+    </h5>
+    <div class="grid">
+      <h5 class="box">Photo Box</h5>
+      <h5 class="box">Poem Box</h5>
+      <h5 class="box">Song Box</h5>
+      <h5 class="box">Quote Box</h5>
+    </div>
+  </div>
+
+  <img src="" alt="placeholder for screenshot right">
+</div>
+
+<%# Feed %>
+<div class="beige flexbox">
+  <img src="" alt="placeholder for screenshot left">
+  <h1 class="textbox">Your Personal Journal: a beautiful garden of the small moments in life</h1>
+</div>
+
+<%# Dashboard %>
+<div class="beige flexbox">
+  <h1>Placeholder for text left block</h1>
+  <img src="" alt="placeholder for screenshot left">
+</div>
+
+
+<%# insert back up button %>
+<%# make it mobile responsive %>
