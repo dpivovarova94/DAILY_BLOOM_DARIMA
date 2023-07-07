@@ -18,6 +18,13 @@ puts "database cleaned 🧹"
 
 
 # SEEDS FOR DEMO
+rose = User.create(
+  username: "Rose",
+  email: "rose@bloom.com",
+  password: "123456",
+  avatar_url: "https://i.pinimg.com/564x/10/6c/6d/106c6d6f853de5a16675a6db4f9ba10a.jpg"
+)
+
 
 axel = User.create(
   username: "Axel",
