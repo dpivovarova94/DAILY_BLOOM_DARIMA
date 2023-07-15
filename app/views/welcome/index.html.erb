@@ -15,16 +15,22 @@
       <div class="textbox">
         <h2>Welcome to <%= inline_svg("logo.svg", class: "icon", height: "20pt") %></h2>
         <h5>Your mental health website to find the beauty in every day <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></h5>
-        <p>Click here to try on your phone <%= inline_svg("icon.svg", class: "icon", height: "20pt") %></p>
       </div>
       <%= image_tag("Feed.jpg", width: "292px", height: "633px", class: "demo-img") %>
+    </div>
+    <div class="grid">
+      <div></div>
+      <h5>Click here to try on your phone <%= inline_svg("icon.svg", class: "icon", height: "20pt") %></h5>
     </div>
   </div>
 
 <%# Challenge card animation %>
 <div class="beige flexbox">
-  <img src="" alt="placeholder for screenshot left">
-  <h5 class="textbox">Daily inspiration <br> We give you the seed to start blooming. Each day we surprise you with one word that gives you a little nudge to look out for the beauty in your daily routine. We help you to focus on the little things in life, to stay positive & grateful!</h5>
+  <%= video_tag("Animation.mov", width: "292px", height: "633px", autoplay: :autoplay, loop: :loop, class: "demo-img") %>
+  <div class="textbox">
+    <h3>Daily Inspiration</h3>
+    <h5>We give you the seed to start blooming. Each day we surprise you with one word that gives you a little nudge to look out for the beauty in your daily routine. We help you to focus on the little things in life, to stay positive & grateful!</h5>
+  </div>
 </div>
 <%# Upload options %>
 <div class="dashboard-gradient flexbox">
