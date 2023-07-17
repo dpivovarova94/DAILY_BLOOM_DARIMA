@@ -15,14 +15,13 @@
     <div class="flexbox">
       <div class="textbox">
         <h2>Welcome to <%= inline_svg("logo.svg", class: "icon", height: "20pt") %></h2>
-        <h5>Your mental health website to find the beauty in every day <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></h5>
+        <h5>Your mental health website to find the beauty in every day <br><br><br><br><br><br><br></h5>
+        <div class="flexbox">
+        <h5 class="p-0 text-end">Click here to try on your phone <%= inline_svg("icon.svg", class: "icon", height: "20pt") %></h5>
+        <%= image_tag("Arrow.png", width: "100px", height:"80px") %>
       </div>
+    </div>
       <%= image_tag("Feed.jpg", width: "292px", height: "633px", class: "demo-img") %>
-    </div>
-    <div class="grid">
-      <div></div>
-      <h5>Click here to try on your phone <%= inline_svg("icon.svg", class: "icon", height: "20pt") %></h5>
-    </div>
   </div>
 
 <%# Challenge card animation %>
@@ -58,7 +57,7 @@
 
 <%# Dashboard %>
 <div class="flexbox">
-  <h1>Your Dashboard that helps you stay motivated</h1>
+  <h1 class="textbox">Your Dashboard that helps you stay motivated</h1>
   <%= video_tag("Dashboard.mp4", size: "292x633", controls: true, autoplay: :autoplay, loop: :loop, class: "demo-img") %>
 </div>
 
