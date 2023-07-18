@@ -15,11 +15,15 @@
   font-weight: 300;
 }
 
+.logo-headline {
+  font-family: 'DailyBloom';
+}
+
 .margin {
   // margin-top: 100px;
   // margin-bottom: 100px;
-  // margin-left: 50px;
-  // margin-right: 50px;
+  // margin-left: 100px;
+  // margin-right: 100px;
   margin: 100px;
 }
 
@@ -43,7 +47,7 @@
 
 .beige {
   // background-color: #FFF7E9;
-  background-color: rgba(253, 255, 144, .7);
+  background-color: rgba(152, 164, 231, .6);
 }
 
 .flexbox {
@@ -79,11 +83,28 @@
   padding-bottom: 40px;
 }
 
+.padding-box {
+  padding: 100px;
+}
+
+.width-align {
+  margin-top: 20px;
+  text-align: justify;
+}
+
 .textbox {
   width: 60%;
   text-align: left;
   font-weight: lighter;
 }
+
+.textbox-right {
+  padding-left: 100px;
+  width: 40%;
+  text-align: center;
+  font-weight: lighter;
+}
+
 
 .grow {
   display: flex;
@@ -98,7 +119,8 @@
 .demo-img {
   outline: 1px solid black;
   border-radius: 20px;
-  box-shadow: 0 1px 2px rgba(0,0,1,0.3);
+  box-shadow: 0 5px 10px rgba(0,1,2,0.4);
+  margin-left: 20px;
 }
 
 .background-gradient {

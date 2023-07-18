@@ -16,47 +16,53 @@
       <div class="textbox">
         <h2 class="greeter">Welcome to <%= inline_svg("logo.svg", class: "icon", height: "50px") %></h2>
         <h5 class="subheadline">Your mental health website to find the beauty in every day <br><br></h5>
-        <h5 class="p-0 m-0 text-end font-weight"><%= inline_svg("icon.svg", class: "icon", height: "20pt") %> Click here to try on your phone <%= image_tag("Arrow.png", width: "100px", height:"100px", class: "padding") %></h5>
+        <%= link_to "/posts" do %>
+          <h5 class="p-0 m-0 text-end font-weight"><%= inline_svg("icon.svg", class: "icon", height: "20pt") %> Click here to try on your phone <%= image_tag("Arrow.png", width: "100px", height:"100px", class: "padding") %></h5>
+        <% end %>
       </div>
       <%# <div class="center">
       </div> %>
+      <%= link_to "/posts" do %>
         <%= image_tag("Feed.jpg", width: "292px", height: "633px", class: "demo-img text-start") %>
+      <% end %>
     </div>
   </div>
 
 <%# Challenge card animation %>
-<div class="beige flexbox">
+<div class="beige flexbox padding-box">
   <%= video_tag("Animation.mp4", size: "292x633", controls: true, autoplay: :autoplay, loop: :loop, class: "demo-img") %>
-  <div class="textbox">
-    <h3>Daily Inspiration</h3>
-    <h5>We give you the seed to start blooming. Each day we surprise you with one word that gives you a little nudge to look out for the beauty in your daily routine. We help you to focus on the little things in life, to stay positive & grateful!</h5>
+  <div class="textbox-right">
+    <h1 class="logo-headline">Daily Inspiration</h1>
+    <h5 class="font-weight width-align">We give you the seed to start blooming. Each day we surprise you with one word that gives you a little nudge to look out for the beauty in your daily routine. <br><br> We help you to focus on the little things in life, to stay positive & grateful!</h5>
   </div>
+  <div></div>
 </div>
+
 <%# Upload options %>
-<div class=" flexbox">
+<div class="flexbox padding-box">
   <div class="grow">
     <h5 class="textbox">
     Not another social media app - it's just for you!
     Get creative by writing poems, quotes, linking your song or taking a picture
     </h5>
     <div class="grid">
-      <h5 class="box">Photo</h5>
-      <h5 class="box">Poem</h5>
-      <h5 class="box">Song</h5>
-      <h5 class="box">Quote</h5>
+      <h5 class="box logo-headline">Photo</h5>
+      <h5 class="box logo-headline">Poem</h5>
+      <h5 class="box logo-headline">Song</h5>
+      <h5 class="box logo-headline">Quote</h5>
     </div>
   </div>
   <%= video_tag("Upload.mp4", size: "292x633", controls: true, autoplay: :autoplay, loop: :loop, class: "demo-img") %>
 </div>
 
 <%# Feed %>
-<div class="beige flexbox">
+<div class="beige flexbox padding-box">
  <%= video_tag("Feed-scroll.mp4", size: "292x633", controls: true, autoplay: :autoplay, loop: :loop, class: "demo-img") %>
   <h1 class="textbox">Your Personal Journal: a beautiful garden of the small moments in life</h1>
 </div>
 
 <%# Dashboard %>
-<div class="flexbox">
+<div class="flexbox padding-box">
   <h1 class="textbox">Your Dashboard that helps you stay motivated</h1>
   <%= video_tag("Dashboard.mp4", size: "292x633", controls: true, autoplay: :autoplay, loop: :loop, class: "demo-img") %>
 </div>
