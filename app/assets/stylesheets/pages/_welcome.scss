@@ -1,14 +1,37 @@
-#welcome-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  z-index: 9999;
+// #welcome-screen {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   background: white;
+//   z-index: 9999;
+// }
+
+.font-weight {
+  font-weight: 300;
+}
+
+.margin {
+  // margin-top: 100px;
+  // margin-bottom: 100px;
+  // margin-left: 50px;
+  // margin-right: 50px;
+  margin: 100px;
+}
+
+.greeter {
+  font-size: 50px;
+  font-weight: 300;
+}
+
+.subheadline {
+  font-size: 50px;
+  font-weight: light;
+  font-weight: 300;
 }
 
 .icon-centered {
@@ -26,9 +49,17 @@
 .flexbox {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
   // align-items: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  // padding-top: 100px;
+  // padding-bottom: 100px;
+}
+
+.center {
+  align-self: center;
+  margin: 0px;
+  height: auto;
 }
 
 .box {
@@ -44,8 +75,12 @@
   margin: 10px;
 }
 
+.padding {
+  padding-bottom: 40px;
+}
+
 .textbox {
-  width: 50%;
+  width: 60%;
   text-align: left;
   font-weight: lighter;
 }

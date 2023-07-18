@@ -12,16 +12,16 @@
         <%= inline_svg("logo.svg", class: "icon", height: "18pt") %>
       <% end %>
     </h1>
-    <div class="flexbox">
+    <div class="flexbox margin">
       <div class="textbox">
-        <h2>Welcome to <%= inline_svg("logo.svg", class: "icon", height: "20pt") %></h2>
-        <h5>Your mental health website to find the beauty in every day <br><br><br><br><br><br><br></h5>
-        <div class="flexbox">
-        <h5 class="p-0 text-end">Click here to try on your phone <%= inline_svg("icon.svg", class: "icon", height: "20pt") %></h5>
-        <%= image_tag("Arrow.png", width: "100px", height:"80px") %>
+        <h2 class="greeter">Welcome to <%= inline_svg("logo.svg", class: "icon", height: "50px") %></h2>
+        <h5 class="subheadline">Your mental health website to find the beauty in every day <br><br></h5>
+        <h5 class="p-0 m-0 text-end font-weight"><%= inline_svg("icon.svg", class: "icon", height: "20pt") %> Click here to try on your phone <%= image_tag("Arrow.png", width: "100px", height:"100px", class: "padding") %></h5>
       </div>
+      <%# <div class="center">
+      </div> %>
+        <%= image_tag("Feed.jpg", width: "292px", height: "633px", class: "demo-img text-start") %>
     </div>
-      <%= image_tag("Feed.jpg", width: "292px", height: "633px", class: "demo-img") %>
   </div>
 
 <%# Challenge card animation %>
