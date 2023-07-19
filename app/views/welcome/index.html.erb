@@ -16,7 +16,7 @@
       <div class="textbox">
         <h2 class="greeter">Welcome to <%= inline_svg("logo.svg", class: "icon", height: "50px") %></h2>
         <h5 class="subheadline">Your mental health website to find the beauty in every day <br><br></h5>
-        <%= link_to "/posts" do %>
+        <%= link_to "/posts", class:"text-decoration-none text-black" do %>
           <h5 class="p-0 m-0 text-end font-weight"><%= inline_svg("icon.svg", class: "icon", height: "20pt") %> Click here to try on your phone <%= image_tag("Arrow.png", width: "100px", height:"100px", class: "padding") %></h5>
         <% end %>
       </div>
