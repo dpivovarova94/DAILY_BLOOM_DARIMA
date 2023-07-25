@@ -15,7 +15,7 @@
     <div class="flexbox margin">
       <div class="textbox">
         <h2 class="greeter">Welcome to <%= inline_svg("logo.svg", class: "icon", height: "50px") %></h2>
-        <h5 class="subheadline">Your mental health website to find the beauty in every day <br><br></h5>
+        <h5 class="greeter">Your mental health website to find the beauty in every day <br><br></h5>
         <%= link_to "/posts", class:"text-decoration-none text-black" do %>
           <h5 class="p-0 m-0 text-end font-weight"><%= inline_svg("icon.svg", class: "icon", height: "20pt") %> Click here to try on your phone <%= image_tag("Arrow.png", width: "100px", height:"100px", class: "padding") %></h5>
         <% end %>
@@ -23,49 +23,48 @@
       <%# <div class="center">
       </div> %>
       <%= link_to "/posts" do %>
-        <%= image_tag("Feed.jpg", width: "292px", height: "633px", class: "demo-img text-start") %>
+        <%= image_tag("Feed.jpg", class: "demo-img text-start") %>
       <% end %>
     </div>
   </div>
 
-<%# Challenge card animation %>
-<div class="beige flexbox padding-box">
-  <%= video_tag("Animation.mp4", size: "292x633", controls: true, autoplay: :autoplay, loop: :loop, class: "demo-img") %>
-  <div class="textbox-right">
-    <h1 class="logo-headline">Daily Inspiration</h1>
-    <h5 class="font-weight width-align">We give you the seed to start blooming. Each day we surprise you with one word that gives you a little nudge to look out for the beauty in your daily routine. <br><br> We help you to focus on the little things in life, to stay positive & grateful!</h5>
-  </div>
-  <div></div>
-</div>
-
-<%# Upload options %>
-<div class="flexbox padding-box">
-  <div class="grow">
-    <h5 class="textbox">
-    Not another social media app - it's just for you!
-    Get creative by writing poems, quotes, linking your song or taking a picture
-    </h5>
-    <div class="grid">
-      <h5 class="box logo-headline">Photo</h5>
-      <h5 class="box logo-headline">Poem</h5>
-      <h5 class="box logo-headline">Song</h5>
-      <h5 class="box logo-headline">Quote</h5>
+  <%# Challenge card animation %>
+  <div class="beige flexbox padding-box-right">
+      <%= video_tag("Animation.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "video") %>
+    <div class="textbox-right">
+      <h1 class="greeter fw-normal">Daily Inspiration</h1>
+      <h2 class="font-weight width-align">We give you the seed to start blooming. Each day we surprise you with one word that gives you a little nudge to look out for the beauty in your daily routine. <br><br> We help you to focus on the little things in life, to stay positive & grateful!</h2>
     </div>
   </div>
-  <%= video_tag("Upload.mp4", size: "292x633", controls: true, autoplay: :autoplay, loop: :loop, class: "demo-img") %>
-</div>
 
-<%# Feed %>
-<div class="beige flexbox padding-box">
- <%= video_tag("Feed-scroll.mp4", size: "292x633", controls: true, autoplay: :autoplay, loop: :loop, class: "demo-img") %>
-  <h1 class="textbox">Your Personal Journal: a beautiful garden of the small moments in life</h1>
-</div>
+  <%# Upload options %>
+  <div class="flexbox padding-box-left">
+    <div class="textbox-left">
+      <h2 class="font-weight width-align">
+      Not another social media app - it's just for you!
+      Get creative by writing poems, quotes, linking your song or taking a picture
+      </h2>
+      <div class="grid">
+        <h2 class="box">Photo</h2>
+        <h2 class="box">Poem</h2>
+        <h2 class="box">Song</h2>
+        <h2 class="box">Quote</h2>
+      </div>
+    </div>
+    <%= video_tag("Upload.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "video") %>
+  </div>
 
-<%# Dashboard %>
-<div class="flexbox padding-box">
-  <h1 class="textbox">Your Dashboard that helps you stay motivated</h1>
-  <%= video_tag("Dashboard.mp4", size: "292x633", controls: true, autoplay: :autoplay, loop: :loop, class: "demo-img") %>
-</div>
+  <%# Feed %>
+  <div class="beige flexbox padding-box-right">
+  <%= video_tag("Feed-scroll.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "video") %>
+    <h1 class="textbox">Your Personal Journal: <br> a beautiful garden of the small moments in life</h1>
+  </div>
+
+  <%# Dashboard %>
+  <div class="flexbox padding-box-left">
+    <h1 class="textbox">Your Dashboard that helps you stay motivated</h1>
+    <%= video_tag("Dashboard.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "video") %>
+  </div>
 
 </body>
 <%# insert back up button %>

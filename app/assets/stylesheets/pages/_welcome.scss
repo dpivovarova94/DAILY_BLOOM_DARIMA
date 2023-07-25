@@ -15,9 +15,6 @@
   font-weight: 300;
 }
 
-.logo-headline {
-  font-family: 'DailyBloom';
-}
 
 .margin {
   // margin-top: 100px;
@@ -32,11 +29,6 @@
   font-weight: 300;
 }
 
-.subheadline {
-  font-size: 50px;
-  font-weight: light;
-  font-weight: 300;
-}
 
 .icon-centered {
   position: absolute;
@@ -83,8 +75,18 @@
   padding-bottom: 40px;
 }
 
-.padding-box {
-  padding: 100px;
+.padding-box-right {
+  padding-right: 55px;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  padding-left: 140px;
+}
+
+.padding-box-left {
+  padding-left: 55px;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  padding-right: 100px;
 }
 
 .width-align {
@@ -98,9 +100,19 @@
   font-weight: lighter;
 }
 
+.textbox-left {
+  padding-right: 400px;
+  padding-left: 50px;
+  letter-spacing: -2px;
+  text-align: left;
+  font-weight: lighter;
+}
+
 .textbox-right {
+  // padding-right: 20px;
   padding-left: 100px;
-  width: 40%;
+  width: 60%;
+  letter-spacing: -2px;
   text-align: center;
   font-weight: lighter;
 }
@@ -120,7 +132,20 @@
   outline: 1px solid black;
   border-radius: 20px;
   box-shadow: 0 5px 10px rgba(0,1,2,0.4);
-  margin-left: 20px;
+  // margin-left: 20px;
+  width: 292px;
+  height: 633px;
+  object-fit: fill;
+}
+
+.video {
+  outline: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(0,1,2,0.4);
+  // margin-left: 20px;
+  width: 292px;
+  height: 633px;
+  object-fit: fill;
 }
 
 .background-gradient {
