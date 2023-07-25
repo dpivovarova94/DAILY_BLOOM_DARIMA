@@ -1,15 +1,20 @@
 // #welcome-screen {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   background: white;
-//   z-index: 9999;
-// }
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   background: white;
+  //   z-index: 9999;
+  // }
+
+  :root{
+    --main-padding:50px;
+    --main-margin-top:50px;
+  }
 
 .font-weight {
   font-weight: 300;
@@ -40,17 +45,14 @@
 .beige {
   // background-color: #FFF7E9;
   background-color: rgba(152, 164, 231, .6);
+  // background-attachment: fixed;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // height: 100vh;
+  // margin: 0;
+  // padding: 0;
 }
 
-.flexbox {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: nowrap;
-  // align-items: center;
-  // padding-top: 100px;
-  // padding-bottom: 100px;
-}
 
 .center {
   align-self: center;
@@ -59,16 +61,16 @@
 }
 
 .box {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border: 1px solid black;
   box-shadow: 0 1px 2px rgba(0,0,1,0.3);
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   text-align: center;
   vertical-align: middle;
-  line-height: 200px;
-  margin: 10px;
+  line-height: 150px;
+  margin: 20px;
 }
 
 .padding {
@@ -123,15 +125,22 @@
   flex-direction: column;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+// .flexbox {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   width: 400px;
+//   flex-wrap: wrap;
+//   // display: grid;
+//   // grid-template-columns: 1fr 1fr;
+//   // grid-gap: 0.2rem;
+// }
 
 .demo-img {
   outline: 1px solid black;
   border-radius: 20px;
-  box-shadow: 0 5px 10px rgba(0,1,2,0.4);
+  // box-shadow: 0 5px 10px rgba(0,1,2,0.4);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   // margin-left: 20px;
   width: 292px;
   height: 633px;
@@ -141,7 +150,8 @@
 .video {
   outline: 1px solid black;
   border-radius: 20px;
-  box-shadow: 0 5px 10px rgba(0,1,2,0.4);
+  // box-shadow: 0 5px 10px rgba(0,1,2,0.4);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   // margin-left: 20px;
   width: 292px;
   height: 633px;
@@ -159,4 +169,116 @@
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
+}
+
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "intro intro feed-static"
+    "animation daily-inspiration daily-inspiration"
+    "medium-selection medium-selection upload"
+    "feed-animated personal-journal personal-journal"
+    "your-dashboard your-dashboard dashboard-animated";
+  grid-gap: 0.5rem;
+}
+
+
+#intro {
+  grid-area: intro;
+  padding:var(--main-padding);
+  margin-top: var(--main-margin-top);
+  place-self: center;
+}
+
+#feed-static {
+  grid-area: feed-static;
+  padding:var(--main-padding);
+  margin-top: var(--main-margin-top);
+}
+
+#animation {
+  grid-area: animation;
+  padding:var(--main-padding);
+  margin-top: var(--main-margin-top);
+}
+
+#daily-inspiration {
+  grid-area: daily-inspiration;
+  padding:var(--main-padding);
+  margin-top: var(--main-margin-top);
+  place-self: center;
+  padding-left: 100px;
+  padding-right: 80px;
+}
+
+#medium-selection {
+  grid-area: medium-selection;
+  padding:var(--main-padding);
+  margin-top: var(--main-margin-top);
+  place-self: center;
+  padding-right: 100px;
+}
+
+
+#upload {
+  grid-area: upload;
+  padding:var(--main-padding);
+  margin-top: var(--main-margin-top);
+}
+
+#feed-animated {
+  grid-area: feed-animated;
+  padding:var(--main-padding);
+  margin-top: var(--main-margin-top);
+}
+
+#personal-journal {
+  grid-area: personal-journal;
+  padding:var(--main-padding);
+  margin-top: var(--main-margin-top);
+  place-self: center;
+  padding-left: 100px;
+  padding-right: 80px;
+}
+
+#your-dashboard {
+  grid-area: your-dashboard;
+  padding:var(--main-padding);
+  margin-top: var(--main-margin-top);
+  place-self: center;
+  padding-right: 100px;
+}
+
+#dashboard-animated {
+  grid-area: dashboard-animated;
+  padding:var(--main-padding);
+  margin-top: var(--main-margin-top);
+}
+
+
+
+@media only screen and (max-width:550px){
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "intro"
+    "feed-static"
+    "daily-inspiration"
+    "animation"
+    "medium-selection"
+    "upload"
+    "personal-journal"
+    "feed-animated"
+    "your-dashboard"
+    "dashboard-animated";
+  }
+
+  .hide {
+    display: none;
+  }
 }

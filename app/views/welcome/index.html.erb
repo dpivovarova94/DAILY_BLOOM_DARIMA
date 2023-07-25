@@ -6,66 +6,76 @@
 
 <%# Introduction to Daily Bloom %>
 <body class="background-gradient">
-  <div>
-    <h1 class="text-center">
-      <%= link_to "/posts" do %>
-        <%= inline_svg("logo.svg", class: "icon", height: "18pt") %>
-      <% end %>
-    </h1>
-    <div class="flexbox margin">
-      <div class="textbox">
+  <h1 class="text-center">
+    <%= link_to "/posts" do %>
+      <%= inline_svg("logo.svg", class: "icon", height: "18pt") %>
+    <% end %>
+  </h1>
+
+<%# first row %>
+  <div class="container">
+      <div id="intro">
         <h2 class="greeter">Welcome to <%= inline_svg("logo.svg", class: "icon", height: "50px") %></h2>
         <h5 class="greeter">Your mental health website to find the beauty in every day <br><br></h5>
         <%= link_to "/posts", class:"text-decoration-none text-black" do %>
-          <h5 class="p-0 m-0 text-end font-weight"><%= inline_svg("icon.svg", class: "icon", height: "20pt") %> Click here to try on your phone <%= image_tag("Arrow.png", width: "100px", height:"100px", class: "padding") %></h5>
+          <h5 class="p-0 m-0 text-end font-weight"><%= inline_svg("icon.svg", class: "icon", height: "20pt") %> Click here to try on your phone <%= image_tag("Arrow.png", width: "100px", height:"100px", class: "padding hide") %></h5>
         <% end %>
       </div>
-      <%# <div class="center">
-      </div> %>
-      <%= link_to "/posts" do %>
-        <%= image_tag("Feed.jpg", class: "demo-img text-start") %>
-      <% end %>
-    </div>
-  </div>
+      <div id="feed-static">
+        <%= link_to "/posts" do %>
+          <%= image_tag("Feed.jpg", class: "demo-img text-start") %>
+        <% end %>
+      </div>
 
-  <%# Challenge card animation %>
-  <div class="beige flexbox padding-box-right">
+  <%# second row %>
+    <div id="animation">
       <%= video_tag("Animation.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "video") %>
-    <div class="textbox-right">
-      <h1 class="greeter fw-normal">Daily Inspiration</h1>
+    </div>
+    <div id="daily-inspiration">
+      <h1 class="greeter fw-normal text-center">Daily Inspiration</h1>
       <h2 class="font-weight width-align">We give you the seed to start blooming. Each day we surprise you with one word that gives you a little nudge to look out for the beauty in your daily routine. <br><br> We help you to focus on the little things in life, to stay positive & grateful!</h2>
     </div>
-  </div>
 
-  <%# Upload options %>
-  <div class="flexbox padding-box-left">
-    <div class="textbox-left">
+
+
+  <%# third row %>
+    <div id="medium-selection">
+      <h1 class="greeter fw-normal text-center">Get creative</h1>
       <h2 class="font-weight width-align">
-      Not another social media app - it's just for you!
-      Get creative by writing poems, quotes, linking your song or taking a picture
+        Choose how you want to capture your moment: take a <strong>picture</strong>, write a <strong>poem</strong>, save a <strong>quote</strong> or link a <strong>song</strong> that's on your mind!
       </h2>
-      <div class="grid">
-        <h2 class="box">Photo</h2>
-        <h2 class="box">Poem</h2>
-        <h2 class="box">Song</h2>
-        <h2 class="box">Quote</h2>
-      </div>
     </div>
-    <%= video_tag("Upload.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "video") %>
-  </div>
+    <div id="upload">
+      <%= video_tag("Upload.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "video") %>
+    </div>
 
-  <%# Feed %>
-  <div class="beige flexbox padding-box-right">
-  <%= video_tag("Feed-scroll.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "video") %>
-    <h1 class="textbox">Your Personal Journal: <br> a beautiful garden of the small moments in life</h1>
-  </div>
 
-  <%# Dashboard %>
-  <div class="flexbox padding-box-left">
-    <h1 class="textbox">Your Dashboard that helps you stay motivated</h1>
-    <%= video_tag("Dashboard.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "video") %>
-  </div>
+  <%# fourth row %>
+    <div id="feed-animated">
+    <%= video_tag("Feed-scroll.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "video") %>
+    </div>
+    <div id="personal-journal">
+      <h1 class="greeter fw-normal text-center">Your Personal Journal:</h1>
+      <h1 class="greeter fw-light text-center">A beautiful garden of the small moments in life</h1>
+      <%# <h2 class="font-weight width-align">It's not another social media app - no pressure of sharing, it's just for you!</h2> %>
+    </div>
 
+
+  <%# fifth row %>
+    <div id="your-dashboard">
+      <h1 class="greeter fw-normal text-center">Your Dashboard:</h1>
+      <h2 class="font-weight width-align">
+        <strong>Categories:</strong> Personalize your daily words by selecting topics you are interested in
+        <br> <br>
+        <strong>Tracking:</strong> Keep track of your uploads
+        <br> <br>
+        <strong>Motivation:</strong> Stay motivated and discover what category you liked most
+      </h2>
+    </div>
+    <div id="dashboard-animated">
+      <%= video_tag("Dashboard.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "video") %>
+    </div>
+  </div>
 </body>
+
 <%# insert back up button %>
-<%# make it mobile responsive %>
