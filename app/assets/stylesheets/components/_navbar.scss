@@ -50,6 +50,20 @@
   fill: $gray;
 }
 
+.icon-small {
+  opacity: 1;
+  transform: 0.3s;
+  fill: $gray;
+  height: 18pt;
+}
+
+.icon-big {
+  opacity: 1;
+  transform: 0.3s;
+  fill: $gray;
+  height: 50px;
+}
+
 .icon:active {
   opacity: 0.6
 }
