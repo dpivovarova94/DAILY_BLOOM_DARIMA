@@ -12,12 +12,17 @@
   // }
 
   :root{
-    --main-padding:50px;
+    --main-padding: 50px;
+    // --main-padding: max(2vh, 2rem) 1rem;
     --main-margin-top:50px;
   }
 
 .font-weight {
   font-weight: 300;
+}
+
+.align {
+  text-align: right;
 }
 
 
@@ -34,6 +39,14 @@
   font-weight: 300;
 }
 
+ul {
+  list-style-image: url('icon.svg');
+}
+
+li::marker {
+    font-size: 3rem;
+    font-weight: bolder;
+}
 
 .icon-centered {
   position: absolute;
@@ -261,6 +274,7 @@
 
 
 
+
 @media only screen and (max-width:550px){
   .container {
     grid-template-columns: 1fr;
@@ -276,9 +290,101 @@
     "feed-animated"
     "your-dashboard"
     "dashboard-animated";
+    padding: 0px;
+  }
+
+  .greeter {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+    letter-spacing: -0.05em;
+    // word-spacing: -0.08em;
+  }
+
+  h5 {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .icon-small {
+    height: 15pt;
+  }
+
+  .icon-big {
+    height: 30px;
+  }
+
+  #intro {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  #feed-static {
+    margin-top: 0px;
+    padding: 0px 20px 20px;
+    place-self: center;
+  }
+
+  #daily-inspiration {
+    padding: 0px 50px;
+  }
+
+  #animation {
+    margin-top: 0px;
+    padding: 20px;
+    place-self: center;
+  }
+
+  #medium-selection {
+    padding: 0px 50px;
+  }
+
+  #upload {
+    margin-top: 0px;
+    padding: 20px;
+    place-self: center;
+  }
+
+  #personal-journal {
+    padding: 0px 50px;
+  }
+
+  #feed-animated {
+    margin-top: 0px;
+    padding: 20px;
+    place-self: center;
+  }
+
+  #your-dashboard {
+    padding: 0px 50px;
+  }
+
+  #dashboard-animated {
+    margin-top: 0px;
+    padding: 20px;
+    place-self: center;
+    margin-bottom: 100px;
   }
 
   .hide {
     display: none;
   }
+
+  .demo-img {
+    width: 233px;
+    height: 506px;
+  }
+
+  .video {
+    width: 233px;
+    height: 506px;
+  }
+
+  li::marker {
+    font-size: 2rem;
+    font-weight: bolder;
+}
 }

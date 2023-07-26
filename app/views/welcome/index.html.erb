@@ -8,17 +8,17 @@
 <body class="background-gradient">
   <h1 class="text-center">
     <%= link_to "/posts" do %>
-      <%= inline_svg("logo.svg", class: "icon", height: "18pt") %>
+      <%= inline_svg("logo.svg", class: "icon-small") %>
     <% end %>
   </h1>
 
 <%# first row %>
   <div class="container">
       <div id="intro">
-        <h2 class="greeter">Welcome to <%= inline_svg("logo.svg", class: "icon", height: "50px") %></h2>
+        <h2 class="greeter">Welcome to <%= inline_svg("logo.svg", class: "icon-big") %></h2>
         <h5 class="greeter">Your mental health website to find the beauty in every day <br><br></h5>
-        <%= link_to "/posts", class:"text-decoration-none text-black" do %>
-          <h5 class="p-0 m-0 text-end font-weight"><%= inline_svg("icon.svg", class: "icon", height: "20pt") %> Click here to try on your phone <%= image_tag("Arrow.png", width: "100px", height:"100px", class: "padding hide") %></h5>
+        <%= link_to "/posts", class:"text-decoration-none align text-black" do %>
+          <h5 class="p-0 m-0 font-weight"><%= inline_svg("icon.svg", class: "icon mt-2", height: "20pt") %> Click here to try on your phone <%= image_tag("Arrow.png", width: "100px", height:"100px", class: "padding hide") %></h5>
         <% end %>
       </div>
       <div id="feed-static">
@@ -63,13 +63,13 @@
 
   <%# fifth row %>
     <div id="your-dashboard">
-      <h1 class="greeter fw-normal text-center">Your Dashboard:</h1>
+      <h1 class="greeter fw-normal text-center">Your Dashboard</h1>
       <h2 class="font-weight width-align">
-        <strong>Categories:</strong> Personalize your daily words by selecting topics you are interested in
-        <br> <br>
-        <strong>Tracking:</strong> Keep track of your uploads
-        <br> <br>
-        <strong>Motivation:</strong> Stay motivated and discover what category you liked most
+        <ul>
+          <li style="padding-left: 10px"> Personalize your daily words by selecting categories you are interested in</li>
+          <li style="padding-left: 10px"> Keep track of your monthly uploads</li>
+          <li style="padding-left: 10px"> Stay motivated & discover what makes you bloom</li>
+        </ul>
       </h2>
     </div>
     <div id="dashboard-animated">
