@@ -20,5 +20,6 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: "users/registrations" }
   get 'wrapped', to: 'pages#wrapped'
+  get 'challenge_success', to: 'challenges#success', as: :challenge_success
 
 end
