@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'posts', to: 'posts#index', as: :feed
   get '/posts/:id', to: 'posts#show', as: 'post'
+  delete '/posts/:id', to: 'posts#destroy', as: 'delete_post'
 
 
   get 'user_categories/new', to: 'user_categories#new'
@@ -20,5 +21,6 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: "users/registrations" }
   get 'wrapped', to: 'pages#wrapped'
+  get 'challenge_success', to: 'challenges#success', as: :challenge_success
 
 end
