@@ -57,10 +57,16 @@
                           <% end %>
                         </div>
                       <% end %>
-                      <div class="keyword" style="height: 5vh;">
-                        <%= post.challenge.keyword.name %>
-                        <p><%= post.created_at.strftime('%d %B %Y')%></p>
+                      <div class="keyword-container">
+                        <div class="keyword">
+                          <%= post.challenge.keyword.name %>
+                          <p><%= post.created_at.strftime('%d %B %Y') %></p>
+                        </div>
+                        <div class="delete-link">
+                          <%= button_to 'Delete', delete_post_path(post), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }%>
+                        </div>
                       </div>
+
                     </div> <!-- Missing closing tag added here -->
                   </div>
                 </div>
