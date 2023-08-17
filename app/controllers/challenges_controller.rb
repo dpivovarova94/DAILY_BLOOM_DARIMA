@@ -1,17 +1,17 @@
 class ChallengesController < ApplicationController
 
   def new
-      @user = current_user
-      # Check if challenge of today already exists for the current user
-      existing_challenge = Challenge.find_by(user: @user, created_at: Time.current.all_day)
-
-      if existing_challenge
-        redirect_to challenge_path(existing_challenge)
-      else
-        @challenge = Challenge.new
-        @keyword = Keyword.where(category: @user.categories).sample
-        @challenge.keyword = @keyword
-      end
+    # Check if challenge of today already exists for the current user
+    # Instead of the new card we will see the success page
+    @user = current_user
+    existing_challenge = Challenge.find_by(user: @user, created_at: Time.current.all_day)
+    if existing_challenge
+      redirect_to challenge_path(existing_challenge)
+    else
+      @challenge = Challenge.new
+      @keyword = Keyword.where(category: @user.categories).sample
+      @challenge.keyword = @keyword
+    end
   end
 
   def create

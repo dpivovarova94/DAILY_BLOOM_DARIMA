@@ -23,4 +23,11 @@ Rails.application.routes.draw do
   get 'wrapped', to: 'pages#wrapped'
   get 'challenge_success', to: 'challenges#success', as: :challenge_success
 
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:index, :show, :create, :update, :destroy]
+    end
+  end
+
+
 end
