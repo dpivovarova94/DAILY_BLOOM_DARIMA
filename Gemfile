@@ -64,7 +64,6 @@ group :development, :test do
   gem "dotenv-rails"
   gem "rspec-rails"
   gem 'shoulda-matchers'
-  gem 'devise'
 end
 
 group :development do
