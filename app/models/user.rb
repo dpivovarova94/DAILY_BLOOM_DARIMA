@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :user_categories, dependent: :destroy
   has_many :categories, through: :user_categories
   has_many :challenges
+  has_many :friendships
+  has_many :friends, through: :friendships
 end
