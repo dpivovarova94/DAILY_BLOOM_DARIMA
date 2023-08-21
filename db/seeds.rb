@@ -26,12 +26,12 @@ rose = User.create(
 )
 
 
-# axel = User.create(
-#   username: "Axel",
-#   email: "axel@bloom.com",
-#   password: "123456",
-#   avatar_url: "https://i.pinimg.com/564x/10/6c/6d/106c6d6f853de5a16675a6db4f9ba10a.jpg"
-# )
+axel = User.create(
+  username: "Axel",
+  email: "axel@bloom.com",
+  password: "123456",
+  avatar_url: "https://i.pinimg.com/564x/10/6c/6d/106c6d6f853de5a16675a6db4f9ba10a.jpg"
+)
 
 # alex = User.create(
 #   username: "Alex",
@@ -201,13 +201,21 @@ keywords_paradox.each do |keyword_name|
   )
 end
 
+keywords_country_life = ["Chickens", "Cows", "Sunrise"]
+keywords_country_life.each do |keyword_name|
+  Keyword.create!(
+    name: keyword_name,
+    category: Category.find_by(name: "Country Life")
+  )
+end
+
 puts "Keywords created"
 
 
-# UserCategory.create(
-#   user: User.find_by(username: "Axel"),
-#   category: Category.find_by(name: "Country Life")
-# )
+UserCategory.create(
+  user: User.find_by(username: "Axel"),
+  category: Category.find_by(name: "Country Life")
+)
 
 
 UserCategory.create(
@@ -230,8 +238,8 @@ UserCategory.create(
   user: User.find_by(username: "Rose"),
   category: Category.find_by(name: "Nostalgia")
 )
-
-# # User Categories for User Lilly
+puts "User Categories created"
+# User Categories for User Lilly
 # 2.times do
 #   UserCategory.create(
 #     user: user,
@@ -263,7 +271,21 @@ UserCategory.create(
 # )
 # picture1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 # picture1.save
+axel1 = Challenge.create!(
+  keyword: Keyword.find_by(name: "Inner Peace"),
+  user: User.find_by(username: "Axel"),
+  created_at: Date.today - 11.days,
+  start_date: Date.today - 11.days
+)
 
+Post.create!(
+  date: Date.today - 11.days,
+  text: "Happiness is contageous",
+  created_at: Date.today - 11.days,
+  challenge: axel1
+)
+
+puts "Axels posts created"
 # axel2 = Challenge.create!(
 #   keyword: Keyword.find_by(name: "Chickens"),
 #   user: User.find_by(username: "Axel"),
@@ -704,6 +726,7 @@ picture16 = Post.create!(
 picture16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 picture16.save
 
+puts "Rose posts created"
 # ALEX POSTS ####################################################
 
 # alex1 = Challenge.create!(

@@ -1,0 +1,16 @@
+<%= form_with(url: friends_search_path, method: :get) do |f| %>
+  <%= f.text_field :search_query, placeholder: "Search friends by name" %>
+  <%= f.submit "Search" %>
+<% end %>
+<% if params[:search_query].present? %>
+  <% if @search_results.any? %>
+    <h2>Search Results</h2>
+    <ul>
+      <% @search_results.each do |friend| %>
+        <li><%= friend.username %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No results found.</p>
+  <% end %>
+<% end  %>
