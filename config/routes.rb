@@ -29,5 +29,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'friends/search', to: 'friends#search', as: 'friends_search'
+
 
 end

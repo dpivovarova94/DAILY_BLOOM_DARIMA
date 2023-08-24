@@ -1,0 +1,6 @@
+<%= form_with(url: friends_search_path, method: :get, remote: true, id: "search-form") do |f| %>
+  <%= f.text_field :search_query, placeholder: "Search friends by name", data: { action: 'input->search#search', target: 'search.input'} %>
+  <%# <%= f.submit "Search" %>
+<% end %>
+
+<p>search form Partial view content is rendering.</p>

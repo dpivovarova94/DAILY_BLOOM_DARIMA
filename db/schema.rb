@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_13_154215) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_18_122747) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,6 +56,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_154215) do
     t.date "start_date"
     t.index ["keyword_id"], name: "index_challenges_on_keyword_id"
     t.index ["user_id"], name: "index_challenges_on_user_id"
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "friend_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_friendships_on_friend_id"
+    t.index ["user_id", "friend_id"], name: "index_friendships_on_user_id_and_friend_id", unique: true
+    t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
   create_table "keywords", force: :cascade do |t|
@@ -106,6 +116,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_154215) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "challenges", "keywords"
   add_foreign_key "challenges", "users"
+  add_foreign_key "friendships", "users"
+  add_foreign_key "friendships", "users", column: "friend_id"
   add_foreign_key "keywords", "categories"
   add_foreign_key "posts", "challenges"
   add_foreign_key "user_categories", "categories"
