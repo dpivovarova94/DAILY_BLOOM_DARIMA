@@ -1,4 +1,4 @@
-class FriendsController < ApplicationController
+class FriendshipsController < ApplicationController
   # layout false
   def search
     # @users = User.all
@@ -22,5 +22,14 @@ class FriendsController < ApplicationController
     #   format.html # Render the search.html.erb
     #   format.json { render json: @search_results } # Render JSON response
     # end
+  end
+
+  def create
+    # friend = User.find(params[:friend_id])
+    # @friendship = Friendshp.new()
+  end
+
+  def update
+
   end
 end

@@ -11,7 +11,7 @@ export default class extends Controller {
   search() {
     // event.preventDefault();
     const query = this.inputTarget.value;
-    fetch(`/friends/search?search_query=${encodeURIComponent(query)}`)
+    fetch(`/friendships/search?search_query=${encodeURIComponent(query)}`)
       .then(response => response.json())
       .then(data => {
         console.log(data)

@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'friends/search', to: 'friends#search', as: 'friends_search'
+  get 'friendships/search', to: 'friendships#search', as: 'friendship_search'
 
-
+  resources :friendship, only: [:create, :update]
 end
