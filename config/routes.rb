@@ -31,5 +31,5 @@ Rails.application.routes.draw do
 
   get 'friendships/search', to: 'friendships#search', as: 'friendship_search'
   # post 'friendships/create', to: 'frienships#create', as: 'friendships'
-  resources :friendships, only: [:create, :new, :update]
+  resources :friendships, only: [:index, :create, :new, :update]
 end

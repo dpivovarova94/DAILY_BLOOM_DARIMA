@@ -13,7 +13,7 @@ export default class extends Controller {
     const query = this.inputTarget.value;
     fetch(`/friendships/search?search_query=${encodeURIComponent(query)}`)
       .then(response => response.text())
-      
+
       // .then(data => {
       //   console.log(data)
       //   // Clear previous results
@@ -34,6 +34,7 @@ export default class extends Controller {
       // })
 
       .then(data => {
+        console.log(data)
         this.resultsTarget.innerHTML = data;
       })
       .catch(error => {
