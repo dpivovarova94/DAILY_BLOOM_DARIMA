@@ -2,5 +2,28 @@
   <%= render partial: "search_form", layout: false %>
   <div id="search-results" data-target='search.results'>
   <!-- Search results will be dynamically updated here by JavaScript -->
+  <% if params[:search_query].present? %>
+      <% if @search_results.any? %>
+        <h2>Search Results</h2>
+        <ul>
+            <% @search_results.each do |friend| %>
+              <%# <%= render partial: 'friends', locals: { friend: friend }, layout: false %>
+              <li>
+                <%= friend.username %>
+                <%= button_to "Add Friend", friendships_path(friend_id: friend.id), method: :post %>
+              <%# <%= simple_form_for(current_user.friendships.new) do |form| %>
+                <%# <%= form.input :friend_id, as: :hidden, input_html: { value: friend.id } %>
+                <%# <%= form.input :status, as: :hidden, input_html: { value: 'pending' } %>
+                <%# <%= form.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+                <%# <%= form.button :submit, "Add Friend simple_form" %>
+              <%# <% end %>
+              </li>
+              <%# <%= friend.username %>
+            <% end %>
+            </ul>
+      <% else %>
+        <p>No results found.</p>
+      <% end %>
+    <% end %>
   </div>
 </div>
