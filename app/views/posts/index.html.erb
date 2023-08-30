@@ -1,4 +1,7 @@
-<div class="container_feed">
+<div class="container_feed" data-controller="posts-toggle">
+<%# <div class="posts-iteration" data-controller="posts-toggle"> %>
+  <p data-action="click->posts-toggle#selectMyPosts">Me</p>
+  <p data-action="click->posts-toggle#selectFriendsPosts">My Friends</p>
   <div class="button-selection">
     <%= link_to 'Quote', feed_path(medium: (params[:medium] == 'text' ? nil : 'text')), class: 'btn-feed btn-quote' %>
     <%= link_to 'Song', feed_path(medium: (params[:medium] == 'song_url' ? nil : 'song_url')), class: 'btn-feed btn-song' %>
@@ -6,73 +9,21 @@
     <%= link_to 'Photo', feed_path(medium: (params[:medium] == 'photo' ? nil : 'photo')), class: 'btn-feed btn-photo' %>
   </div>
 
-  <div class="feed">
-    <% @posts.each do |post| %>
-      <div class="posts_cards" data-bs-toggle="modal" data-bs-target="#exampleModal<%= post.id %>" data-post-id="<%= post.id %>">
-        <% if ! post.photo.key.nil? %>
-          <%= cl_image_tag(post.photo.key, class:"card-photo", crop: :thumb, gravity: :face) %>
-        <% elsif ! post.text.nil? %>
-          <div class="card-quote">
-            <%= post.text %>
-          </div>
-        <% elsif ! post.poem.nil? %>
-          <div class="card-poem">
-            <%= post.poem %>
-          </div>
-        <% elsif !post.song_url.nil? %>
-          <div class="card-song">
-            <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
-            <% if spotify_track_id.present? %>
-              <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" style="border-radius:12px" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-
-        <!-- Modal starts here -->
-        <div class="modal fade" id="exampleModal<%= post.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="height: 70vh;border-radius: 10pt;">
-              <div id="modal-body-content">
-                <div class="content-wrap" style="padding-top: 10pt;">
-                  <div class="index-card-container">
-                    <div class="standard-card d-flex flex-column">
-                      <% if ! post.photo.key.nil? %>
-                        <div class="show-photo-card" style="max-height: 60vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                          <%= cl_image_tag(post.photo.key, crop: :fill, gravity: :face, class: 'img-responsive', style: 'max-height: 100%; width: auto;') %>
-                        </div>
-                      <% elsif ! post.text.nil? %>
-                        <div class="flex-grow-1 quote-modal" >
-                        <div><%= post.text %></div>
-                        </div>
-                      <% elsif ! post.poem.nil? %>
-                        <div class="flex-grow-1 poem-modal" >
-                          <div><%= post.poem %></div>
-                        </div>
-                      <% elsif !post.song_url.nil? %>
-                        <div class="song-modal" style="height: 60vh; width: auto; display: flex; align-items: center; justify-content: center; margin-bottom: 20px">
-                          <% spotify_track_id = extract_spotify_track_id(post.song_url) %>
-                          <% if spotify_track_id.present? %>
-                            <iframe src="https://open.spotify.com/embed/track/<%= spotify_track_id %>?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                          <% end %>
-                        </div>
-                      <% end %>
-                    </div>
-                  </div>
-                  <div class="keyword-container">
-                      <div class="keyword">
-                        <%= post.challenge.keyword.name %>
-                        <p><%= post.created_at.strftime('%d %B %Y') %></p>
-                      </div>
-                      <div>
-                        <%= button_to 'Delete', delete_post_path(post), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' },  class: "btn btn-delete"%>
-                      </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> <!-- Modal ends here -->
-    <% end %>
+  <div data-posts-toggle-target="myPosts" >
+    <div class="feed">
+      <% @my_posts.each do |post| %>
+        <%= render partial: 'posts', locals: { post: post } %>
+      <% end %>
+    </div>
   </div>
-</div>
+
+  <div data-posts-toggle-target="friendsPosts" class="d-none" >
+    <div class="feed">
+      <% @friends_posts.each do |post| %>
+        <%= render partial: 'posts', locals: { post: post } %>
+      <% end %>
+    </div>
+  </div>
+
+  </div>
+<%# </div> %>

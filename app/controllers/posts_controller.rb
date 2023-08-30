@@ -2,31 +2,28 @@ class PostsController < ApplicationController
   layout 'show_layout', only: :show
 
   def index
+    # selecting posts of the current user and the friends of the current user with status accepted
     friend_ids = current_user.friendships.where(status: 'accepted').pluck(:friend_id)
     if params[:medium].present?
       if params[:medium] == "photo"
-        # @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).joins(:photo_attachment).where.not(active_storage_attachments: { blob_id: nil }).order(created_at: :desc)
-        @posts = Post.joins(:challenge)
-                      .where("challenges.user_id = ? OR challenges.user_id IN (?)",
-                          current_user.id,
-                          friend_ids)
-                      .joins(:photo_attachment).where.not(active_storage_attachments: { blob_id: nil }).order(created_at: :desc)
+        @my_posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).joins(:photo_attachment).where.not(active_storage_attachments: { blob_id: nil }).order(created_at: :desc)
+        @friends_posts = Post.joins(:challenge)
+        .where("challenges.user_id IN (?)",
+        friend_ids)
+        .joins(:photo_attachment).where.not(active_storage_attachments: { blob_id: nil }).order(created_at: :desc)
       else
-        # @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).where.not(params[:medium] => "").order(created_at: :desc)
-        @posts = Post.joins(:challenge)
-                      .where("challenges.user_id = ? OR challenges.user_id IN (?)",
-                      current_user.id,
-                      friend_ids)
-                      .where.not(params[:medium] => "").order(created_at: :desc)
+        @my_posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).where.not(params[:medium] => "").order(created_at: :desc)
+        @friends_posts = Post.joins(:challenge)
+        .where("challenges.user_id IN (?)",
+        friend_ids)
+        .where.not(params[:medium] => "").order(created_at: :desc)
       end
     else
-      # @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).order(created_at: :desc)
-      # selecting posts of the current user and the friends of the current user with status accepted
-      @posts = Post.joins(:challenge)
-                   .where("challenges.user_id = ? OR challenges.user_id IN (?)",
-                          current_user.id,
-                          friend_ids)
-                   .order(created_at: :desc)
+      @my_posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id }).order(created_at: :desc)
+      @friends_posts = Post.joins(:challenge)
+      .where("challenges.user_id IN (?)",
+      friend_ids)
+      .order(created_at: :desc)
     end
   end
 
