@@ -30,19 +30,31 @@
 <%# here ends the avatar %>
 
 <%# here start the friend requests %>
-<% @friendship_requests.each do |friendship| %>
-  <% if friendship.pending? %>
-    <p><%= friendship.user.username %> sent you a friend request.</p>
-    <%= simple_form_for friendship do |f| %>
-      <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-      <%= f.submit 'Accept', class: 'btn btn-custom btn-success' %>
-    <% end %>
-    <%= simple_form_for friendship do |f| %>
-      <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-      <%= f.submit 'Reject', class: 'btn btn-custom btn-danger' %>
-    <% end %>
+<div class="container_friend_requests">
+  <% @friendship_requests.each do |friendship| %>
+    <div class="friend_requests_infos">
+      <% if friendship.pending? %>
+        <div class="card-friend">
+          <img src="<%= friendship.user.avatar_url %>" alt="Avatar">
+          <div class="card-friend-infos">
+            <p><strong><%= friendship.user.username %></strong> sent you a friend request.</p>
+          </div>
+        </div>
+        <div class="friend_request_buttons">
+          <%= simple_form_for friendship do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+            <%= f.submit 'Accept', class: 'btn btn-custom-friend' %>
+          <% end %>
+          <%= simple_form_for friendship do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+            <%= f.submit 'Reject', class: 'btn btn-custom-friend' %>
+          <% end %>
+        </div>
+
+      <% end %>
+    </div>
   <% end %>
-<% end %>
+</div>
 
 <%# here start the friend requests %>
 

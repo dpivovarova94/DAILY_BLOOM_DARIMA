@@ -60,3 +60,31 @@
   font-weight: normal;
   font-style: normal;
 }
+
+.container_friend_requests {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.friend_requests_infos {
+  flex:1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.friend_request_buttons form {
+  margin-left: auto; /* Push the button to the very right */
+}
+
+.friend_requests_infos p {
+  margin-bottom: 0px;
+  // margin-left: 10px;
+  font-size: 12px;
+  // margin-right: 20px;
+}
+
+.friend_request_buttons {
+  display: flex;
+  // margin-left: 20px; /* Push the button to the very right */
+}

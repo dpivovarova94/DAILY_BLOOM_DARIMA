@@ -1,32 +1,38 @@
 <!-- Search results will be dynamically updated here by JavaScript -->
 <% if params[:search_query].present? %>
   <% if @search_results.any? %>
-    <h2>Search Results</h2>
-    <ul>
+    <%# <h2>Search Results</h2> %>
         <% @search_results.each do |friend| %>
           <%# <%= render partial: 'friends', locals: { friend: friend }, layout: false %>
-          <li>
           <% friendship = @friendships.find_by(friend_id: friend.id) %>
             <% if friendship && friendship.status == 'accepted' %>
-              <%= friend.username %>
-              <%= button_to "Already added as friend", "#", class: "disabled-button", disabled: true %>
+              <div class="card-friend">
+                <img src="<%= friendship.friend.avatar_url %>" alt="Avatar">
+                <div class="card-friend-infos">
+                  <h3><%= friend.username %></h3>
+                  <%= button_to "Already added as friend", "#", class: "disabled-button", disabled: true, class: "btn btn-custom-friend" %>
+                </div>
+              </div>
             <% elsif friendship && friendship.status == 'pending'  %>
-               <%= friend.username %>
-                <%= button_to "Pending", "#", class: "disabled-button", disabled: true %>
+              <div class="card-friend">
+                <img src="<%= friendship.friend.avatar_url %>" alt="Avatar">
+                <div class="card-friend-infos">
+                  <h3><%= friend.username %></h3>
+                  <%= button_to "Pending", "#", class: "disabled-button", disabled: true, class: "btn btn-custom-friend" %>
+                </div>
+              </div>
              <% else %>
-              <%= friend.username %>
-              <%= button_to "Add Friend", friendships_path(friend_id: friend.id), method: :post %>
-            <%# <%= simple_form_for(current_user.friendships.new) do |form| %>
-            <%# <%= form.input :friend_id, as: :hidden, input_html: { value: friend.id } %>
-            <%# <%= form.input :status, as: :hidden, input_html: { value: 'pending' } %>
-            <%# <%= form.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-            <%# <%= form.button :submit, "Add Friend simple_form" %>
+              <div class="card-friend">
+                <img src="<%= friend.avatar_url %>" alt="Avatar">
+                <div class="card-friend-infos">
+                  <h3><%= friend.username %></h3>
+                  <%= button_to "Add Friend", friendships_path(friend_id: friend.id), method: :post, class:"btn btn-custom-friend" %>
+                </div>
+              </div>
           <%# <% end %>
           <% end %>
-          </li>
           <%# <%= friend.username %>
         <% end %>
-        </ul>
   <% else %>
     <p>No results found.</p>
   <% end %>

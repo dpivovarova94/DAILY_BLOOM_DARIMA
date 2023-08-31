@@ -209,8 +209,29 @@
   color: white;
 }
 
+// Button for the search page of friends
 
+.btn-custom-friend {
+  border: 1px solid black;
+  color: black;
+  // padding: 10px;
+  padding: 5px;
+  width: 60pt;
+  margin: 10pt;
+  border-radius: 10pt;
+  font-size: 10px;
+  font-family: $body-font;
+  font-weight: lighter;
+  text-decoration: none;
+  text-align: center;
+  
+  &:active {
+    background-color: $main-yellow;
+    border: none;
+  }
+}
 
+// Buttons for the login, edit forms
 .editpage {
   h1 {
     margin-top: 40px;
