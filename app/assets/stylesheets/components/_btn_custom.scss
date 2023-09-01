@@ -224,11 +224,45 @@
   font-weight: lighter;
   text-decoration: none;
   text-align: center;
-  
+  background-color: $main-blue;
+
   &:active {
     background-color: $main-yellow;
     border: none;
   }
+}
+
+// Buttons for the dashboard friendship requests: accept or reject
+.btn-custom-friend-request {
+  border: 1px solid black;
+  color: black;
+  // padding: 10px;
+  // padding: 5px;
+  // width: 60pt;
+  margin-left: 10pt;
+  border-radius: 10pt;
+  font-size: 10px;
+  font-family: $body-font;
+  font-weight: lighter;
+  text-decoration: none;
+  text-align: center;
+  // background-color: $main-blue;
+}
+
+.btn-custom-friend-request-active {
+  border: 1px solid black;
+  color: black;
+  // padding: 10px;
+  // padding: 5px;
+  // width: 60pt;
+  margin-left: 10pt;
+  border-radius: 10pt;
+  font-size: 10px;
+  font-family: $body-font;
+  font-weight: lighter;
+  text-decoration: none;
+  text-align: center;
+  background-color: $main-blue;
 }
 
 // Buttons for the login, edit forms

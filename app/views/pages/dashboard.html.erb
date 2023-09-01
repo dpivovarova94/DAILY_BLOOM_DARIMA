@@ -43,11 +43,11 @@
         <div class="friend_request_buttons">
           <%= simple_form_for friendship do |f| %>
             <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-            <%= f.submit 'Accept', class: 'btn btn-custom-friend' %>
+            <%= f.submit 'Accept', class: 'btn btn-custom-friend-request-active' %>
           <% end %>
           <%= simple_form_for friendship do |f| %>
             <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-            <%= f.submit 'Reject', class: 'btn btn-custom-friend' %>
+            <%= f.submit 'Reject', class: 'btn btn-custom-friend-request' %>
           <% end %>
         </div>
 
