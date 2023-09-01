@@ -5,15 +5,15 @@
         <% @search_results.each do |friend| %>
           <%# <%= render partial: 'friends', locals: { friend: friend }, layout: false %>
           <% friendship = @friendships.find_by(friend_id: friend.id) %>
-            <% if friendship && friendship.status == 'accepted' %>
+            <% if friendship && friendship.status == 'accepted' && friend.id!=current_user.id %>
               <div class="card-friend">
                 <img src="<%= friendship.friend.avatar_url %>" alt="Avatar">
                 <div class="card-friend-infos">
                   <h3><%= friend.username %></h3>
-                  <%= button_to "Already added as friend", "#", class: "disabled-button", disabled: true, class: "btn btn-custom-friend" %>
+                  <%= button_to "Following", "#", class: "disabled-button", disabled: true, class: "btn btn-custom-friend" %>
                 </div>
               </div>
-            <% elsif friendship && friendship.status == 'pending'  %>
+            <% elsif friendship && friendship.status == 'pending' && friend.id!=current_user.id %>
               <div class="card-friend">
                 <img src="<%= friendship.friend.avatar_url %>" alt="Avatar">
                 <div class="card-friend-infos">
@@ -21,17 +21,25 @@
                   <%= button_to "Pending", "#", class: "disabled-button", disabled: true, class: "btn btn-custom-friend" %>
                 </div>
               </div>
-             <% else %>
+            <% elsif friendship && friendship.status == 'rejected' && friend.id!=current_user.id %>
+              <div class="card-friend">
+                <img src="<%= friendship.friend.avatar_url %>" alt="Avatar">
+                <div class="card-friend-infos">
+                  <h3><%= friend.username %></h3>
+                  <%= button_to "Rejected", "#", class: "disabled-button", disabled: true, class: "btn btn-custom-friend" %>
+                </div>
+              </div>
+             <% elsif friend.id!=current_user.id %>
               <div class="card-friend">
                 <img src="<%= friend.avatar_url %>" alt="Avatar">
                 <div class="card-friend-infos">
                   <h3><%= friend.username %></h3>
-                  <%= button_to "Add Friend", friendships_path(friend_id: friend.id), method: :post, class:"btn btn-custom-friend" %>
+                  <%= button_to "Follow", friendships_path(friend_id: friend.id), method: :post, class:"btn btn-custom-friend" %>
                 </div>
               </div>
-          <%# <% end %>
-          <% end %>
-          <%# <%= friend.username %>
+            <% else %>
+              <p>No results found.</p>
+            <% end %>
         <% end %>
   <% else %>
     <p>No results found.</p>

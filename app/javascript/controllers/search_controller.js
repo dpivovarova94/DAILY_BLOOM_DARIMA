@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus";
 
 
 export default class extends Controller {
-  static targets = ["input", "results"]
+  static targets = ["input", "results", "friendsList"]
 
   connect() {
     console.log("Connected to search controller");
@@ -34,11 +34,13 @@ export default class extends Controller {
       // })
 
       .then(data => {
-        console.log(data)
+        // console.log(data)
         this.resultsTarget.innerHTML = data;
       })
       .catch(error => {
         console.error("Error fetching search results:", error);
       });
+
+      this.friendsListTarget.classList.add("d-none")
   }
 }

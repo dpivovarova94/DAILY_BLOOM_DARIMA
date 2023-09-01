@@ -8,9 +8,6 @@ export default class extends Controller {
     console.log("Connected to search controller");
   }
 
-  toggler() {
-
-  }
   selectMyPosts() {
     this.myPostsTarget.classList.remove("d-none");
     this.friendsPostsTarget.classList.add("d-none");
