@@ -1,0 +1,20 @@
+<div class="container_search" data-controller="search">
+  <div id="search-field">
+    <%= render partial: "search_form", layout: false %>
+  </div>
+  <div id="search-results" data-target='search.results'>
+  </div>
+  <div id="friends-list">
+    <% if @accepted_friendships.any? %>
+      <h2>Friends</h2>
+      <% @accepted_friendships.each do |friendship| %>
+      <div class="card-friend">
+        <img src="<%= friendship.friend.avatar_url %>" alt="Avatar">
+        <div class="card-friend-infos">
+          <h3><%= friendship.friend.username %></h3>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -7,6 +7,8 @@ class PagesController < ApplicationController
     @user = current_user
     @selected_categories = @user.categories
     @posts = Post.joins(:challenge).where(challenges: { user_id: current_user.id })
+    @friendship_requests = Friendship.where(friend_id: current_user.id)
+
   end
 
   def wrapped

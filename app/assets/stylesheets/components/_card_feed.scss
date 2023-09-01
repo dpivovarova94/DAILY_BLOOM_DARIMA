@@ -88,17 +88,36 @@
   }
 
   .button-selection {
-    display: grid;
-    // justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+    margin-top: 10px;
     // align-items: center;
-    margin-bottom: 20px;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 16px;
+    // margin-bottom: 20px;
+    // grid-template-columns: 1fr 1fr;
+    // grid-gap: 16px;
   }
 }
 
 .img-rounded {
   border-radius: 15px;
+}
+
+.posts_toggle {
+  display: flex;
+  justify-content: center;
+}
+
+.posts_toggle p {
+  cursor: pointer;
+  margin: 0 5px;
+  font-family: 'DailyBloom';
+  font-size: medium;
+
+}
+
+.selected {
+  color: gray;
 }
 
 /////////// Old Code from First Talk ///////////
